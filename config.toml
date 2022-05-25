@@ -1,0 +1,65 @@
+baseURL = 'https://kikiraihan.github.io'
+languageCode = 'en-us'
+title = 'Moh Zulkifli Katili'
+theme="researcher"
+
+disableKinds = ["taxonomy", "term"]
+enableEmoji = true
+math = false          # enable KaTeX (https://katex.org/) globally
+googleAnalytics = ""  # add your tracking id
+
+[params]
+  author = "Moh Zulkifli Katili"
+  description = "A simple monospaced resume theme for Hugo."
+  favicon = "favicon.ico"  # path to a .ico to use as favicon
+  logo = ""  # url or path to a logo to put in the header
+  [params.footer]
+    text = "Moh Zulkifli Katili"
+    url = "https://github.com/kikiraihan"
+  [params.style]  # appearance options (can be omitted)
+    fontFamily = "Inconsolata"
+    pageWidth = "750px"
+    avatarSize = "90px"
+    colorBlack = "#222222"
+    colorRed = "#dc3545"
+  [[params.socialIcons]]
+    icon = "fab fa-twitter"
+    title = "Twitter"
+    url = "https://twitter.com/inikikikatili"
+  [[params.socialIcons]]
+    icon = "fab fa-instagram"
+    title = "Instagram"
+    url = "https://www.instagram.com/inikikikatili/"
+  [[params.socialIcons]]
+    icon = "fab fa-github"
+    title = "Github"
+    url = "https://github.com/kikiraihan"
+  [[params.socialIcons]]
+    icon = "fab fa-linkedin"
+    title = "Linkedin"
+    url = "https://www.linkedin.com/in/moh-zulkifli-katili-3ba18319a/"
+  [[params.socialIcons]]
+    icon = "fas fa-envelope"
+    title = "E-mail"
+    url = "mailto:mohzulkiflikatili@gmail.com"
+
+[permalinks]
+  "/" = "/:filename"
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blogs"
+    url = "/posts"
+    weight = 3
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 2
+  
+
+[markup.goldmark.renderer]
+  unsafe = true  # allow raw HTML in markdown files

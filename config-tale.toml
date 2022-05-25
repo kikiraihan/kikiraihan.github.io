@@ -1,0 +1,20 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Moh Zulkifli Katili'
+theme="tale"
+sectionPagesMenu = "main"
+
+
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    title = "About"
+    url = "/about/"
+    weight = 0
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    title = "Posts"
+    url = "/posts/"
+    weight = 0
