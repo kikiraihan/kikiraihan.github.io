@@ -1,0 +1,20 @@
+{{ if and (isset .Site.Params "avatarurl") (not (isset .Site.Params "gravatar")) }}
+  {{ with .Site.Params.avatarURL }}
+    <div ><img style="
+      width: 15rem;
+      height: auto;
+      border-radius: 50%;
+      @media only screen and (max-width: 768px) {
+        width: 10rem;
+      }" src="{{ . | relURL }}" alt="avatar"></div>
+  {{ end }}
+{{ end }}
+{{ with .Site.Params.gravatar }}
+  <div ><img style="
+    width: 20rem;
+    height: auto;
+    border-radius: 50%;
+    @media only screen and (max-width: 768px) {
+      width: 10rem;
+    }" src="https://www.gravatar.com/avatar/{{md5 .}}?s=240&d=mp" alt="gravatar"></div>
+{{ end }}
