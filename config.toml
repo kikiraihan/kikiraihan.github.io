@@ -23,7 +23,7 @@ googleAnalytics = ""  # add your tracking id
   #gravatar = "mohzulkiflikatili@gmail.com"
   
   [params.footer]
-    #text = "Moh Zulkifli Katili"
+    text = "Talk about web, data, travelling, and life"
     #url = "mailto:mohzulkiflikatili@gmail.com"
   [params.style]  # appearance options (can be omitted)
     fontFamily = "Inconsolata"
