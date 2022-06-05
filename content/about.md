@@ -8,7 +8,7 @@ title = "About"
 ## 👋🏼 ABOUT ME
 I was a bachelor of **Informatics System** at *Universitas Negeri Gorontalo* in 2021, and now I am doing my master's study at *IPB university* in **Computer Science**.
 
-I have soft skills in **programming and graphic design**. I also have **leadership experience** and **economic knowledge**, that I gained when I entrusted with being the **general chairman** of the *"Generasi Baru Indonesia Gorontalo"* (that is ***Bank Indonesia* Scholarship Awardee community**), for the period 2020 to 2021.
+I have soft skills in **programming and graphic design**. I also have **leadership experience** and **economic knowledge**, that I gained when I was entrusted with being the **general chairman** of the *"Generasi Baru Indonesia Gorontalo"* (the community of ***Bank Indonesia* Scholarship Awardee**), at the period 2020 to 2021.
 
 ---
 

@@ -72,6 +72,10 @@ googleAnalytics = ""  # add your tracking id
     name = "Projects"
     url = "/projects"
     weight = 3
+  [[menu.main]]
+    name = "Blogs"
+    url = "/blogs"
+    weight = 4
   
   
 
