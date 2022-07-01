@@ -2,13 +2,13 @@
 title = "About"
 +++
 
-<!-- <div ><img style="
+<div ><img style="
         height: auto;
         border-radius: 5px;
-" src="/pot-mk-01.jpeg" alt="avatar"></div>  -->
+" src="/pdl-width.jpg" alt="avatar"></div> 
 <!-- <br> -->
 <!-- >My greatest potential is the willingness to keep learning new things.  -->
-{{< figure class="avatar" src="/avatar.jpg" alt="avatar">}}
+<!-- {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}} -->
 
 ## 👋🏼 ABOUT ME
 I was a bachelor of **Informatics System** at the *Universitas Negeri Gorontalo* in 2021, and now completing my master's studies at the *IPB university* in the field of *Computer Science*.
