@@ -5,25 +5,25 @@ date: 2022-04-25
 
 # Jadwalin
 
-### Masalah :
-Fakultas Ekonomi dan Bisnis Islam IAIN Sultan Amai Gorontalo, membutuhkan sebuah sistem untuk mengatur jadwal matakuliah dalam skala fakultas. Data matakuliah dan contoh jadwal yang tersedia berupa file excell, yang diperoleh dari Sistem Informasi Akademik (SIAK). Dalam kasus ini, akses melalui API SIAK tidak diizinkan untuk alasan tertentu.
-Sistem harus mempertimbangkan : 
-1. Jurusan → jadwal bagi mahasiswa dalam satu jurusan tidak boleh bertabrakan.
-2. Dosen → cek dosen pengajar apakah ada matakuliah juga di jam yang sama.
-3. Ruangan → cek apakah ruangan sudah terpakai di jam yang sama.
-4. SKS -> cek SKS matakuliah kalau sesuai dengan SKS pada slot jam. (sks adalah satuan kredit semester).
+### Problem :
+The Faculty of Islamic Economics and Business, IAIN Sultan Amai Gorontalo, requires a system to manage course schedules on a faculty scale. Available course data and sample schedules are in the form of excell files, which are obtained from the Academic Information System (SIAK). In this case, access through the SIAK API is not permitted for certain reasons.
+The system must consider:
+1. Department → the schedule for students in one major may not collide.
+2. Lecturer → check the teaching lecturer whether there are also courses at the same time.
+3. Room → check whether the room is already occupied at the same time.
+4. SKS -> check the course credits if they match the credits in the clock slot. (credits are a semester credit unit).
 
-**Waktu pengerjaan :** 2 bulan
+**Working time:** 2 months
 
-**Tanggal :** April – Mei 2022
+**Date :** April – May 2022
 
-### Solusi :
-Untuk menyelesaikan permasalahan di brief diberikan solusi berikut :
-- Fitur input dibangun menggunakan prinsip export data excell, untuk memudahkan user yang sudah terbiasa bekerja dengan file excell, dan memudahkan integrasi dikarenakan belum mendapat akses SIAT.
-- Pembuatan fitur sudah mempertimbangkan ke 4 hal dibrief, Jurusan, Dosen, Ruangan, SKS, dan dapat dengan mudah ditambahkan fitur karena dibuat dalam sistem rule laravel.
-- Terdapat fitur Generate jadwal otomatis dengan menggunakan algoritma greedy.
+### Solution :
+To solve the problem in the brief given the following solutions:
+- The input feature is built using the export data excell principle, to make it easier for users who are used to working with excell files, and facilitate integration because they do not yet have access to SIAT.
+- The making of the feature has taken into account 4 dibrief matters, Department, Lecturer, Room, Credits, and features can be easily added because they are made in the Laravel rule system.
+- There is an automatic schedule generator feature using a greedy algorithm.
 
-#### Tangkapan Layar :
+#### Screenshot :
 ![/projects/jadwalin1.png](/projects/jadwalin1.png)
 ![/projects/jadwalin2.png](/projects/jadwalin2.png)
 ![/projects/jadwalin3.png](/projects/jadwalin3.png)

@@ -1,20 +1,20 @@
 ---
 title: "Kongkong | [Frontend]"
-date: 2020-08-05
+dates: 2020-08-05
 ---
 
-# Kongkong Student Crowdfunding Platform (Fake Project)
+# Kongkong Student Crowdfunding Platform (Practice Project)
 
-### Masalah :
-Kami berencana untuk mengembangkan sebuah crowdfunding platform untuk kegiatan mahasiswa, idenya untuk memberikan solusi alternatif sumber dana bagi ormawa yang ingin melaksanakan kegiatan dari pada harus menjalankan list dana per orang, tanpa menjelaskan informasi kegiatan.
+### Problem :
+We plan to develop a crowdfunding platform for student activities, the idea is to provide an alternative source of funding for students who want to carry out activities instead of having to run a list of funds per person, without explaining activity information.
 
-Tugas saya adalah membuat tampilan aplikasi yang cocok dengan target user mahasiswa. Dibutuhkan tampilan yang fleksibel sekaligus responsif. Menampilkan data-data kegiatan mahasiswa dan ormawa yang melaksanakan kegiatan.
+My task is to make the appearance of the application match the target student user. It takes a display that is flexible as well as responsive. Displays data on student and ormawa activities that carry out activities.
 
 
-### Solusi :
-Dibuat tampilan menggunakan bootstrap dari awal tanpa menggunakan template. Dibuat dengan kaidah mobile first developement, untuk mendukung responsifitas tampilan pada perangkat smartphone yang biasa diguanakan mahasiswa.
+### Solution :
+Created a view using bootstrap from scratch without using a template. Made with mobile first development principles, to support display responsiveness on smartphone devices that are commonly used by students.
 
-#### Tangkapan layar :
+#### Screenshot :
 ![/projects/kongkong1.png](/projects/kongkong1.png)
 ![/projects/kongkong2.png](/projects/kongkong2.png)
 ![/projects/kongkong3.png](/projects/kongkong3.png)

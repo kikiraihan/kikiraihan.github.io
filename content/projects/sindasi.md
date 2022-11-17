@@ -3,33 +3,33 @@ title: "Sindasi | [Frontend, Backend]"
 date: 2021-02-05
 ---
 
-# Sindasi : SPK Rekomendasi Mahasiswa Menggunakan Metode AHP-TOPSIS
+# Sindasi: Student Recommended SPK Using the AHP-TOPSIS Method
 
-### Masalah :
-Dibutuhkan aplikasi yang dapat membantu Birokrasi Jurusan dalam menemukan mahasiswa yang cocok untuk kasus tertentu seperti lomba/penelitian dll. Aplikasi harus dinamis, artinya dapat disesuaikan, sehingga dapat digunakan pada multi kasus selama menggunakan data mahasiswa (nilai MK, organisasi, gaji orang tua) berupa keterangan yang diisi oleh mahasiwa tersebut serta data nilai matakuliah dari sistem informasi akademik.
+### Problem :
+An application is needed that can assist the Department Bureaucracy in finding suitable students for certain cases such as competitions/research etc. The application must be dynamic, meaning that it can be adjusted, so that it can be used in multiple cases as long as it uses student data (Courses scores, organization, parents' salaries) in the form of information filled in by the student as well as course grade data from an academic information system.
 
-contoh kasus : rekomendasi calon penerima beasiswa, rekomendasi utusan lomba, rekomendasi pendampingan penelitian dosen dll.
+case examples: recommendations for prospective scholarship recipients, recommendations for contest delegates, recommendations for lecturer research assistance, etc.
 
-### Solusi :
-Sindasi adalah Sistem Informasi dan Rekomendasi Mahasiswa. Sistem ini menyediakan informasi lengkap mahasiswa baik akademik maupun nonakademik. Selain itu sistem ini menerapkan metode Sistem Pendukung Keputusan dalam proses penentuan rekomendasi mahasiswa secara dinamis dengan menggunakan kombinasi **metode Analitical Hierarcy Process dan Technique for Order Preference by Similarity to Ideal Solution (AHP-TOPSIS)**. Artinya rekomendasi dapat dibuat dinamis dengan preferensi bobot yang dapat disesuaikan.
-Rekomendasi yang dibuat dapat dikonfigurasi melalui penilaian dan perbandingan berpasangan kriteria lalu disimpan menjadi preferensi rekomendasi. Rekomendasi mahasiswa kemudian dapat dihasilkan berdasarkan preferensi yang tersimpan.  Kriteria diperoleh dari sejumlah data mahasiswa berupa (nilai matakuliah, kegiatan ekstrakulikuler, ataupun prestasi yang dimiliki). Bobot setiap kriteria dapat berbeda antara masing-masing rekomendasi, sehingga dapat digunakan secara dinamis untuk membantu ketua jurusan atau ketua prodi dalam menemukan rekomendasi mahasiswa untuk kebutuhan tertentu yang spesifik.
+### Solution :
+Sindasi is a Student Information and Recommendation System. This system provides complete student information, both academic and non-academic. In addition, this system applies the Decision Support System method in the process of determining student recommendations dynamically by using a combination of **Analytical Hierarchy Process and Technique for Order Preference by Similarity to Ideal Solution (AHP-TOPSIS)** methods. This means recommendations can be made dynamic with adjustable weight preferences.
+Recommendations made can be configured through assessment and pairwise comparison of criteria and then stored as recommendation preferences. Student recommendations can then be generated based on the saved preferences. The criteria are obtained from a number of student data in the form of (course grades, extracurricular activities, or achievements). The weight of each criterion can be different for each recommendation, so that it can be used dynamically to assist heads of departments or study program heads in finding student recommendations for specific specific needs.
 
-Detail Fitur dapat dilihat ditabel berikut :
-No | Fitur | Dosen | Kajur | Kaprodi | Mahasiswa | Admin | 
+Feature details can be seen in the following table:
+No | Features | Lecturer | Kajur | Head of study program | Student | admin |
 -------|-------|-------|-------|-------|-------|-------|
-1 | Login | Ada | Ada | Ada | Ada | Ada | 
-2 | Dashboard | Ada | Ada | Ada | Ada | Ada | 
-3 | Kelola data mahasiswa | - | - | - | Ada | - | 
-4 | Tampil daftar mahasiswa | Hanya lihat mahasiswa PA | Hanya lihat semua mahasiswa | Hanya lihat mahasiswa prodi | - | Hanya lihat semua mahasiswa | 
-5 | Tampil profil dan akademik mahasiswa | Hanya lihat mahasiswa PA | Hanya lihat semua mahasiswa | Hanya lihat mahasiswa prodi | Hanya lihat profilnya | Hanya lihat semua mahasiswa | 
-6 | Monitoring matakuliah | - | Semua MK | Hanya MK Prodi | - | - | 
-7 | Master kriteria | Hanya lihat | Hanya lihat | Hanya lihat | - | Lihat, Update, Hapus, dan Tambah kriteria | 
-8 | Master preferensi | Lihat, tambah preferensi, hapus hanya preferensi miliknya | Lihat, tambah preferensi, hapus semua preferensi | Lihat, tambah preferensi, hapus hanya preferensi miliknya | - | Lihat, tambah preferensi, hapus semua preferensi | 
-9 | Rekomendasi otomatis | - | Ada | Ada | - | - | 
-10 | Kelola data user | - | Ada | - | - | Ada | 
-11 | Import data | - | Ada | - | - | Ada
+1 | Login | Ok | Ok | Ok | Ok | Ok |
+2 | Dashboard | Ok | Ok | Ok | Ok | Ok |
+3 | Manage student data | -| -| -| Ok | -|
+4 | Display student list | Only student guidance | all students | Study program students only | -| all students |
+5 | Display student profiles and academics | Only student guidance | all students | Study program students only | Only his profile | all students |
+6 | Monitor courses | -| All Courses | Only Courses Prodi | -| -|
+7 | Master criteria | Only | Only | Only | -| View, Update, Delete, and Add criteria |
+8 | Preference master | View, add preferences, delete only his preferences | View, add preferences, delete all preferences | View, add preferences, delete only his preferences | -| View, add preferences, delete all preferences |
+9 | Auto recommendation | -| Ok | Ok | -| -|
+10 | Manage user data | -| Ok | -| -| Ok |
+11 | Import data | -| Ok | -| -| Ok
 
-#### Tangkapan layar :
+#### Screenshot :
 ![/projects/sindasi1.png](/projects/sindasi1.png)
 ![/projects/sindasi2.png](/projects/sindasi2.png)
 ![/projects/sindasi3.png](/projects/sindasi3.png)
