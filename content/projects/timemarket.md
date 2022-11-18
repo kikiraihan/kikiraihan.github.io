@@ -1,5 +1,5 @@
 ---
-title: "TimeMarket | [Frontend, Backend]"
+title: "TimeMarket | Bank Indonesia"
 date: 2021-05-24
 ---
 
@@ -41,3 +41,5 @@ No | Features | Employee | Team Leader (Chief) | Head of Office (KPw) | Admin
 12 | Accessing Main Calendar | Yes | Yes | Yes | - |
 13 | Transferring jobs to other employees | Only if you become a principal | Only if you become a principal | - | - |
 14 | Marking job status completed | Yes | - | - | -
+
+*Proker : "Activity / Work Programme"*

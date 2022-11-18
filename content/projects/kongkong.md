@@ -1,5 +1,5 @@
 ---
-title: "Kongkong | [Frontend]"
+title: "Kongkong | Pilot Project"
 date: 2020-08-05
 ---
 

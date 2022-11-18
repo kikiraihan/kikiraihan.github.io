@@ -1,5 +1,5 @@
 ---
-title: "Jadwalin | [Frontend, Backend]"
+title: "Jadwalin | Pilot Project"
 date: 2022-04-25
 ---
 

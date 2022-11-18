@@ -1,5 +1,5 @@
 ---
-title: "Digimosque | [Frontend, Backend]"
+title: "Digimosque | Digimosque StartUp"
 date: 2022-05-06
 ---
 

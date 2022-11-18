@@ -1,5 +1,5 @@
 ---
-title: "Sindasi | [Frontend, Backend]"
+title: "Sindasi | Undergraduate Thesis Project"
 date: 2021-02-05
 ---
 
