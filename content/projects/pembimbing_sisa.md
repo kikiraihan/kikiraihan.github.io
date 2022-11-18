@@ -5,7 +5,7 @@ date: 2022-04-25
 
 # Jadwalin
 
-### Problem :
+### Brief :
 The Faculty of Islamic Economics and Business, IAIN Sultan Amai Gorontalo, requires a system to manage course schedules on a faculty scale. Available course data and sample schedules are in the form of excell files, which are obtained from the Academic Information System (SIAK). In this case, access through the SIAK API is not permitted for certain reasons.
 The system must consider:
 1. Department → the schedule for students in one major may not collide.

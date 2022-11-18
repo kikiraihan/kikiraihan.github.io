@@ -1,11 +1,11 @@
 ---
 title: "Kongkong | [Frontend]"
-dates: 2020-08-05
+date: 2020-08-05
 ---
 
 # Kongkong Student Crowdfunding Platform (Practice Project)
 
-### Problem :
+### Brief :
 We plan to develop a crowdfunding platform for student activities, the idea is to provide an alternative source of funding for students who want to carry out activities instead of having to run a list of funds per person, without explaining activity information.
 
 My task is to make the appearance of the application match the target student user. It takes a display that is flexible as well as responsive. Displays data on student and ormawa activities that carry out activities.
