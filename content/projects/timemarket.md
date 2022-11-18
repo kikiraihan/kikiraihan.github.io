@@ -20,7 +20,7 @@ To solve the problems in the brief, the following solutions are given:
 - Added native access mode feature via chrome browser by adding certain metadata to the main HTML page. So that web applications can be opened as if they were native android applications (Semi Progressive Web App).
 - Manual Book Creation
 
-The application can be accessed via the [following link](https://timemarket.enter.id). this is a Human Resource Management application that aims to monitor and control the workload of employees based on time management and human resources so that they are balanced in order to achieve targets efficiently and effectively. This application has 4 user roles, namely employees, Team Leaders (Chief), Head of Office (KPw), and Admin.
+The application can be accessed via the [following link](https://timemarket.masuk.id). this is a Human Resource Management application that aims to monitor and control the workload of employees based on time management and human resources so that they are balanced in order to achieve targets efficiently and effectively. This application has 4 user roles, namely employees, Team Leaders (Chief), Head of Office (KPw), and Admin.
 
 ![/projects/timemarket.png](/projects/timemarket.png)
 
