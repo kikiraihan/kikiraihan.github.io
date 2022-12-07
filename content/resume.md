@@ -48,7 +48,6 @@ Year | Host Office | Term Of Agreement | Job
 Year | Issuing Organization | Name
 -----|-------|--------
 2022 | Dicoding Academy | Learn Machine Learning Development. [Cert.](https://www.dicoding.com/certificates/81P28V93QPOY)
-
 2022 | Dicoding Academy | Learn Machine Learning for Beginners. [Cert.](https://www.dicoding.com/certificates/NVP791DY4ZR0)
 2022 | Dicoding Academy | Get started programming in python. [Cert.](https://www.dicoding.com/certificates/1RXYM5RVMXVM)
 2022 | Dicoding Academy | Learn Basic Data Visualization. [Cert.](https://www.dicoding.com/certificates/0LZ01KMQRP65)
