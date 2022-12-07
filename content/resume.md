@@ -31,7 +31,7 @@ Gained teamwork skill and economic knowledge from bank Indonesia, when he was **
 
 ## 📑 Publication
 In chronological order:
-1. Katili, M., Amali, L., dan Tuloli, M. 2021. Impelementasi Metode AHP-TOPSIS Dalam Sistem Pendukung Rekomendasi Mahasiswa Berprestasi. Jambura Journal Of Informatics. Vol. 3, No.1, pp. 1-10. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
+1. Katili, M., Amali, L., dan Tuloli, M. 2021. Impelementasi Metode AHP-TOPSIS dalam Sistem Pendukung Rekomendasi Mahasiswa Berprestasi. Jambura Journal Of Informatics. Vol. 3, No.1, pp. 1-10. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
 
 ---
 
