@@ -24,7 +24,7 @@ Gained teamwork skill and economic knowledge from bank Indonesia, when he was **
 ##### 2021-Now | IPB University
 *	Graduate School of Computer Science Master's Program, On Going.
 ##### 2016-2021 | Universitas Negeri Gorontalo
-*	Best graduates student of the Faculty of Engineering, Universitas Negeri Gorontalo, in November 2021.
+*	Best graduates student of the Faculty of Engineering, Universitas Negeri Gorontalo, in November 2021. Score : 3.53 (of 4).
 * Undergraduate Thesis (Grade A): Implementation of the AHP-TOPSIS Method in the Achievement Student Recommendation Support System. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
 
 ---
