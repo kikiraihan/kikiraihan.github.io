@@ -36,10 +36,20 @@ In chronological order:
 ---
 
 ## 👨🏽‍💻 Experiences
-Year | Host Office | Term Of Agreement | Job
+##### 2022 | Digimosque  
+*-as Web Developer in Term Contract-*
+* Create an API for the nearest mosque search algorithm and others APIs.
+* Build the entire admin panel of the aplication. 
+##### 2019 | Bank Indonesia Representative Office Gorontalo 
+*-as Web Developer in Internship-*
+* Build an inflation early warning system at the Division of Policy Coordination Communication Function. 
+* Conduct a survey of food commodity prices with employees of the Division of Regional Economic and Financial Statistics Supervision Function. 
+* Assist in socializing QRIS (QRCode Indonesian Standard) and digital finance at the Division of Payment System and Rupiah Currency Processing Functions. 
+---
+<!-- Year | Host Office | Term Of Agreement | Job
 -----|-------------|------|--------
 2022 | Digimosque | Term Contract | (1) create an API for the nearest mosque search algorithm and others APIs. (2) build the entire admin panel of the aplication. 
-2019 | Bank Indonesia Representative Office Gorontalo | Internship | (1) Build an inflation early warning system at the Division of Policy Coordination Communication Function. (2) Conduct a survey of food commodity prices with employees of the Division of Regional Economic and Financial Statistics Supervision Function. (3) Assist in socializing QRIS (QRCode Indonesian Standard) and digital finance at the Division of Payment System and Rupiah Currency Processing Functions. 
+2019 | Bank Indonesia Representative Office Gorontalo | Internship | (1) Build an inflation early warning system at the Division of Policy Coordination Communication Function. (2) Conduct a survey of food commodity prices with employees of the Division of Regional Economic and Financial Statistics Supervision Function. (3) Assist in socializing QRIS (QRCode Indonesian Standard) and digital finance at the Division of Payment System and Rupiah Currency Processing Functions.  -->
 
 <!-- - 🟡 : internship. 
 - 🟢 : fulltime work. -->
