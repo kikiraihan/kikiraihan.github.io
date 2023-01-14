@@ -10,20 +10,21 @@ googleAnalytics = ""  # add your tracking id
 
 [params]
   author = "Moh Zulkifli Katili"
-  description = "A simple monospaced resume theme for Hugo."
+  description = "A Freelance Software Engineer. Love Programming, Data Science, and Graphic Design also."
   favicon = "favicon.ico"  # path to a .ico to use as favicon
   logo = ""  # url or path to a logo to put in the header
   info = [
     #"@kikiraihan",
     #"@inikikikatili",
-    "Web Developer",
+    "Software Engineer",
     #"Data Engineer",
   ]
   avatarURL = "avatar_home_enh.jpg"
   #gravatar = "mohzulkiflikatili@gmail.com"
   
   [params.footer]
-    text = "Talk about web, data, and life"
+    #text = "Talk about web, data, and life"
+    text = "Talk about Web, data, network science and Design"
     #url = "mailto:mohzulkiflikatili@gmail.com"
   [params.style]  # appearance options (can be omitted)
     fontFamily = "Inconsolata"

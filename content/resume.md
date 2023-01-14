@@ -11,7 +11,7 @@ title = "About"
 <!-- {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}} -->
 
 ## 👋🏼 About Me
-a **Freelance Programmer**. Currently completing his Computer Science masters at the IPB university. Research on **knowledge graphs (Ontology)** of plant diseases domain.
+a **Freelance Software Engineer**. Currently completing his Computer Science masters at the IPB university. Research on **knowledge graphs (Ontology)** of plant diseases domain.
 Enjoys learning **[programming, data science](https://www.instagram.com/katili.dev/)** and **[graphic design](https://www.instagram.com/hexstudiogo/)**. He has the advantage of m-shape skills, though not as deep as the specialists do. He also gained teamwork experience and economic knowledge from bank Indonesia, when he was **the chairman** of the “Generasi Baru Indonesia Gorontalo” (the community of **Bank Indonesia Scholarship Awardee**) 2020-2021.
 
 ---
