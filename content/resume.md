@@ -12,16 +12,18 @@ title = "About"
 
 ## 👋🏼 About Me
 a **Freelance Software Engineer**. Currently completing his Computer Science masters at the IPB university. Research on **knowledge graphs (Ontology)** of plant diseases domain.
-Enjoys learning **[programming, data science](https://www.instagram.com/katili.dev/)** and **[graphic design](https://www.instagram.com/hexstudiogo/)**. He has the advantage of m-shape skills, though not as deep as the specialists do. He also gained teamwork experience and economic knowledge from bank Indonesia, when he was **the chairman** of the “Generasi Baru Indonesia Gorontalo” (the community of **Bank Indonesia Scholarship Awardee**) 2020-2021.
+He has the advantage of m-shape skills since enjoy learning **[programming, data science](https://www.instagram.com/katili.dev/)** and **[graphic design](https://www.instagram.com/hexstudiogo/)**. He also gained teamwork experience and economic knowledge from bank Indonesia, when he was **the chairman** of the “Generasi Baru Indonesia Gorontalo” (the community of **Bank Indonesia Scholarship Awardee**) 2020-2021.
 
 ---
 
 
 ## 🎓 Education
 ##### 2021-Now | IPB University
-*	Graduate School of Computer Science Master's Program, On Going.
+* Computer Science, Computational Intelegence and Optimization Division
+* Graduate School of Computer Science Master's Program, On Going
 ##### 2016-2021 | Universitas Negeri Gorontalo
-*	Best graduates student of the Faculty of Engineering. Score : 3.53 (of 4).
+* Bachelor of Information System (S.Kom)
+* Best graduates student of the Faculty of Engineering. Score : 3.53 (of 4)
 * Undergraduate Thesis (Grade A): Implementation of the AHP-TOPSIS Method in the Achievement Student Recommendation Support System. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
 
 ---
@@ -32,16 +34,15 @@ In chronological order:
 
 ---
 
-## 👨🏽‍💻 Experiences
+## 👨🏽‍💻 Work Experiences
 ##### 2022 | Digimosque  
 *-as Web Developer in Term Contract-*
-* Create an API for the nearest mosque search algorithm and others APIs.
-* Build the entire admin panel of the aplication. 
+* Created an API for the nearest mosque search algorithm and others APIs
+* Built a whole web admin that manages android app data
 ##### 2019 | Bank Indonesia Representative Office Gorontalo 
 *-as Web Developer in Internship-*
-* Build an inflation early warning system at the Division of Policy Coordination Communication Function. 
-* Conduct a survey of food commodity prices with employees of the Division of Regional Economic and Financial Statistics Supervision Function. 
-* Assist in socializing QRIS (QRCode Indonesian Standard) and digital finance at the Division of Payment System and Rupiah Currency Processing Functions. 
+* Built an inflation early warning system to assist the food commodity price survey meeting
+* Under the direction of the Division of Policy Coordination Communication Function, cooperated with other divisions
 ---
 <!-- Year | Host Office | Term Of Agreement | Job
 -----|-------------|------|--------
@@ -50,6 +51,20 @@ In chronological order:
 
 <!-- - 🟡 : internship. 
 - 🟢 : fulltime work. -->
+
+
+## 🐜 Organizational experience
+##### Aug 2020 - Sep 2021 | Generasi Baru Indonesia (GenBI) Gorontalo 
+*-as Chairman -*
+* Was involved in more than 100 activities as an ambassador for Bank Indonesia carried out from the 2019-2021 period
+* In 2020-2021 he served as chairman and carried out 60 activities, such as community service, entrepreneurship seminars, member capacity building, etc
+* Has built new and updated the scoring system to suit all the needs of the organizational structure in depth
+* By direction of our supervisor, has initiated a long-term vision and mission of 2025 to become the best Bank Indonesia scholarship awardee community in Sulawesi
+##### Feb 2017 - Jan 2018 | Linux Study Group
+*-as Head of Multimedia Division-*
+* With his friends, has revived the only open-source community on campus
+* Guide members to organize free learning and knowledge-sharing activities for all students, especially graphic design materials
+---
 
 ## ⚙️ Certifications
 Year | Issuing Organization | Name
@@ -73,7 +88,7 @@ Year | Place | Name
 2017 | Finalist of | National Graphic Design Competition UNITY-UNY. [Cert.](https://drive.google.com/file/d/1rc_KAT7Rzk2RWIpb3QfS6LqDKucNFl3c/view?usp=sharing)
 
 
-## 🗃️ Projects Portfolio
+## 🗃️ Portfolio
 
 *Please see my work portfolio in Project Menu*
 
