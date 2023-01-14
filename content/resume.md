@@ -11,11 +11,9 @@ title = "About"
 <!-- {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}} -->
 
 ## 👋🏼 About Me
-a Bachelor of Informatics System from the **Universitas Negeri Gorontalo**. Currently completing his **Computer Science master's** at the **IPB university**. Research on **Knowledge Graph (Ontology)**, especially its application in plant diseases domain.
-
-Interest in **[programming](https://www.instagram.com/katili.dev/)** and **[graphic design](https://www.instagram.com/hexstudiogo/)**. Enjoys learning both, and has the advantage of phi-shape skills, though not as deep as the specialists do.
-
-Gained teamwork skill and economic knowledge from bank Indonesia, when he was **the chairman** of the “Generasi Baru Indonesia Gorontalo” (the community of **Bank Indonesia Scholarship Awardee**) 2020-2021.
+a **Freelance Programmer**. Currently completing his Computer Science masters at the IPB university. Research on **knowledge graphs (Ontology)** of plant diseases domain.
+Enjoys learning **[programming, data science,](https://www.instagram.com/katili.dev/)** and **[graphic design](https://www.instagram.com/hexstudiogo/)**. He has the advantage of phi-shape skills, though not as deep as the specialists do.
+He gained teamwork skill and economic knowledge from bank Indonesia, when he was **the chairman** of the “Generasi Baru Indonesia Gorontalo” (the community of **Bank Indonesia Scholarship Awardee**) 2020-2021.
 
 ---
 
