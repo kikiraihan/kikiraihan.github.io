@@ -69,8 +69,8 @@ In chronological order:
 ## ⚙️ Certifications
 Year | Issuing Organization | Name
 -----|-------|--------
+2023 | Dicoding Academy | Belajar Dasar Structured Query Language (SQL). [Cert.](https://www.dicoding.com/certificates/1RXY0R2O3ZVM)
 2023 | Dicoding Academy | Belajar Dasar Data Science. [Cert.](https://www.dicoding.com/certificates/1RXY0R109ZVM)
-
 2022 | Dicoding Academy | Learn Machine Learning Development. [Cert.](https://www.dicoding.com/certificates/81P28V93QPOY)
 2022 | Dicoding Academy | Learn Machine Learning for Beginners. [Cert.](https://www.dicoding.com/certificates/NVP791DY4ZR0)
 2022 | Dicoding Academy | Get started programming in python. [Cert.](https://www.dicoding.com/certificates/1RXYM5RVMXVM)
