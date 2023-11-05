@@ -11,7 +11,7 @@ title = "About"
 <!-- {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}} -->
 
 ## 👋🏼 About Me
-a **Freelance Software Engineer**. Currently completing his Computer Science masters at the IPB university. Research on **knowledge graphs (Ontology)** of plant diseases domain.
+a **software engineer** skilled in software development, data analysis, graph analytics, data visualization, machine learning and Bioinformatic. He is passionate about leveraging data analytics and software developement to drive impactful solutions. Tech stack he experienced with is Python, PHP, Javasript, SQL Database, NoSQL Database, SPARQL, RDF, and SAP.
 He has the advantage of m-shape skills since enjoy learning **[programming, data science](https://www.instagram.com/katili.dev/)** and **[graphic design](https://www.instagram.com/hexstudiogo/)**. He also gained teamwork experience and economic knowledge from bank Indonesia, when he was **the chairman** of the “Generasi Baru Indonesia Gorontalo” (the community of **Bank Indonesia Scholarship Awardee**) 2020-2021.
 
 ---
@@ -69,6 +69,8 @@ In chronological order:
 ## ⚙️ Certifications
 Year | Issuing Organization | Name
 -----|-------|--------
+2023 | Dicoding Academy | Belajar Dasar Data Science. [Cert.](https://www.dicoding.com/certificates/1RXY0R109ZVM)
+
 2022 | Dicoding Academy | Learn Machine Learning Development. [Cert.](https://www.dicoding.com/certificates/81P28V93QPOY)
 2022 | Dicoding Academy | Learn Machine Learning for Beginners. [Cert.](https://www.dicoding.com/certificates/NVP791DY4ZR0)
 2022 | Dicoding Academy | Get started programming in python. [Cert.](https://www.dicoding.com/certificates/1RXYM5RVMXVM)
