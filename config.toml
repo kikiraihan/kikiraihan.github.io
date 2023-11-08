@@ -17,6 +17,7 @@ googleAnalytics = ""  # add your tracking id
     #"@kikiraihan",
     #"@inikikikatili",
     "Software Engineer",
+    "+5 Years Experience"
     #"Data Engineer",
   ]
   avatarURL = "avatar_home_enh.jpg"
@@ -24,7 +25,7 @@ googleAnalytics = ""  # add your tracking id
   
   [params.footer]
     #text = "Talk about web, data, and life"
-    text = "Talk about Web, data, network science and Design"
+    text = "Talk about Web, data, network science and Knowledge Graph"
     #url = "mailto:mohzulkiflikatili@gmail.com"
   [params.style]  # appearance options (can be omitted)
     fontFamily = "Inconsolata"
