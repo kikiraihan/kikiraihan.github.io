@@ -72,6 +72,7 @@ Year | Issuing Organization | Name
 2023 | IEEE IPB Student Branch | Course in AI and Optimization for Smart Agriculture and Biomedical Applications. [Cert.](https://drive.google.com/file/d/1HZyYnYuhgVuVR7x_OnZrvKdyA2yee7Dk/view?usp=drive_link)
 2023 | Dicoding Academy | Learn Basic Structured Query Language (SQL). [Cert.](https://www.dicoding.com/certificates/1RXY0R2O3ZVM)
 2023 | Dicoding Academy | Learn Basic Data Science. [Cert.](https://www.dicoding.com/certificates/1RXY0R109ZVM)
+2023 | HackerRank | Problem Solving in Programming. [Cert.](https://www.hackerrank.com/certificates/a58d56624986)
 2022 | Dicoding Academy | Learn Machine Learning Development. [Cert.](https://www.dicoding.com/certificates/81P28V93QPOY)
 2022 | Dicoding Academy | Learn Machine Learning for Beginners. [Cert.](https://www.dicoding.com/certificates/NVP791DY4ZR0)
 2022 | Dicoding Academy | Get started programming in python. [Cert.](https://www.dicoding.com/certificates/1RXYM5RVMXVM)
