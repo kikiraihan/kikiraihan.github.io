@@ -30,7 +30,8 @@ He has the advantage of m-shape skills since enjoy learning **[programming, data
 
 ## 📑 Publication
 In chronological order:
-1. Katili, M., Amali, L., dan Tuloli, M. 2021. Impelementasi Metode AHP-TOPSIS dalam Sistem Pendukung Rekomendasi Mahasiswa Berprestasi. Jambura Journal Of Informatics. Vol. 3, No.1, pp. 1-10. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
+1. Katili, M. Z., Herdiyeni, Y., & Hardhienata, M. K. D. Leveraging Biotic Interaction Knowledge Graph and Network Analysis to Uncover Insect Vectors of Plant Virus. [URI.](https://e-journal.unair.ac.id/JISEBI/article/view/50015)
+2. Katili, M., Amali, L., dan Tuloli, M. 2021. Impelementasi Metode AHP-TOPSIS dalam Sistem Pendukung Rekomendasi Mahasiswa Berprestasi. Jambura Journal Of Informatics. Vol. 3, No.1, pp. 1-10. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
 
 ---
 
