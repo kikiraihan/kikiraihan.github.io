@@ -19,8 +19,8 @@ He has the advantage of m-shape skills since enjoy learning **[programming, data
 
 ## 🎓 Education
 ##### 2021-Now | IPB University [Link](https://drive.google.com/drive/u/0/folders/1Wwh5hk_OuUyt11b17IaD48WP-uYLUfMa)
-* Computer Science, Computational Intelegence and Optimization Division
-* Graduate School of Computer Science Master's Program, On Going
+* Computer Science Master's Program, Computational Intelegence and Optimization Division
+* Thesis (Grade A, Scopus Indexed) : Leveraging Biotic Interaction Knowledge Graph and Network Analysis to Uncover Insect Vectors of Plant Virus. [URI.](https://e-journal.unair.ac.id/JISEBI/article/view/50015)
 ##### 2016-2021 | Universitas Negeri Gorontalo [Link](https://drive.google.com/file/d/1x3xgPUfZeQWXGtCqtsLgQ3sUSZ2CLtXy/view?usp=drive_link)
 * Bachelor of Information System (S.Kom)
 * Best graduates student of the Faculty of Engineering. Score : 3.53 (of 4)
