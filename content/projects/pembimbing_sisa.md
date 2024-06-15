@@ -1,6 +1,7 @@
 ---
-title: "Jadwalin | Pilot Project"
+title: "Jadwalin : Course Schedule Management System"
 date: 2022-04-25
+cover: "/projects/jadwalin3.png"
 ---
 
 # Jadwalin

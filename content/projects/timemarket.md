@@ -1,6 +1,7 @@
 ---
-title: "TimeMarket | Bank Indonesia"
+title: "TimeMarket : Workload Management Application"
 date: 2021-05-24
+cover: "/projects/timemarket.png"
 ---
 
 # TimeMarket

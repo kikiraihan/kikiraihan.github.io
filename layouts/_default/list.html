@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="container">
+    <h1>{{ .Title }}</h1>
+    <div class="grid-container">
+        {{ range .Pages }}
+            <div class="grid-item">
+                <a href="{{ .Permalink }}">
+                    {{ with .Params.cover }}
+                        <img src="{{ . }}" class="grid-image" alt="Cover Image">
+                    {{ end }}
+                    <div class="caption">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</div>
+                </a>
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

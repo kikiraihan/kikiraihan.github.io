@@ -26,4 +26,41 @@
     {{ end }}
 
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3dea4f52-4980-41f6-abc6-6146629b7981";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+    <style>
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Untuk memastikan gambar yang lebih besar dari ukuran container tetap terpotong */
+            float: left;
+            width: 33.33%; /* Mengatur lebar setiap item grid */
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 8px; /* Rounded corners for the grid items */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow effect */
+        }
+
+        .grid-item img {
+            width: 200px;
+            height: 200px;
+            display: block;
+            object-fit: cover; /* Untuk memastikan gambar dipotong sesuai proporsi aslinya */
+        }
+        
+        /* Bersihkan float */
+        .container::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        /* Atur ul agar tidak memiliki padding dan margin */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+    </style>
 </head>

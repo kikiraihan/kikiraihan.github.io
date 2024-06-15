@@ -1,6 +1,7 @@
 ---
-title: "Digimosque | Digimosque StartUp"
+title: "Digimosque : making API and admin panels for digital mosque"
 date: 2022-05-06
+cover: "/projects/digi5.jpeg"
 ---
 
 # Digimosque: making API and admin panels for digital mosque android applications"

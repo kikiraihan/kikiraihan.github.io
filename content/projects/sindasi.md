@@ -1,6 +1,7 @@
 ---
-title: "Sindasi | Undergraduate Thesis Project"
+title: "Sindasi: Student Recommended SPK Using the AHP-TOPSIS Method"
 date: 2021-02-05
+cover: "/projects/sindasi1.png"
 ---
 
 # Sindasi: Student Recommended SPK Using the AHP-TOPSIS Method

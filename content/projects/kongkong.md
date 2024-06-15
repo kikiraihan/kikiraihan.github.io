@@ -1,6 +1,7 @@
 ---
-title: "Kongkong | Pilot Project"
+title: "Kongkong Crowdfunding"
 date: 2020-08-05
+cover: "/projects/kongkong1.png"
 ---
 
 # Kongkong Student Crowdfunding Platform (Practice Project)
