@@ -4,3 +4,9 @@
 {{ else }}
 <h3>{{ .Site.Params.info }}</h3>
 {{ end }}
+
+{{ if reflect.IsSlice .Site.Params.subinfo }}
+<span>{{ range .Site.Params.subinfo }}{{.}}. {{ end}}</span>
+{{ else }}
+<span>{{ .Site.Params.subinfo }}</span>
+{{ end }}

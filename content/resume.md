@@ -11,19 +11,18 @@ title = "About"
 <!-- {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}} -->
 
 ## 👋🏼 About Me
-a **software engineer** skilled in software development, data analysis, graph analytics, data visualization, machine learning and Bioinformatic. He is passionate about leveraging data analytics and software developement to drive impactful solutions. Tech stack he experienced with is Python, PHP, Javasript, SQL Database, NoSQL Database, SPARQL, RDF, and SAP.
-He has the advantage of m-shape skills since enjoy learning **[programming, data science](https://www.instagram.com/katili.dev/)** and **[graphic design](https://www.instagram.com/hexstudiogo/)**. He also gained teamwork experience and economic knowledge from bank Indonesia, when he was **the chairman** of the “Generasi Baru Indonesia Gorontalo” (the community of **Bank Indonesia Scholarship Awardee**) 2020-2021.
+a Data-Driven **Software Developer** adept in Python, PHP, JavaScript, SQL, NoSQL, RDF-SPARQL, and SAP Analytic. Excels in software development, machine learning, graph analytics, and data analysis. Passionate about leveraging tech for impactful solutions. A Teamwork person, with a strong desire to work with a team to achieve common goals.
 
 ---
 
 
 ## 🎓 Education
 ##### 2021-Now | IPB University [Link](https://drive.google.com/file/d/1Rf-mnooyajTzv04g21sWWF6nVAKna3wv/view?usp=drive_link)
-* Computer Science Master's Program, Computational Intelegence and Optimization Division
+* Computer Science Master's Program, in Computational Intelegence and Optimization Division (GPA : 3.83 of 4)
 * Thesis (Grade A, Scopus Indexed) : Leveraging Biotic Interaction Knowledge Graph and Network Analysis to Uncover Insect Vectors of Plant Virus. [URI.](https://e-journal.unair.ac.id/JISEBI/article/view/50015)
 ##### 2016-2021 | Universitas Negeri Gorontalo [Link](https://drive.google.com/file/d/1x3xgPUfZeQWXGtCqtsLgQ3sUSZ2CLtXy/view?usp=drive_link)
 * Bachelor of Information System (S.Kom)
-* Best graduates student of the Faculty of Engineering. Score : 3.53 (of 4)
+* Best graduates student of the Faculty of Engineering (GPA : 3.53 of 4)
 * Undergraduate Thesis (Grade A): Implementation of the AHP-TOPSIS Method in the Achievement Student Recommendation Support System. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
 
 ---
@@ -36,14 +35,33 @@ In chronological order:
 ---
 
 ## 👨🏽‍💻 Work Experiences
-##### 2022 | Digimosque  
-*-as Web Developer in Term Contract-*
-* Created an API for the nearest mosque search algorithm and others APIs
-* Built a whole web admin that manages android app data
-##### 2019 | Bank Indonesia Representative Office Gorontalo 
-*-as Web Developer in Internship-*
-* Built an inflation early warning system to assist the food commodity price survey meeting
-* Under the direction of the Division of Policy Coordination Communication Function, cooperated with other divisions
+
+##### Oct 2023 - Jun 2024 | PT. MAKASSAR RAYA MOTOR - Makassar, Indonesia
+*- Software Engineer & Data Analyst (Contract)*
+* Conducted spatial analysis of sales data covering 3 provinces, 54 districts, 709 sub-districts, and 7,394 villages.
+* Collaborated with the spatial mapping team to organize the absorption of geojson data from 3 provinces.
+* Utilized Python Plotly to create a dashboard of analysis results containing maps of 3 provinces, 54 districts, and 709 sub-districts.
+
+##### Feb 2024 - Mar 2023 | Panah Papua (NGO) - West Papua, Indonesia
+*- Software Engineer & Spatial Data Analyst (Project Based)*
+* Developed a map page and spatial data for the Papuan sago forest.
+* Created more than 20 API modules and over 800 commits in the GitHub project.
+* Implemented backend program code with SOLID principles using the NestJS JavaScript framework.
+
+##### May 2021 - Aug 2022 | Bank Indonesia Representative Office of Gorontalo - Gorontalo, Indonesia
+*- Web Developer (Contract)*
+* Developed TimeMarket, a web app for employee workload management, within 6 months of full-stack development.
+* Delivered Progressive Web apps to enhance multiplatform accessibility with a native app-like experience.
+* Extended the contract to add features to the second version, completed in 3 months with 6 months of maintenance.
+
+##### Jan 2021 - Jun 2021 | Digimosque - Gorontalo, Indonesia
+*- Web Developer (Project Based)*
+* Created an API for the nearest mosque search algorithm and basic functionalities in 3–4 months using Laravel.
+* Built a web administrator, including 15 modules in less than 2 months, using Laravel Livewire.
+
+##### Sep 2019 - Dec 2019 | Bank Indonesia Representative Office of Gorontalo - Gorontalo, Indonesia
+*- Web Developer (Internship)*
+* Developed Raisa, a Web App to Monitor Regional Inflation and Early Warnings, in 3 months of full-stack development.
 ---
 <!-- Year | Host Office | Term Of Agreement | Job
 -----|-------------|------|--------
