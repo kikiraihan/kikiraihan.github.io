@@ -1,7 +1,8 @@
 ---
-title: "Kongkong Crowdfunding"
+title: "Kongkong : Students Crowdfunding Platform"
 date: 2020-08-05
 cover: "/projects/kongkong1.png"
+tags: ["Fullstack","PHP-Laravel"]
 ---
 
 # Kongkong Student Crowdfunding Platform (Practice Project)

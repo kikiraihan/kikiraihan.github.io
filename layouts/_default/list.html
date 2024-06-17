@@ -1,15 +1,24 @@
 {{ define "main" }}
+
 <div class="container">
-    <h1>{{ .Title }}</h1>
-    <div class="grid-container">
+    <h1> Recent {{ .Title }}</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         {{ range .Pages }}
-            <div class="grid-item">
-                <a href="{{ .Permalink }}">
-                    {{ with .Params.cover }}
-                        <img src="{{ . }}" class="grid-image" alt="Cover Image">
-                    {{ end }}
-                    <div class="caption">{{ .Date.Format "2006-01-02" }} | {{ .Title }}</div>
-                </a>
+            <div class="col p-1">
+                <div class="shadow p-2 border">
+                    <a href="{{ .Permalink }}" style="text-decoration: none;">
+                        {{ with .Params.cover }}
+                            <img src="{{ . }}" class="grid-img border mb-2" alt="Cover Image">
+                        {{ end }}
+                        <div>
+                            <span class="badge badge-secondary text-white">{{ .Date.Format "2006-Jan" }}</span>
+                            {{ range .Params.tags }}
+                                <span class="badge badge-pill badge-primary text-white">{{ . }}</span>
+                            {{ end }}
+                        </div>
+                        <div class="caption">{{ .Title }}</div>
+                    </a>
+                </div>
             </div>
         {{ end }}
     </div>

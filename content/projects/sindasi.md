@@ -2,6 +2,7 @@
 title: "Sindasi: Student Recommended SPK Using the AHP-TOPSIS Method"
 date: 2021-02-05
 cover: "/projects/sindasi1.png"
+tags: ["Fullstack","web-app","DSS"]
 ---
 
 # Sindasi: Student Recommended SPK Using the AHP-TOPSIS Method

@@ -63,12 +63,12 @@ googleAnalytics = ""  # add your tracking id
   "/" = "/:filename"
 
 [menu]
+  #[[menu.main]]
+  #  name = "Me"
+  #  url = "/"
+  #  weight = 1
   [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Resume"
+    name = "CV-Resume"
     url = "/resume"
     weight = 1
   [[menu.main]]

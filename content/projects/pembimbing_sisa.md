@@ -2,6 +2,7 @@
 title: "Jadwalin : Course Schedule Management System"
 date: 2022-04-25
 cover: "/projects/jadwalin3.png"
+tags: ["Fullstack","PHP-Laravel"]
 ---
 
 # Jadwalin
