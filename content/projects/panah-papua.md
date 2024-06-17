@@ -2,12 +2,13 @@
 title: "Panah Papua: Mapping the Sago Forest of West Papua"
 date: 2024-02-01
 cover: "/projects/panah-papua/pp1.jpeg"
+bidang: ["Fullstack-web"]
 tags: ["Geo-web","Python", "Maps"]
 ---
 
 # Panah Papua: Mapping the Sago Forest of West Papua
 
-**🔗 web-URL:** : [website link](https://panah-papua.vercel.app/) <br> 
+**🔗 web-URL:** [website link](https://panah-papua.vercel.app/) <br> 
 **⏱️ Project Duration:** 2 weeks <br> 
 
 ### Brief :

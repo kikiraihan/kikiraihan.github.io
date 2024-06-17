@@ -1,7 +1,15 @@
 {{ define "main" }}
 
 <div class="container">
-    <h1> Recent {{ .Title }}</h1>
+    <div class="row align-items-center">
+        <h1 class="col"> Recent {{ .Title }}</h1>
+        <div class="col text text-right">
+            <span>Info : </span>
+            <span class="badge badge-secondary text-white">Date</span>
+            <span class="badge badge-info text-white">Role</span>
+            <span class="badge badge-pill badge-primary text-white">Tags</span>
+        </div>
+    </div>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
         {{ range .Pages }}
             <div class="col p-1">
@@ -12,6 +20,9 @@
                         {{ end }}
                         <div>
                             <span class="badge badge-secondary text-white">{{ .Date.Format "2006-Jan" }}</span>
+                            {{ range .Params.bidang }}
+                                <span class="badge badge-info text-white">{{ . }}</span>
+                            {{ end }}
                             {{ range .Params.tags }}
                                 <span class="badge badge-pill badge-primary text-white">{{ . }}</span>
                             {{ end }}

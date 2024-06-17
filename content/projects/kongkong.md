@@ -2,7 +2,8 @@
 title: "Kongkong : Students Crowdfunding Platform"
 date: 2020-08-05
 cover: "/projects/kongkong/kongkong1.png"
-tags: ["Fullstack-web","PHP-Laravel","PWA"]
+bidang: ["Fullstack-web"]
+tags: ["PHP-Laravel","PWA"]
 ---
 
 # Kongkong Student Crowdfunding Platform (Practice Project)

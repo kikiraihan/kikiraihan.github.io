@@ -1,14 +1,15 @@
 ---
 title: "Digimosque : making API and admin panels for digital mosque"
 date: 2022-05-06
-cover: "/projects/digimosque/digi5.jpeg"
-tags: ["Backend-web","PHP-Laravel"]
+cover: "/projects/digimosque/digi6.png"
+bidang: ["Backend-web"]
+tags: ["PHP-Laravel", "Laravel-Livewire"]
 ---
 
 # Digimosque: making API and admin panels for digital mosque android applications"
 <img src="/projects/digimosque/digi5.jpeg" alt="drawing" width="200" style="border-radius: 5%"/>
 
-**🔗 URL:** : [Startup Profile](https://www.linkedin.com/company/digimosque?originalSubdomain=id) <br> 
+**🔗 URL:** [Startup Profile](https://www.linkedin.com/company/digimosque?originalSubdomain=id) <br> 
 
 ### Brief :
 Digimosque is a startup that carries a digital mosque platform that can make it easier to find information on mosques in the area and also as a place to make donations for religious activities. This application provides information on mosques around us, takmir features for cash/infaq/qurban management etc., IOT tools (monitors, air conditioners, prayer times, etc.) that are directly integrated with the application, and various other features.

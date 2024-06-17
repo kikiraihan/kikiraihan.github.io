@@ -2,12 +2,13 @@
 title: "PT. MAKASSAR RAYA MOTOR: Optimizing Sales Strategies through Spatial Analysis"
 date: 2023-10-01
 cover: "/projects/mrm/mrm1.jpeg"
-tags: ["Fullstack-dev","Geo-web","Map", "PHP", "Python"]
+bidang: ["Fullstack-web"]
+tags: ["Geo-web","Map", "PHP", "Python"]
 ---
 
 # PT. MAKASSAR RAYA MOTOR: Optimizing Sales Strategies through Spatial Analysis
 
-**🔗 URL:** : [Client Profile](https://daihatsumrm.co.id/) <br> 
+**🔗 URL:** [Client Profile](https://daihatsumrm.co.id/) <br> 
 **⏱️ Working Period:** October 2023 - June 2024 <br> 
 
 ### Brief :
@@ -27,7 +28,7 @@ In this project we focused on leveraging spatial analysis techniques and develop
 - Backend Development with FastAPI Python: Complementing the frontend application, we developed a backend system using FastAPI Python for processing spatial data and powering the mapping functionalities. This backend infrastructure ensured robust performance and scalability, enabling efficient data management and analysis.
 
 
-Achievements:
+### Achievements:
 - Conducted comprehensive spatial analysis of sales data across 3 provinces, providing actionable insights for sales strategies.
 - Collaborated with urban planning experts to design detailed maps incorporating socio-economic indicators for accurate analysis.
 - Developed an interactive dashboard using Python Plotly, enabling stakeholders to visualize sales performance and socio-economic metrics.

@@ -2,12 +2,13 @@
 title: "Contag School: Revolutionizing University Academic Affairs Management"
 date: 2023-03-01
 cover: "/projects/contag/c2.jpeg"
-tags: ["Backend","NestJS", "NodeJS", "Javascript"]
+bidang: ["Backend-web"]
+tags: ["NestJS", "NodeJS", "Javascript"]
 ---
 
 # Contag School: Revolutionizing University Academic Affairs Management
 
-**🔗 URL:** : [Startup Profile](https://contag.id/) <br> 
+**🔗 URL:** [Startup Profile](https://contag.id/) <br> 
 **⏱️ Working Period:** March 2023 - October 2023 <br> 
 
 ### Brief :
@@ -27,7 +28,7 @@ During our engagement with Contag School, we focused on delivering robust backen
 - Clean Code Practices: We embraced clean code principles throughout the development lifecycle, emphasizing readability, maintainability, and scalability. By writing self-explanatory code, adhering to consistent coding styles, and employing meaningful naming conventions, we aimed to simplify code comprehension and facilitate collaborative development within the Contag School team.
 
 
-Achievements:
+### Achievements:
 - Successfully delivered more than 20 API modules, empowering Contag School with comprehensive backend functionalities.
 - Maintained an active presence on GitHub with over 800 commits, ensuring transparent version control and collaborative development.
 - Implemented backend program code adhering to SOLID principles, fostering codebase stability and extensibility.

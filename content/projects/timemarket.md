@@ -2,7 +2,8 @@
 title: "TimeMarket : Workload Management Application"
 date: 2021-05-24
 cover: "/projects/timemarket/timemarket.png"
-tags: ["Fullstack-web","PWA","Laravel-Livewire"]
+bidang: ["Fullstack-web"]
+tags: ["PWA","Laravel-Livewire"]
 ---
 
 # TimeMarket
