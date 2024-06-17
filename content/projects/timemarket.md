@@ -1,8 +1,8 @@
 ---
 title: "TimeMarket : Workload Management Application"
 date: 2021-05-24
-cover: "/projects/timemarket.png"
-tags: ["PWA","Laravel-Livewire"]
+cover: "/projects/timemarket/timemarket.png"
+tags: ["Fullstack-web","PWA","Laravel-Livewire"]
 ---
 
 # TimeMarket
@@ -24,7 +24,11 @@ To solve the problems in the brief, the following solutions are given:
 
 The application can be accessed via the [following link](https://timemarket.masuk.id). this is a Human Resource Management application that aims to monitor and control the workload of employees based on time management and human resources so that they are balanced in order to achieve targets efficiently and effectively. This application has 4 user roles, namely employees, Team Leaders (Chief), Head of Office (KPw), and Admin.
 
-![/projects/timemarket.png](/projects/timemarket.png)
+![/projects/timemarket/timemarket.png](/projects/timemarket/timemarket.png)
+
+#### Progressive Web APP (PWA) Feature 
+<iframe src="/projects/timemarket/timemarket_homescreen.webm" width="100%" height="480"></iframe>
+<br><br>
 
 The details of the features can be seen in table 1, as follows:
 No | Features | Employee | Team Leader (Chief) | Head of Office (KPw) | Admin

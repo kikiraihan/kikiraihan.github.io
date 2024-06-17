@@ -1,8 +1,8 @@
 ---
 title: "Kongkong : Students Crowdfunding Platform"
 date: 2020-08-05
-cover: "/projects/kongkong1.png"
-tags: ["Fullstack","PHP-Laravel"]
+cover: "/projects/kongkong/kongkong1.png"
+tags: ["Fullstack-web","PHP-Laravel","PWA"]
 ---
 
 # Kongkong Student Crowdfunding Platform (Practice Project)
@@ -17,7 +17,8 @@ My task is to make the appearance of the application match the target student us
 Created a view using bootstrap from scratch without using a template. Made with mobile first development principles, to support display responsiveness on smartphone devices that are commonly used by students.
 
 #### Screenshot :
-![/projects/kongkong1.png](/projects/kongkong1.png)
-![/projects/kongkong2.png](/projects/kongkong2.png)
-![/projects/kongkong3.png](/projects/kongkong3.png)
-![/projects/kongkong4.png](/projects/kongkong4.png)
+| ![/projects/kongkong/kongkong1.png](/projects/kongkong/kongkong1.png) | ![/projects/kongkong/kongkong2.png](/projects/kongkong/kongkong2.png) |
+| -------------- | -------------- |
+
+| ![/projects/kongkong/kongkong3.png](/projects/kongkong/kongkong3.png) | ![/projects/kongkong/kongkong3.png](/projects/kongkong/kongkong4.png) |
+| -------------- | -------------- |

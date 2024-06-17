@@ -1,12 +1,14 @@
 ---
 title: "Digimosque : making API and admin panels for digital mosque"
 date: 2022-05-06
-cover: "/projects/digi5.jpeg"
-tags: ["Backend","Fullstack","PHP-Laravel"]
+cover: "/projects/digimosque/digi5.jpeg"
+tags: ["Backend-web","PHP-Laravel"]
 ---
 
 # Digimosque: making API and admin panels for digital mosque android applications"
-<img src="/projects/digi5.jpeg" alt="drawing" width="200" style="border-radius: 5%"/>
+<img src="/projects/digimosque/digi5.jpeg" alt="drawing" width="200" style="border-radius: 5%"/>
+
+**🔗 URL:** : [Startup Profile](https://www.linkedin.com/company/digimosque?originalSubdomain=id) <br> 
 
 ### Brief :
 Digimosque is a startup that carries a digital mosque platform that can make it easier to find information on mosques in the area and also as a place to make donations for religious activities. This application provides information on mosques around us, takmir features for cash/infaq/qurban management etc., IOT tools (monitors, air conditioners, prayer times, etc.) that are directly integrated with the application, and various other features.
@@ -27,9 +29,10 @@ This digimosque application is already available on PlayStore for Android or can
 
 #### Screenshot :
 ##### android app
-![/projects/digi6.png](/projects/digi6.png)
+![/projects/digimosque/digi6.png](/projects/digimosque/digi6.png)
 ##### admin panels
-![/projects/digi1.png](/projects/digi1.png)
-![/projects/digi2.png](/projects/digi2.png)
-![/projects/digi3.png](/projects/digi3.png)
-![/projects/digi4.png](/projects/digi4.png)
+| ![/projects/digimosque/digi1.png](/projects/digimosque/digi1.png) | ![/projects/digimosque/digi2.png](/projects/digimosque/digi2.png) |
+| -------------- | -------------- |
+| ![/projects/digimosque/digi3.png](/projects/digimosque/digi3.png) | ![/projects/digimosque/digi4.png](/projects/digimosque/digi4.png) | 
+
+<iframe width="100%" height="480" src="https://www.youtube.com/embed/uFxaXUciovo" title="DigiMosque Box &amp; DigiMosque Mobile Apps. Masjid Digital Berbasis AIoT" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

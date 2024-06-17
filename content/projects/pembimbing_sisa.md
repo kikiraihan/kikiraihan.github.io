@@ -1,8 +1,8 @@
 ---
 title: "Jadwalin : Course Schedule Management System"
 date: 2022-04-25
-cover: "/projects/jadwalin3.png"
-tags: ["Fullstack","PHP-Laravel"]
+cover: "/projects/jadwalin/jadwalin3.png"
+tags: ["Fullstack-web","PHP-Laravel"]
 ---
 
 # Jadwalin
@@ -26,6 +26,8 @@ To solve the problem in the brief given the following solutions:
 - There is an automatic schedule generator feature using a greedy algorithm.
 
 #### Screenshot :
-![/projects/jadwalin1.png](/projects/jadwalin1.png)
-![/projects/jadwalin2.png](/projects/jadwalin2.png)
-![/projects/jadwalin3.png](/projects/jadwalin3.png)
+| ![/projects/jadwalin/jadwalin3.png](/projects/jadwalin/jadwalin3.png) |
+| -------------- |
+
+| ![/projects/jadwalin/jadwalin1.png](/projects/jadwalin/jadwalin1.png) | ![/projects/jadwalin/jadwalin2.png](/projects/jadwalin/jadwalin2.png) |
+| -------------- | -------------- |

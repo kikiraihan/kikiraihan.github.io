@@ -1,8 +1,8 @@
 ---
 title: "Sindasi: Student Recommended SPK Using the AHP-TOPSIS Method"
 date: 2021-02-05
-cover: "/projects/sindasi1.png"
-tags: ["Fullstack","web-app","DSS"]
+cover: "/projects/sindasi/sindasi1.png"
+tags: ["Fullstack-web","DSS-app"]
 ---
 
 # Sindasi: Student Recommended SPK Using the AHP-TOPSIS Method
@@ -32,6 +32,8 @@ No | Features | Lecturer | Kajur | Head of study program | Student | admin |
 11 | Import data | -| Yes | -| -| Yes
 
 #### Screenshot :
-![/projects/sindasi1.png](/projects/sindasi1.png)
-![/projects/sindasi2.png](/projects/sindasi2.png)
-![/projects/sindasi3.png](/projects/sindasi3.png)
+| ![/projects/sindasi/sindasi1.png](/projects/sindasi/sindasi1.png) |
+| -------------- |
+
+| ![/projects/sindasi/sindasi2.png](/projects/sindasi/sindasi2.png) | ![/projects/sindasi/sindasi3.png](/projects/sindasi/sindasi3.png) |
+| -------------- | -------------- |
