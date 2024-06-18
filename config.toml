@@ -35,6 +35,14 @@ googleAnalytics = ""  # add your tracking id
     colorBlack = "#222222"
     colorRed = "#dc3545"
   [[params.socialIcons]]
+    icon = "fas fa-envelope"
+    title = "E-mail"
+    url = "mailto:mohzulkiflikatili@gmail.com"
+  [[params.socialIcons]]
+    icon = "fab fa-whatsapp"
+    title = "whatsapp"
+    url = "tel:+6282291501085"
+  [[params.socialIcons]]
     icon = "fab fa-facebook"
     title = "facebook"
     url = "https://www.facebook.com/astro.raihan/"
@@ -54,10 +62,6 @@ googleAnalytics = ""  # add your tracking id
     icon = "fab fa-linkedin"
     title = "Linkedin"
     url = "https://www.linkedin.com/in/moh-zulkifli-katili-3ba18319a/"
-  [[params.socialIcons]]
-    icon = "fas fa-envelope"
-    title = "E-mail"
-    url = "mailto:mohzulkiflikatili@gmail.com"
 
 [permalinks]
   "/" = "/:filename"
@@ -71,10 +75,10 @@ googleAnalytics = ""  # add your tracking id
     name = "CV-Resume"
     url = "/resume"
     weight = 1
-  [[menu.main]]
-    name = "Contact"
-    url = "/contact"
-    weight = 4
+  #[[menu.main]]
+  #  name = "Contact"
+  #  url = "/contact"
+  #  weight = 4
   [[menu.main]]
     name = "Project"
     url = "/projects"
