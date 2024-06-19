@@ -6,23 +6,23 @@
     {{ end }}
     <body class="notranslate">
         {{- partial "header.html" . -}}
-        {{- partial "tombol_google_translate_inside.html" . -}}
+        {{- partial "script_in_baseof/tombol_google_translate_inside.html" . -}}
         <div id="content" class="translate">
             {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
+
+        <!-- Container untuk menampilkan gambar preview -->
+        <div id="previewContainer">
+            <img id="previewImage" src="" alt="Preview Gambar">
+        </div>
     </body>
     
     <!-- libraries -->
-    <!-- Tambahkan script untuk menginisialisasi Google Translate -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'id,en',
-                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
-            }, 'google_translate_button');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- preview saat gambar diklik -->
+    {{- partial "script_in_baseof/tag_img_preview.html" . -}}
+
+    <!-- Google Translate -->
+    {{- partial "script_in_baseof/init_google_translate.html" . -}}
+    
 </html>

@@ -16,7 +16,7 @@
                 <div class="shadow p-2 border">
                     <a href="{{ .Permalink }}" style="text-decoration: none;">
                         {{ with .Params.cover }}
-                            <img src="{{ . }}" class="grid-img border mb-2" alt="Cover Image">
+                            <img src="{{ . }}" class="grid-img border mb-2 no-preview" alt="Cover Image">
                         {{ end }}
                         <div>
                             <span class="badge badge-secondary text-white">{{ .Date.Format "2006-Jan" }}</span>

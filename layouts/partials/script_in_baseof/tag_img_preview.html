@@ -1,0 +1,22 @@
+<script>
+    const images = document.querySelectorAll('img');
+
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            if (!image.classList.contains('no-preview')) {
+                const src = image.getAttribute('src');
+                const previewImage = document.getElementById('previewImage');
+                previewImage.setAttribute('src', src);
+                const previewContainer = document.getElementById('previewContainer');
+                previewContainer.style.display = 'flex'; // Menampilkan preview container
+            }
+        });
+    });
+
+    // Menyembunyikan preview saat area di luar gambar di-klik
+    document.getElementById('previewContainer').addEventListener('click', (event) => {
+        if (event.target === document.getElementById('previewContainer')) {
+            event.target.style.display = 'none'; // Menyembunyikan preview container
+        }
+    });
+</script>

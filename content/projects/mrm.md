@@ -35,7 +35,8 @@ In this project we focused on leveraging spatial analysis techniques and develop
 - Built a fullstack Web App with Laravel Livewire, integrating the dashboard seamlessly for user-friendly access to data and analysis tools.
 - Implemented a backend system with FastAPI Python for efficient processing of spatial data and mapping functionalities.
 
-
+<!-- cara menambahkan kelas di gambar -->
+<!-- ![/projects/mrm/mrm1.jpeg](/projects/mrm/mrm1.jpeg){:class="nama-class"} -->
 
 #### Screenshot :
 | Maps Analysis       | Dashboard Analysis       |
