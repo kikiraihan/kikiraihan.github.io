@@ -3,9 +3,10 @@
 <div class="container">
     <!-- jika tipe(folder) konten adalah projects dan antara page atau section. atau nama file resume -->
     {{ if or (
-        and (eq .Type "projects") (or (eq .Kind "page") (eq .Kind "section"))
+        and (eq .Type "projects") (eq .Kind "page")
     ) (eq .File.BaseFileName "resume")
     }}
+        <!-- (or (eq .Kind "page") (eq .Kind "section")) -->
         <div id="google_translate_button"></div>
     {{ end }}
 </div>
