@@ -1,0 +1,11 @@
+<!-- tombol_google_terjemahan_di_dalam_konten -->
+
+<div class="container">
+    <!-- jika tipe(folder) konten adalah projects dan antara page atau section. atau nama file resume -->
+    {{ if or (
+        and (eq .Type "projects") (or (eq .Kind "page") (eq .Kind "section"))
+    ) (eq .File.BaseFileName "resume")
+    }}
+        <div id="google_translate_button"></div>
+    {{ end }}
+</div>

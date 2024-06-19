@@ -1,6 +1,6 @@
-+++
-title = "About"
-+++
+---
+title: "Resume"
+---
 
 <div ><img style="
         height: auto;

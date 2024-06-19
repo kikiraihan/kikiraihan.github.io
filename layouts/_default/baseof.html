@@ -4,9 +4,10 @@
     {{ if or (.Params.math) (.Site.Params.math) }}
         {{- partial "math.html" . -}}
     {{ end }}
-    <body>
+    <body class="notranslate">
         {{- partial "header.html" . -}}
-        <div id="content">
+        {{- partial "tombol_google_translate_inside.html" . -}}
+        <div id="content" class="translate">
             {{- block "main" . }}{{- end }}
         </div>
         {{- partial "footer.html" . -}}
@@ -19,7 +20,7 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'id,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
             }, 'google_translate_button');
         }
     </script>
