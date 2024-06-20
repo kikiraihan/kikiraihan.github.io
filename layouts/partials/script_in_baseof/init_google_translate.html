@@ -3,8 +3,44 @@
         new google.translate.TranslateElement({
             pageLanguage: 'en',
             includedLanguages: 'id,en',
-            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+            autoDisplay: false
         }, 'google_translate_button');
     }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<!-- kode untuk menyembunyikan iframe tambahan -->
+<style>
+    /* Menggunakan selector CSS untuk menyembunyikan .skiptranslate yang langsung di dalam tag body */
+    body > .skiptranslate {
+        display: none;
+    }
+</style>
+<script>
+    // Membuat sebuah instance MutationObserver
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            // Memeriksa apakah perubahan terjadi pada elemen body
+            if (mutation.target.tagName === 'BODY') {
+                // Memeriksa apakah properti style yang diubah adalah position, min-height, atau top
+                if (mutation.target.style.position === 'relative' ||
+                    mutation.target.style.minHeight === '100%' ||
+                    mutation.target.style.top === '0px') {
+                    // Mengatur ulang properti style
+                    mutation.target.style.position = '';
+                    mutation.target.style.minHeight = '';
+                    mutation.target.style.top = '';
+                }
+            }
+        });
+    });
+
+    // Menentukan target node dan jenis mutasi yang diamati
+    var targetNode = document.querySelector('body');
+    var config = { attributes: true, attributeOldValue: true };
+
+    // Memulai pengamatan dengan menggunakan MutationObserver
+    observer.observe(targetNode, config);
+</script>
