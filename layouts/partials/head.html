@@ -28,12 +28,25 @@
     <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="3dea4f52-4980-41f6-abc6-6146629b7981";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 
     <style>
-        .grid-img {
-            width: 300px;
-            height: 200px;
-            display: block;
-            object-fit: cover; /* Untuk memastikan gambar dipotong sesuai proporsi aslinya */
+        /* Untuk ukuran di atas "md" */
+        @media screen and (min-width: 768px) {
+            .grid-img {
+                width: 300px;
+                height: 200px;
+                display: block;
+                object-fit: cover;
+            }
         }
+        /* Untuk ukuran di bawah atau sama dengan "md" */
+        @media screen and (max-width: 767px) {
+            .grid-img {
+                width: 100%;
+                height: auto; /* Anda mungkin perlu menambahkan properti ini untuk menjaga proporsi gambar */
+                display: block;
+                object-fit: cover; /* Atau gunakan properti yang sesuai dengan kebutuhan di sini */
+            }
+        }
+
         #content .grid-img{
             margin:0;
         }
