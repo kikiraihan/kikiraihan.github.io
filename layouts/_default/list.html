@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row align-items-center">
         <h1 class="col"> Recent {{ .Title }}</h1>
-        <div class="col text text-right">
+        <div class="col text text-right notranslate">
             <span>Info : </span>
             <span class="badge badge-secondary text-white">Date</span>
             <span class="badge badge-info text-white">Role</span>
@@ -18,7 +18,7 @@
                         {{ with .Params.cover }}
                             <img src="{{ . }}" class="grid-img border mb-2 no-preview" alt="Cover Image">
                         {{ end }}
-                        <div>
+                        <div class="notranslate">
                             <span class="badge badge-secondary text-white">{{ .Date.Format "2006-Jan" }}</span>
                             {{ range .Params.bidang }}
                                 <span class="badge badge-info text-white">{{ . }}</span>
