@@ -1,16 +1,18 @@
 ---
 title: "Resume"
 ---
-
-<div ><img style="
+<br><br><br>
+<div><img style="
         height: auto;
-        border-radius: 5px;
-" src="/flanel-width.jpg" alt="avatar"></div> 
+        border-radius: 50%;
+        width:20%;
+        margin:0;
+" src="/avatar_home2_enh.jpg" alt="avatar"></div> 
 <!-- <br> -->
 <!-- >My greatest potential is the willingness to keep learning new things.  -->
 <!-- {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}} -->
 
-## 👋🏼 About Me
+## 👋🏼 Hello, I am Mohammad Zulkifli Katili (Kiki).
 a Data-Driven **Software Developer** adept in Python, PHP, JavaScript, SQL, NoSQL, RDF-SPARQL, and SAP Analytic. Excels in software development, machine learning, graph analytics, and data analysis. Passionate about leveraging tech for impactful solutions. A Teamwork person, with a strong desire to work with a team to achieve common goals.
 
 ---
@@ -24,13 +26,6 @@ a Data-Driven **Software Developer** adept in Python, PHP, JavaScript, SQL, NoSQ
 * Bachelor of Information System (S.Kom)
 * Best graduates student of the Faculty of Engineering (GPA : 3.53 of 4)
 * Undergraduate Thesis (Grade A): Implementation of the AHP-TOPSIS Method in the Achievement Student Recommendation Support System. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
-
----
-
-## 📑 Publication
-In chronological order:
-1. Katili, M. Z., Herdiyeni, Y., & Hardhienata, M. K. D. Leveraging Biotic Interaction Knowledge Graph and Network Analysis to Uncover Insect Vectors of Plant Virus. [URI.](https://e-journal.unair.ac.id/JISEBI/article/view/50015)
-2. Katili, M., Amali, L., dan Tuloli, M. 2021. Impelementasi Metode AHP-TOPSIS dalam Sistem Pendukung Rekomendasi Mahasiswa Berprestasi. Jambura Journal Of Informatics. Vol. 3, No.1, pp. 1-10. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
 
 ---
 
@@ -83,6 +78,14 @@ In chronological order:
 *-as Head of Multimedia Division-*
 * With his friends, has revived the only open-source community on campus
 * Guide members to organize free learning and knowledge-sharing activities for all students, especially graphic design materials
+
+---
+
+## 📑 Publication
+In chronological order:
+1. Katili, M. Z., Herdiyeni, Y., & Hardhienata, M. K. D. Leveraging Biotic Interaction Knowledge Graph and Network Analysis to Uncover Insect Vectors of Plant Virus. [URI.](https://e-journal.unair.ac.id/JISEBI/article/view/50015)
+2. Katili, M., Amali, L., dan Tuloli, M. 2021. Impelementasi Metode AHP-TOPSIS dalam Sistem Pendukung Rekomendasi Mahasiswa Berprestasi. Jambura Journal Of Informatics. Vol. 3, No.1, pp. 1-10. [URI.](https://ejurnal.ung.ac.id/index.php/jji/article/view/10246)
+
 ---
 
 ## ⚙️ Certifications

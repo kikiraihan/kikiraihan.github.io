@@ -1,12 +1,30 @@
 <h1>{{ .Site.Params.author }}</h1>
-{{ if reflect.IsSlice .Site.Params.info }}
+<!-- {{ if reflect.IsSlice .Site.Params.info }}
 <h3>{{ range .Site.Params.info }}{{.}}<br>{{ end}}</h3>
 {{ else }}
 <h3>{{ .Site.Params.info }}</h3>
-{{ end }}
+{{ end }} -->
 
-{{ if reflect.IsSlice .Site.Params.subinfo }}
+<!-- {{ if reflect.IsSlice .Site.Params.subinfo }}
 <span>{{ range .Site.Params.subinfo }}{{.}}. {{ end}}</span>
 {{ else }}
 <span>{{ .Site.Params.subinfo }}</span>
-{{ end }}
+{{ end }} -->
+<span> a Software Developer, I make  </span>
+<h4 id="typed-text" class="d-inline" style="color: #dc3545;"></h4>
+<!-- Setup and start animation! -->
+<script>
+    var typed5 = new Typed('#typed-text', {
+        strings: [
+            "Web App", 
+            "AI/ML Model", 
+            "Data Analysis", 
+            "Knowledge Graph"
+        ],
+        typeSpeed: 20,
+        backSpeed: 20,
+        cursorChar: '_',
+        shuffle: false,
+        loop: true
+    });
+</script>

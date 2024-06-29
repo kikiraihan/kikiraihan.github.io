@@ -1,6 +1,6 @@
 baseURL = 'https://kikiraihan.github.io'
 languageCode = 'en-us'
-title = 'Moh Zulkifli Katili'
+title = 'Moh. Zulkifli Katili'
 theme="researcher"
 
 disableKinds = ["taxonomy", "term"]
@@ -9,7 +9,7 @@ math = false          # enable KaTeX (https://katex.org/) globally
 googleAnalytics = ""  # add your tracking id
 
 [params]
-  author = "Moh Zulkifli Katili"
+  author = "Mohammad Zulkifli Katili"
   description = "A Software Engineer. Love Programming, Data Science, and Graphic Design also."
   favicon = "favicon.ico"  # path to a .ico to use as favicon
   logo = ""  # url or path to a logo to put in the header
