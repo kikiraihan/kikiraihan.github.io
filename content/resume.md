@@ -19,7 +19,7 @@ a Data-Driven **Software Developer** adept in Python, PHP, JavaScript, SQL, NoSQ
 
 
 ## 🎓 Education
-##### 2021-Now | IPB University [Link](https://drive.google.com/file/d/1Rf-mnooyajTzv04g21sWWF6nVAKna3wv/view?usp=drive_link)
+##### 2021-2024 | IPB University [Link](https://drive.google.com/file/d/1Rf-mnooyajTzv04g21sWWF6nVAKna3wv/view?usp=drive_link)
 * Computer Science Master's Program, in Computational Intelegence and Optimization Division (GPA : 3.83 of 4)
 * Thesis (Grade A, Scopus Indexed) : Leveraging Biotic Interaction Knowledge Graph and Network Analysis to Uncover Insect Vectors of Plant Virus. [URI.](https://e-journal.unair.ac.id/JISEBI/article/view/50015)
 ##### 2016-2021 | Universitas Negeri Gorontalo [Link](https://drive.google.com/file/d/1x3xgPUfZeQWXGtCqtsLgQ3sUSZ2CLtXy/view?usp=drive_link)
