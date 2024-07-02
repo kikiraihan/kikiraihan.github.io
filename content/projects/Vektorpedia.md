@@ -3,7 +3,7 @@ title: "VektorPedia: Insect Vector Search Engine (Master Thesis)"
 date: 2022-08-01
 cover: "/projects/vektorpedia/6.jpg"
 bidang: ["AI-Researcher","Software Engineer"]
-tags: ["Network Science", "Knowledge Graph"]
+tags: ["Network Science", "Knowledge Graph", "Python"]
 ---
 
 # VektorPedia: Insect Vector Search Engine (Master Thesis)
