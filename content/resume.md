@@ -2,12 +2,18 @@
 title: "Resume"
 ---
 <br><br><br>
-<div><img style="
+<div style="width:100%; overflow:hidden;">
+  <img 
+    src="/_worm-closeup.jpg" 
+    alt="avatar" 
+    style="width:100%; height:250px; object-fit:cover; object-position:50% 20%;">
+</div>
+<!-- <div><img style="
         height: auto;
         border-radius: 50%;
         width:20%;
         margin:0;
-" src="/avatar_home2_enh.jpg" alt="avatar"></div> 
+" src="/avatar_home2_enh.jpg" alt="avatar"></div>  -->
 <!-- <br> -->
 <!-- >My greatest potential is the willingness to keep learning new things.  -->
 <!-- {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}} -->
