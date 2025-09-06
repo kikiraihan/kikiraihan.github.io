@@ -1,12 +1,12 @@
 ---
 title: "Resume"
 ---
-<br><br><br>
-<div style="width:100%; overflow:hidden;">
+<!-- <br><br><br> -->
+<div style="width:100%; height:200px; overflow:hidden;">
   <img 
     src="/_worm-closeup.jpg" 
     alt="avatar" 
-    style="width:100%; height:250px; object-fit:cover; object-position:50% 20%;">
+    style="width:100%; height:200px; object-fit:cover; object-position:50% 20%;">
 </div>
 <!-- <div><img style="
         height: auto;
