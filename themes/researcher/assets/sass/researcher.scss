@@ -13,40 +13,67 @@ $font-family: {{ .Param "style.fontFamily" | default "Inconsolata" }};
 $y-small: 0.6rem;
 $y-medium: 1.0rem;
 
+// CSS Custom Properties for Dark Mode
+:root {
+    --color-text: #{$black};
+    --color-primary: #{$red};
+    --color-bg: #ffffff;
+    --color-bg-secondary: #f8f8f8;
+    --color-border: #cccccc;
+    --color-code-bg: #f8f8f8;
+    --color-table-stripe: #f8f8f8;
+}
+
+// Dark mode colors
+:root:not(.light) {
+    --color-text: #e0e0e0;
+    --color-primary: #ff6b6b;
+    --color-bg: #1a1a1a;
+    --color-bg-secondary: #2a2a2a;
+    --color-border: #404040;
+    --color-code-bg: #2a2a2a;
+    --color-table-stripe: #252525;
+}
+
 // Placeholders
 %link-default {
-    color: $red;
+    color: var(--color-primary);
     text-decoration: none;
     & * {
-        color: $red;
+        color: var(--color-primary);
     }
     &:hover {
-        color: $red;
+        color: var(--color-primary);
         text-decoration: underline;
     }
 }
 %link-dark {
-    color: $black;
+    color: var(--color-text);
     text-decoration: none;
     & * {
-        color: $black;
+        color: var(--color-text);
     }
     &:hover {
-        color: $black;
+        color: var(--color-text);
         text-decoration: underline;
     }
 }
 %table-cell {
-    border: 1px solid #cccccc;
+    border: 1px solid var(--color-border);
     padding: 6px 12px;
     text-align: left;
 }
 
 // Style
 * {
-    color: $black;
+    color: var(--color-text);
     font-family: $font-family;
     line-height: 1.2;
+}
+
+html, body {
+    background-color: var(--color-bg);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 .container {
     max-width: $max-width;
@@ -127,19 +154,19 @@ $y-medium: 1.0rem;
             @extend %table-cell;
         }
         & tr:nth-child(2n) {
-            background-color: #f8f8f8;
+            background-color: var(--color-table-stripe);
         }
     }
     blockquote {
-        border-left: 4px solid;
+        border-left: 4px solid var(--color-border);
         font-style: italic;
         margin: $y-medium 0;
         padding: 8px 8px;
     }
     code {
-        color: $black;
-        background-color: #f8f8f8;
-        border: 1px solid #cccccc;
+        color: var(--color-text);
+        background-color: var(--color-code-bg);
+        border: 1px solid var(--color-border);
         border-radius: 10%;
         padding: 0px 4px;
     }

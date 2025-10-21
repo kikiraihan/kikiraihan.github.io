@@ -13,6 +13,9 @@
     {{ $style := resources.Get "sass/researcher.scss" | resources.ExecuteAsTemplate "sass/researcher.scss" . | toCSS | minify }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
 
+    <!-- Dark mode script - load early to prevent flash -->
+    <script src="{{ "js/darkmode.js" | absURL }}"></script>
+
     {{ with .Site.Params.favicon }}
         <link rel="icon" type="image/ico" href="{{ . | absURL }}">
     {{ end }}
@@ -53,14 +56,14 @@
         #content .grid-img{
             margin:0;
         }
-        
+
         /* Bersihkan float */
         .container::after {
             content: "";
             clear: both;
             display: table;
         }
-        
+
         /* Atur ul agar tidak memiliki padding dan margin */
         ul {
             list-style-type: none;
@@ -69,6 +72,19 @@
         }
         .caption:hover {
             text-decoration: underline;
+        }
+
+        /* Dark mode toggle icon */
+        #dark-mode-toggle {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        #dark-mode-toggle:hover {
+            transform: rotate(20deg);
+        }
+        /* Show moon icon in light mode, sun icon in dark mode */
+        :root:not(.light) #dark-mode-toggle .fa-moon:before {
+            content: "\f185"; /* fa-sun icon code */
         }
     </style>
 
@@ -86,7 +102,11 @@
             justify-content: center;
             align-items: center;
         }
-    
+
+        :root:not(.light) #previewContainer {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
         #previewImage {
             max-width: 80%;
             max-height: 80%;
