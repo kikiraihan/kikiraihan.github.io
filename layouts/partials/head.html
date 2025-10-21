@@ -58,7 +58,17 @@
         :root.light h6,
         :root.light p,
         :root.light li,
-        :root.light span:not(.navbar-text) {
+        :root.light span:not(.navbar-text),
+        :root.light div,
+        :root.light strong,
+        :root.light b,
+        :root.light em,
+        :root.light i,
+        :root.light small,
+        :root.light td,
+        :root.light th,
+        :root.light label,
+        :root.light blockquote {
             color: #222222 !important;
         }
 
@@ -87,6 +97,11 @@
             color-scheme: dark;
         }
 
+        /* Universal dark mode text color - catch all */
+        :root:not(.light) * {
+            color: var(--color-text) !important;
+        }
+
         :root:not(.light) body,
         :root:not(.light) .container,
         :root:not(.light) .navbar,
@@ -110,6 +125,7 @@
             opacity: 0.3;
         }
 
+        :root:not(.light) a,
         :root:not(.light) a:not(.nav-link) {
             color: var(--color-primary) !important;
         }
@@ -122,7 +138,18 @@
         :root:not(.light) h6,
         :root:not(.light) p,
         :root:not(.light) li,
-        :root:not(.light) span:not(.navbar-text) {
+        :root:not(.light) span,
+        :root:not(.light) div,
+        :root:not(.light) strong,
+        :root:not(.light) b,
+        :root:not(.light) em,
+        :root:not(.light) i,
+        :root:not(.light) small,
+        :root:not(.light) td,
+        :root:not(.light) th,
+        :root:not(.light) label,
+        :root:not(.light) blockquote,
+        :root:not(.light) .navbar-text {
             color: var(--color-text) !important;
         }
 
@@ -136,6 +163,7 @@
         :root:not(.light) pre {
             background-color: var(--color-bg-secondary) !important;
             border-color: var(--color-border) !important;
+            color: var(--color-text) !important;
         }
 
         /* Social icons in dark mode */
@@ -145,6 +173,14 @@
 
         :root:not(.light) .social-icons a:hover {
             color: var(--color-primary) !important;
+        }
+
+        /* Font Awesome icons */
+        :root:not(.light) i.fa,
+        :root:not(.light) i.fas,
+        :root:not(.light) i.fab,
+        :root:not(.light) i.far {
+            color: inherit !important;
         }
     </style>
 
