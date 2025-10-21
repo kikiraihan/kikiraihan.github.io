@@ -18,6 +18,70 @@
 
     <!-- Dark mode comprehensive styles -->
     <style>
+        /* Light mode explicit styles */
+        :root.light {
+            color-scheme: light;
+        }
+
+        :root.light body,
+        :root.light .container,
+        :root.light .navbar,
+        :root.light #content,
+        :root.light #footer {
+            background-color: #ffffff !important;
+            color: #222222 !important;
+        }
+
+        :root.light .navbar-brand,
+        :root.light .navbar-text {
+            color: #222222 !important;
+        }
+
+        :root.light .nav-link {
+            color: #dc3545 !important;
+        }
+
+        :root.light hr {
+            border-color: #cccccc !important;
+            opacity: 1;
+        }
+
+        :root.light a:not(.nav-link) {
+            color: #dc3545 !important;
+        }
+
+        :root.light h1,
+        :root.light h2,
+        :root.light h3,
+        :root.light h4,
+        :root.light h5,
+        :root.light h6,
+        :root.light p,
+        :root.light li,
+        :root.light span:not(.navbar-text) {
+            color: #222222 !important;
+        }
+
+        :root.light code {
+            color: #222222 !important;
+            background-color: #f8f8f8 !important;
+            border-color: #cccccc !important;
+        }
+
+        :root.light .highlight pre,
+        :root.light pre {
+            background-color: #f8f8f8 !important;
+            border-color: #cccccc !important;
+        }
+
+        :root.light .social-icons a {
+            color: #222222 !important;
+        }
+
+        :root.light .social-icons a:hover {
+            color: #dc3545 !important;
+        }
+
         /* Dark mode comprehensive color overrides */
         :root:not(.light) {
             color-scheme: dark;
@@ -60,6 +124,12 @@
         :root:not(.light) li,
         :root:not(.light) span:not(.navbar-text) {
             color: var(--color-text) !important;
+        }
+
+        :root:not(.light) code {
+            color: var(--color-text) !important;
+            background-color: var(--color-code-bg) !important;
+            border-color: var(--color-border) !important;
         }
 
         :root:not(.light) .highlight pre,
