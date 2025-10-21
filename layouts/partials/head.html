@@ -284,4 +284,73 @@
             cursor: pointer;
         }
     </style>
+
+    <!-- FINAL DARK MODE OVERRIDE - Load absolutely last -->
+    <style>
+        /* Dark mode - hardcoded colors for maximum override power */
+        html:not(.light),
+        html:not(.light) body,
+        html:not(.light) body *,
+        :root:not(.light),
+        :root:not(.light) body,
+        :root:not(.light) body * {
+            color: #e0e0e0 !important;
+        }
+
+        html:not(.light) body,
+        :root:not(.light) body {
+            background-color: #1a1a1a !important;
+        }
+
+        html:not(.light) .container,
+        html:not(.light) .navbar,
+        html:not(.light) #content,
+        html:not(.light) #footer,
+        :root:not(.light) .container,
+        :root:not(.light) .navbar,
+        :root:not(.light) #content,
+        :root:not(.light) #footer {
+            background-color: #1a1a1a !important;
+        }
+
+        /* Links in dark mode */
+        html:not(.light) a,
+        :root:not(.light) a {
+            color: #ff6b6b !important;
+        }
+
+        /* Code blocks in dark mode */
+        html:not(.light) code,
+        :root:not(.light) code {
+            background-color: #2a2a2a !important;
+            border-color: #404040 !important;
+            color: #e0e0e0 !important;
+        }
+
+        html:not(.light) pre,
+        :root:not(.light) pre {
+            background-color: #2a2a2a !important;
+            color: #e0e0e0 !important;
+        }
+
+        /* Light mode - ensure proper colors */
+        html.light,
+        html.light body,
+        html.light body *,
+        :root.light,
+        :root.light body,
+        :root.light body * {
+            color: #222222 !important;
+        }
+
+        html.light body,
+        :root.light body {
+            background-color: #ffffff !important;
+        }
+
+        html.light a,
+        :root.light a {
+            color: #dc3545 !important;
+        }
+    </style>
 </head>
