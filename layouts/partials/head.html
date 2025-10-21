@@ -16,6 +16,68 @@
     <!-- Dark mode script - load early to prevent flash -->
     <script src="{{ "js/darkmode.js" | absURL }}"></script>
 
+    <!-- Dark mode comprehensive styles -->
+    <style>
+        /* Dark mode comprehensive color overrides */
+        :root:not(.light) {
+            color-scheme: dark;
+        }
+
+        :root:not(.light) body,
+        :root:not(.light) .container,
+        :root:not(.light) .navbar,
+        :root:not(.light) #content,
+        :root:not(.light) #footer {
+            background-color: var(--color-bg) !important;
+            color: var(--color-text) !important;
+        }
+
+        :root:not(.light) .navbar-brand,
+        :root:not(.light) .navbar-text {
+            color: var(--color-text) !important;
+        }
+
+        :root:not(.light) .nav-link {
+            color: var(--color-primary) !important;
+        }
+
+        :root:not(.light) hr {
+            border-color: var(--color-border) !important;
+            opacity: 0.3;
+        }
+
+        :root:not(.light) a:not(.nav-link) {
+            color: var(--color-primary) !important;
+        }
+
+        :root:not(.light) h1,
+        :root:not(.light) h2,
+        :root:not(.light) h3,
+        :root:not(.light) h4,
+        :root:not(.light) h5,
+        :root:not(.light) h6,
+        :root:not(.light) p,
+        :root:not(.light) li,
+        :root:not(.light) span:not(.navbar-text) {
+            color: var(--color-text) !important;
+        }
+
+        :root:not(.light) .highlight pre,
+        :root:not(.light) pre {
+            background-color: var(--color-bg-secondary) !important;
+            border-color: var(--color-border) !important;
+        }
+
+        /* Social icons in dark mode */
+        :root:not(.light) .social-icons a {
+            color: var(--color-text) !important;
+        }
+
+        :root:not(.light) .social-icons a:hover {
+            color: var(--color-primary) !important;
+        }
+    </style>
+
     {{ with .Site.Params.favicon }}
         <link rel="icon" type="image/ico" href="{{ . | absURL }}">
     {{ end }}
