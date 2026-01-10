@@ -21,7 +21,7 @@ googleAnalytics = ""  # add your tracking id
     "Machine Learning",
     "Knowledge Graph",
   ]
-  avatarURL = "_3per4view.jpg"
+  avatarURL = "_new_can.webp"
   #gravatar = "mohzulkiflikatili@gmail.com"
   
   [params.footer]
