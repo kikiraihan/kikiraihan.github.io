@@ -8,11 +8,11 @@ const props = withDefaults(defineProps<{
 }>(), { to: undefined, href: undefined, variant: 'solid', icon: undefined })
 
 const classes = computed(() => [
-  'group inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition-colors duration-300',
+  'group inline-flex items-center gap-2 px-5 py-3 font-pixel text-sm uppercase',
   {
-    solid: 'bg-ink text-paper hover:bg-accent hover:text-accent-ink',
-    outline: 'border border-ink/80 text-ink hover:bg-ink hover:text-paper',
-    ghost: 'text-ink hover:text-accent',
+    solid: 'pixel-box bg-accent text-accent-ink hover:bg-ink hover:text-paper',
+    outline: 'pixel-box bg-paper text-ink hover:bg-accent-2 hover:text-ink',
+    ghost: 'text-ink transition-colors duration-300 hover:text-accent',
   }[props.variant],
 ])
 const external = computed(() => !!props.href && /^https?:/.test(props.href))

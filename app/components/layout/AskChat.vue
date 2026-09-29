@@ -1,20 +1,50 @@
 <script setup lang="ts">
 // The old site loaded Crisp on every page. Here it is loaded only when the visitor asks for it,
 // so it costs nothing for performance until then.
+// Crisp's own launcher bubble is kept hidden: this button stays the only entry point,
+// so after the chat window is closed the visitor sees this button again (not Crisp's default one).
 const { crispWebsiteId } = useAppConfig()
 const loading = ref(false)
 const loaded = ref(false)
+const chatOpen = ref(false)
 
 type CrispWindow = Window & { $crisp?: unknown[][], CRISP_WEBSITE_ID?: string }
+
+function crisp(...cmd: unknown[]) {
+  (window as CrispWindow).$crisp?.push(cmd)
+}
+
+function onOpened() {
+  chatOpen.value = true
+}
+function onClosed() {
+  chatOpen.value = false
+  // hide the whole Crisp widget (incl. its launcher) once the window is closed
+  crisp('do', 'chat:hide')
+}
+function onMessageReceived() {
+  // an operator replied while the widget was hidden: bring the window back
+  crisp('do', 'chat:show')
+  crisp('do', 'chat:open')
+}
 
 function openChat() {
   const w = window as CrispWindow
   if (loaded.value) {
-    w.$crisp?.push(['do', 'chat:open'])
+    crisp('do', 'chat:show')
+    crisp('do', 'chat:open')
     return
   }
   loading.value = true
-  w.$crisp = [['do', 'chat:open']]
+  // Commands queued before l.js loads are replayed by Crisp in order.
+  w.$crisp = [
+    ['safe', true],
+    ['on', 'chat:opened', onOpened],
+    ['on', 'chat:closed', onClosed],
+    ['on', 'message:received', onMessageReceived],
+    ['do', 'chat:show'],
+    ['do', 'chat:open'],
+  ]
   w.CRISP_WEBSITE_ID = crispWebsiteId
   const s = document.createElement('script')
   s.src = 'https://client.crisp.chat/l.js'
@@ -27,9 +57,9 @@ function openChat() {
 
 <template>
   <button
-    v-if="crispWebsiteId && !loaded"
+    v-if="crispWebsiteId && !chatOpen"
     type="button"
-    class="fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2.5 text-sm shadow-lg shadow-black/5 transition hover:-translate-y-0.5 hover:border-ink"
+    class="pixel-box fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 bg-paper px-4 py-2.5 font-pixel text-sm uppercase"
     :disabled="loading"
     @click="openChat"
   >
