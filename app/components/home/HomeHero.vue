@@ -20,7 +20,7 @@ onMounted(async () => {
     <div class="grid items-end gap-10 md:grid-cols-12">
       <div class="md:col-span-8">
         <p class="hero-in eyebrow flex items-center gap-3" style="--d: 0ms">
-          <span class="inline-block size-2 animate-pulse rounded-full bg-accent" aria-hidden="true" />
+          <span class="blink inline-block size-2 bg-accent" aria-hidden="true" />
           {{ profile.role }} — {{ profile.location }}
         </p>
 
@@ -36,7 +36,7 @@ onMounted(async () => {
         <p class="hero-in mt-4 font-mono text-sm text-ink-3" style="--d: 400ms">
           <span class="sr-only">I build {{ profile.typed.join(', ') }}.</span>
           <span aria-hidden="true">
-            I build <span class="text-accent">{{ typed }}</span><span class="animate-pulse">_</span>
+            &gt; I build <span class="text-accent">{{ typed }}</span><span class="blink">█</span>
           </span>
         </p>
 
@@ -51,7 +51,7 @@ onMounted(async () => {
       </div>
 
       <div class="hero-in md:col-span-4" style="--d: 260ms">
-        <div class="relative ml-auto aspect-[4/5] w-2/3 max-w-sm overflow-hidden rounded-lg md:w-full">
+        <div class="pixel-frame relative ml-auto aspect-[4/5] w-2/3 max-w-sm overflow-hidden md:w-full">
           <div ref="portrait" class="absolute -inset-y-[8%] inset-x-0">
             <NuxtImg
               format="webp"
