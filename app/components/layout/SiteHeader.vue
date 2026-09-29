@@ -9,7 +9,7 @@ const isActive = (to: string) => route.path === to || route.path.startsWith(`${t
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 border-b-2 border-ink bg-paper/90 backdrop-blur-md">
+  <header class="site-header sticky top-0 z-40 backdrop-blur-md">
     <nav class="container-page flex h-16 items-center justify-between" aria-label="Main">
       <NuxtLink to="/" class="group flex items-baseline gap-2" :aria-label="`${profile.name}, home`">
         <span class="font-serif text-2xl leading-none">Kiki</span>
@@ -21,12 +21,11 @@ const isActive = (to: string) => route.path === to || route.path.startsWith(`${t
           <li v-for="item in nav" :key="item.to">
             <NuxtLink
               :to="item.to"
-              class="px-3 py-1.5 font-pixel text-sm uppercase transition-colors hover:text-accent"
+              class="nav-link px-3 py-1.5 transition-colors hover:text-accent"
               :class="isActive(item.to) ? 'text-ink' : 'text-ink-2'"
               :aria-current="isActive(item.to) ? 'page' : undefined"
             >
-              <!-- menu-select arrow, like a game title screen -->
-              <span v-if="isActive(item.to)" class="blink mr-1 text-accent" aria-hidden="true">▶</span>
+              <!-- the active-page marker (dot / arrow) is drawn by the theme via [aria-current]::before/::after -->
               {{ item.label }}
             </NuxtLink>
           </li>
