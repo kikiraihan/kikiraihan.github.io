@@ -1,0 +1,66 @@
+# Professional history, newest first. `project` links to /work/<slug> when a case study exists.
+items:
+  - company: SingaPay
+    role: Software Engineer
+    period: 2025 — Present
+    kind: work
+    summary: Building payment systems — payment gateway, B2B/B2C flows and APIs.
+    highlights:
+      - Backend services for payment processing and integrations.
+  - company: PT. Makassar Raya Motor
+    role: Software Engineer & Data Analyst (Contract)
+    period: Oct 2023 — Jun 2024
+    location: Makassar
+    kind: work
+    summary: Spatial sales intelligence for a Daihatsu dealer group across three provinces.
+    highlights:
+      - Spatial analysis of sales across 3 provinces, 54 districts, 709 sub-districts and 7,394 villages.
+      - Plotly dashboards, FastAPI spatial backend and a Livewire web app.
+    project: makassar-raya-motor
+  - company: Contag School
+    role: Backend Engineer
+    period: Mar 2023 — Oct 2023
+    kind: work
+    summary: API modules for a university academic-affairs SaaS.
+    highlights:
+      - 20+ NestJS API modules and 800+ commits, following SOLID principles.
+    project: contag
+  - company: IPB University
+    role: M.Sc. Computer Science
+    period: 2021 — 2024
+    location: Bogor
+    kind: education
+    summary: Computational Intelligence & Optimization. GPA 3.83 / 4.
+    highlights:
+      - Thesis on biotic-interaction knowledge graphs and network analysis (Scopus indexed).
+    project: vektorpedia
+  - company: Bank Indonesia — Gorontalo Office
+    role: Web Developer (Contract)
+    period: May 2021 — Aug 2022
+    location: Gorontalo
+    kind: work
+    summary: Built TimeMarket, a workload-management PWA, then its second version.
+    highlights:
+      - v1 in 6 months of full-stack development; v2 in 3 months plus 6 months of maintenance.
+    project: timemarket
+  - company: Digimosque
+    role: Web Developer (Project based)
+    period: 2022
+    kind: work
+    summary: Nearest-mosque search API and the full admin panel.
+    highlights:
+      - 15-module admin panel in under two months with Livewire.
+    project: digimosque
+  - company: Universitas Negeri Gorontalo
+    role: B.Sc. Information Systems
+    period: 2016 — 2021
+    location: Gorontalo
+    kind: education
+    summary: Best graduate of the Faculty of Engineering. GPA 3.53 / 4.
+    project: sindasi
+  - company: Bank Indonesia — Gorontalo Office
+    role: Web Developer (Internship)
+    period: Sep 2019 — Dec 2019
+    location: Gorontalo
+    kind: work
+    summary: Built Raisa, a web app to monitor regional inflation with early warnings.
