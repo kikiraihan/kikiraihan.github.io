@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
+import { activeTheme } from './app/theme.config'
 
 const siteUrl = process.env.NUXT_PUBLIC_SITE_URL || 'https://kikiraihan.github.io'
 
@@ -27,7 +28,8 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      htmlAttrs: { lang: 'en' },
+      // data-theme selects the CSS theme (app/assets/css/themes/*.css); pick it in app/theme.config.ts
+      htmlAttrs: { 'lang': 'en', 'data-theme': activeTheme },
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       script: [
         {

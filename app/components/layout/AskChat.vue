@@ -59,7 +59,7 @@ function openChat() {
   <button
     v-if="crispWebsiteId && !chatOpen"
     type="button"
-    class="pixel-box fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 bg-paper px-4 py-2.5 font-pixel text-sm uppercase"
+    class="ask-btn fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 px-4 py-2.5"
     :disabled="loading"
     @click="openChat"
   >

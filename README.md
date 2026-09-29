@@ -17,6 +17,8 @@ npm run lint && npm run typecheck
 app/
 ├── app.config.ts          # profile, nav, socials, skills, typed words, Crisp id  ← edit here
 ├── assets/css/main.css    # Tailwind + design tokens (colors, fonts, type scale, motion)
+├── assets/css/themes/     # one CSS file per theme (editorial, retro) — see CLAUDE.md → Theming
+├── theme.config.ts        # active theme (hardcoded)  ← switch themes here
 ├── components/
 │   ├── base/              # AppButton, SectionHeading, TagList
 │   ├── layout/            # SiteHeader, SiteFooter, ThemeToggle, ImageLightbox, AskChat

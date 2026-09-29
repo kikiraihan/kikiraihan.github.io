@@ -7,13 +7,10 @@ const props = withDefaults(defineProps<{
   magnetic?: boolean
 }>(), { to: undefined, href: undefined, variant: 'solid', icon: undefined })
 
+// Look (shape, colors, font) comes from the active theme: .btn / .btn-<variant> in assets/css/themes/*.css
 const classes = computed(() => [
-  'group inline-flex items-center gap-2 px-5 py-3 font-pixel text-sm uppercase',
-  {
-    solid: 'pixel-box bg-accent text-accent-ink hover:bg-ink hover:text-paper',
-    outline: 'pixel-box bg-paper text-ink hover:bg-accent-2 hover:text-ink',
-    ghost: 'text-ink transition-colors duration-300 hover:text-accent',
-  }[props.variant],
+  'btn group inline-flex items-center gap-2 px-5 py-3',
+  `btn-${props.variant}`,
 ])
 const external = computed(() => !!props.href && /^https?:/.test(props.href))
 </script>

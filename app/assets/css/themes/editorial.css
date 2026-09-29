@@ -1,0 +1,68 @@
+/* ===========================================================================
+ * Theme: editorial — the original look (serif headlines, soft paper, rounded pills).
+ * Colors, fonts and sizes come from the shared defaults in main.css; this file only
+ * fills in the theme hooks used by components (see CLAUDE.md → Theming).
+ * ========================================================================= */
+
+@layer components {
+  html[data-theme="editorial"] .eyebrow {
+    @apply font-mono text-xs tracking-[0.18em];
+  }
+
+  /* AppButton */
+  html[data-theme="editorial"] .btn {
+    @apply rounded-full text-sm font-medium transition-colors duration-300;
+  }
+  html[data-theme="editorial"] .btn-solid {
+    @apply bg-ink text-paper hover:bg-accent hover:text-accent-ink;
+  }
+  html[data-theme="editorial"] .btn-outline {
+    @apply border border-ink/80 text-ink hover:bg-ink hover:text-paper;
+  }
+  html[data-theme="editorial"] .btn-ghost {
+    @apply text-ink hover:text-accent;
+  }
+
+  /* TagList */
+  html[data-theme="editorial"] .tag {
+    @apply rounded-full border border-line px-2.5;
+  }
+
+  /* Image frames: ProjectCard cover, HomeHero portrait, metric badge on a card */
+  html[data-theme="editorial"] .card-frame {
+    @apply rounded-lg border border-line;
+  }
+  html[data-theme="editorial"] .portrait-frame {
+    @apply rounded-lg;
+  }
+  html[data-theme="editorial"] .metric-badge {
+    @apply rounded-md bg-paper/90 backdrop-blur;
+  }
+
+  /* SiteHeader */
+  html[data-theme="editorial"] .site-header {
+    @apply border-b border-line/70 bg-paper/85;
+  }
+  html[data-theme="editorial"] .nav-link {
+    @apply rounded-full text-sm;
+  }
+  /* active page: small accent dot after the label */
+  html[data-theme="editorial"] .nav-link[aria-current="page"]::after {
+    content: "";
+    @apply ml-0.5 inline-block size-1 translate-y-[-2px] rounded-full bg-accent;
+  }
+
+  /* HomeHero: pulsing status dot and typewriter cursor */
+  html[data-theme="editorial"] .status-dot {
+    @apply animate-pulse rounded-full;
+  }
+  html[data-theme="editorial"] .cursor::after {
+    content: "_";
+    @apply animate-pulse;
+  }
+
+  /* AskChat */
+  html[data-theme="editorial"] .ask-btn {
+    @apply rounded-full border border-line bg-paper text-sm shadow-lg shadow-black/5 transition hover:-translate-y-0.5 hover:border-ink;
+  }
+}

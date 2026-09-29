@@ -8,7 +8,7 @@ const metric = computed(() => props.project.metrics?.[0])
 
 <template>
   <article class="group relative">
-    <div class="pixel-frame relative overflow-hidden bg-paper-2 transition-transform duration-150 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
+    <div class="card-frame relative overflow-hidden bg-paper-2">
       <NuxtImg
         format="webp"
         :src="project.cover"
@@ -20,7 +20,7 @@ const metric = computed(() => props.project.metrics?.[0])
       />
       <div
         v-if="metric"
-        class="absolute bottom-3 left-3 border-2 border-ink bg-paper px-3 py-2 transition-transform duration-500 group-hover:-translate-y-1"
+        class="metric-badge absolute bottom-3 left-3 px-3 py-2 transition-transform duration-500 group-hover:-translate-y-1"
       >
         <p class="font-serif text-2xl leading-none">
           {{ metric.value }}

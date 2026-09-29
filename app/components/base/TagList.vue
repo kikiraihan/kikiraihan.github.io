@@ -7,7 +7,7 @@ withDefaults(defineProps<{ tags?: string[], label?: string }>(), { tags: () => [
     <li
       v-for="tag in tags"
       :key="tag"
-      class="border-2 border-line bg-paper-2 px-2 py-0.5 font-mono text-[11px] text-ink-2"
+      class="tag py-0.5 font-mono text-[11px] text-ink-2"
     >
       {{ tag }}
     </li>
