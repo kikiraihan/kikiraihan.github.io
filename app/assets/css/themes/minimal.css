@@ -1,0 +1,163 @@
+/* ===========================================================================
+ * Theme: minimal — clean, Apple-like product UI (in the spirit of mobbin.com).
+ * Pure white / true black canvas, one sans family (Inter) with tight semibold headings,
+ * soft gray surfaces instead of borders, large radii, pill buttons, frosted header.
+ * Overrides the shared tokens from main.css and fills in the theme hooks used by
+ * components (see CLAUDE.md → Theming). Uses the already self-hosted Inter Variable,
+ * so it adds no new font download.
+ * ========================================================================= */
+
+/* ---------------------------------------------------------------------------
+ * Tokens: Apple system grays, one blue accent.
+ * `html[...]` beats the `:root` / `.dark` defaults; `.dark` needs its own rule.
+ * ------------------------------------------------------------------------- */
+html[data-theme="minimal"] {
+  --paper: #ffffff;
+  --paper-2: #f5f5f7; /* secondary surface (cards, chips, secondary buttons) */
+  --ink: #1d1d1f;
+  --ink-2: #6e6e73;
+  --ink-3: #86868b;
+  --line: #e8e8ed;
+  --accent: #0071e3; /* system blue */
+  --accent-ink: #ffffff;
+  --accent-2: #34c759; /* system green */
+  --shadow: rgb(0 0 0 / 0.08);
+
+  /* `font-serif` is used for every heading: here it is the sans, made semibold + tight below. */
+  --font-serif: var(--font-sans);
+
+  /* Big, tight, confident headlines (Apple product-page scale). */
+  --text-display: clamp(2.5rem, 6vw + 1rem, 6.5rem);
+  --text-display--line-height: 1;
+  --text-display--letter-spacing: -0.045em;
+  --text-headline: clamp(1.875rem, 2.5vw + 1rem, 3.5rem);
+  --text-headline--line-height: 1.08;
+  --text-headline--letter-spacing: -0.035em;
+
+  /* Generous, continuous-looking corners. */
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 1.75rem;
+  --radius-3xl: 2rem;
+}
+
+html[data-theme="minimal"].dark {
+  --paper: #000000;
+  --paper-2: #161617;
+  --ink: #f5f5f7;
+  --ink-2: #a1a1a6;
+  --ink-3: #6e6e73;
+  --line: #2c2c2e;
+  --accent: #2997ff;
+  --accent-ink: #000000;
+  --accent-2: #30d158;
+  --shadow: rgb(0 0 0 / 0.6);
+}
+
+/* ---------------------------------------------------------------------------
+ * Base
+ * ------------------------------------------------------------------------- */
+@layer base {
+  /* Headings: semibold sans with tight tracking. Utilities in templates still win (base layer). */
+  html[data-theme="minimal"] .font-serif {
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+ * Theme hooks
+ * ------------------------------------------------------------------------- */
+@layer components {
+  html[data-theme="minimal"] .eyebrow {
+    @apply text-[13px] font-medium normal-case tracking-[-0.01em];
+  }
+
+  /* AppButton: black pill (primary), gray pill (secondary), blue text link (ghost) */
+  html[data-theme="minimal"] .btn {
+    @apply rounded-full text-[15px] font-medium tracking-[-0.01em] transition duration-200 active:scale-[0.97];
+  }
+  html[data-theme="minimal"] .btn-solid {
+    @apply bg-ink text-paper hover:opacity-85;
+  }
+  html[data-theme="minimal"] .btn-outline {
+    @apply bg-paper-2 text-ink hover:bg-line;
+  }
+  html[data-theme="minimal"] .btn-ghost {
+    @apply text-accent hover:underline underline-offset-4;
+  }
+
+  /* TagList: soft gray chip, no border */
+  html[data-theme="minimal"] .tag {
+    @apply rounded-full bg-paper-2 px-2.5;
+  }
+
+  /* Image frames: borderless gray tile, hairline ring, soft lift on hover */
+  html[data-theme="minimal"] .card-frame {
+    @apply rounded-2xl ring-1 ring-black/5 transition-shadow duration-500 group-hover:shadow-2xl group-hover:shadow-black/10;
+  }
+  html[data-theme="minimal"].dark .card-frame {
+    @apply ring-white/10 group-hover:shadow-black/60;
+  }
+  html[data-theme="minimal"] .portrait-frame {
+    @apply rounded-3xl;
+  }
+  html[data-theme="minimal"] .metric-badge {
+    @apply rounded-xl bg-paper/80 shadow-sm backdrop-blur-xl backdrop-saturate-150;
+  }
+
+  /* SiteHeader: frosted glass bar with a hairline, like apple.com */
+  html[data-theme="minimal"] .site-header {
+    @apply border-b border-line/60 bg-paper/70 backdrop-saturate-150;
+  }
+  html[data-theme="minimal"] .nav-link {
+    @apply rounded-full text-sm font-medium transition-colors;
+  }
+  /* active page: filled gray pill (segmented-control look) instead of a dot */
+  html[data-theme="minimal"] .nav-link[aria-current="page"] {
+    @apply bg-paper-2;
+  }
+
+  /* HomeHero: round status dot with a soft expanding halo, thin text-caret cursor.
+     No .prompt prefix in this theme (plain "I build …"). */
+  html[data-theme="minimal"] .status-dot {
+    @apply rounded-full;
+    animation: minimal-halo 2.4s var(--ease-out-expo) infinite;
+  }
+  html[data-theme="minimal"] .cursor::after {
+    content: "";
+    @apply ml-0.5 inline-block h-[1.1em] w-[2px] translate-y-[0.2em] rounded-full bg-accent;
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  /* AskChat: floating frosted pill */
+  html[data-theme="minimal"] .ask-btn {
+    @apply rounded-full border border-line bg-paper/80 text-sm font-medium shadow-[0_8px_30px_var(--shadow)] backdrop-blur-xl backdrop-saturate-150 transition hover:-translate-y-0.5 active:scale-[0.97];
+  }
+}
+
+/* No fake oblique on headings: the italic second line ("Katili") reads as a gray subtitle instead.
+   Unlayered on purpose so it beats the `italic` utility. */
+html[data-theme="minimal"] :is(.font-serif.italic, .font-serif .italic) {
+  font-style: normal;
+}
+
+/* Tags use `font-mono` in the template; this theme keeps everything in one sans family.
+   Unlayered on purpose so it beats the utility. */
+html[data-theme="minimal"] .tag {
+  font-family: var(--font-sans);
+}
+
+/* Markdown content: semibold, tight headings like the rest of the theme */
+html[data-theme="minimal"] .prose-page :where(h2) {
+  @apply font-semibold tracking-[-0.03em];
+}
+html[data-theme="minimal"] .prose-page :where(h3) {
+  @apply font-semibold tracking-[-0.02em];
+}
+
+@keyframes minimal-halo {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 45%, transparent); }
+  70%, 100% { box-shadow: 0 0 0 7px transparent; }
+}

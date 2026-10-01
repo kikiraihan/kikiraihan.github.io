@@ -9,6 +9,7 @@
    app/theme.config.ts (see CLAUDE.md → Theming). Tokens below are the shared defaults. */
 @import "./themes/editorial.css";
 @import "./themes/retro.css";
+@import "./themes/minimal.css";
 
 @plugin "@tailwindcss/typography";
 
