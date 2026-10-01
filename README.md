@@ -38,7 +38,7 @@ public/
 ├── images/profile/        # portrait, avatar
 ├── images/work/<slug>/    # one folder per project, same name as the Markdown file
 ├── images/writing/<slug>/
-├── og.png, favicon.ico, resume.pdf, .nojekyll
+├── og.png, favicon.ico, .nojekyll
 server/routes/             # sitemap.xml, robots.txt (prerendered)
 content.config.ts          # content schemas (validated front-matter)
 ```

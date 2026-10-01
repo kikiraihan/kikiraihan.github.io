@@ -23,10 +23,7 @@ usePageSeo({
           {{ profile.description }}
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <AppButton :href="profile.resume" icon="lucide:download">
-            Download résumé
-          </AppButton>
-          <AppButton to="/contact" variant="outline">
+          <AppButton to="/contact">
             Get in touch
           </AppButton>
         </div>
