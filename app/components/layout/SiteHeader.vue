@@ -12,7 +12,7 @@ const isActive = (to: string) => route.path === to || route.path.startsWith(`${t
   <header class="site-header sticky top-0 z-40 backdrop-blur-md">
     <nav class="container-page flex h-16 items-center justify-between" aria-label="Main">
       <NuxtLink to="/" class="group flex items-baseline gap-2" :aria-label="`${profile.name}, home`">
-        <span class="font-serif text-2xl leading-none">Kikiaa</span>
+        <span class="font-serif text-2xl leading-none">Kiki</span>
         <span class="eyebrow hidden transition-colors group-hover:text-accent sm:inline">Katili</span>
       </NuxtLink>
 
