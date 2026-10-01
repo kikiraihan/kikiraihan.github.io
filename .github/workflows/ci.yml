@@ -40,9 +40,10 @@ jobs:
           path: .output/public
 
   # Manual deploy only (Actions → CI & Deploy → Run workflow → deploy: true).
+  # Also deploys automatically on every push to main.
   # Requires Settings → Pages → Source: "GitHub Actions".
   deploy:
-    if: github.event_name == 'workflow_dispatch' && inputs.deploy
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'workflow_dispatch' && inputs.deploy)
     needs: build
     runs-on: ubuntu-latest
     environment:
