@@ -124,7 +124,7 @@ Plain Markdown images `![alt](/images/…)` are optimised and open in the lightb
 
 ## Deployment
 
-`npm run generate` produces a static site in `.output/public` (GitHub Pages compatible: `.nojekyll`, extensionless `.html` routes). The CI workflow lints, typechecks and builds on every push/PR; deployment to GitHub Pages is a manual `workflow_dispatch` with `deploy: true`.
+`npm run generate` produces a static site in `.output/public` (GitHub Pages compatible: `.nojekyll`, extensionless `.html` routes). The CI workflow lints, typechecks and builds on every push/PR; every push to `main` is deployed to GitHub Pages (a manual `workflow_dispatch` with `deploy: true` also deploys). Settings → Pages → Source must be "GitHub Actions".
 
 The site assumes it is served from the domain root (e.g. `kikiraihan.github.io` or a custom domain). To replace the old site, either push this build to the `kikiraihan.github.io` repository or point a custom domain at this repository's Pages.
 
