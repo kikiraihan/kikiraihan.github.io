@@ -33,14 +33,15 @@ The whole look of the site is a **theme**, chosen by one hardcoded value:
 
 ```ts
 // app/theme.config.ts
-export const themes = ['editorial', 'retro'] as const
-export const activeTheme: ThemeName = 'retro'   // ← change this and rebuild
+export const themes = ['editorial', 'retro', 'minimal'] as const
+export const activeTheme: ThemeName = 'minimal'   // ← change this and rebuild
 ```
 
 | Theme       | Look                                                                                     |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `editorial` | The original design: Instrument Serif headlines, soft paper colors, rounded pill buttons. |
-| `retro`     | Old-school video game (current): Press Start 2P pixel font, square corners, hard offset shadows, pixel grid background, CRT scanlines, blinking cursors. |
+| `retro`     | Old-school video game: Press Start 2P pixel font, square corners, hard offset shadows, pixel grid background, CRT scanlines, blinking cursors. |
+| `minimal`   | Clean Apple-like UI à la mobbin.com (current): white / true-black canvas, Inter semibold headlines with tight tracking, gray pill buttons and chips, large radii, frosted header. |
 
 ### How it works
 
@@ -107,6 +108,13 @@ table above.
   normal `text-*` sizes stay usable; display/headline sizes are also reduced via tokens.
 - `font-synthesis: none` is set for pixel text — `italic` has no effect there (by design).
 - Scanlines are a fixed `body::after` overlay with `pointer-events: none`.
+
+### Minimal theme notes
+
+- `--font-serif` points at Inter (already self-hosted), made semibold with tight tracking by a base rule on
+  `.font-serif`; `italic` on headings is neutralised (the gray color carries the contrast instead).
+- Tags are switched to the sans font by an unlayered rule (the template uses `font-mono`).
+- No `.prompt` prefix; the cursor is a thin accent caret. Active nav item is a gray pill.
 
 ## Chat (Crisp)
 
