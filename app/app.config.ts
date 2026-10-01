@@ -11,7 +11,6 @@ export default defineAppConfig({
       'Software engineer combining backend engineering, product thinking, AI, and visual design. Payments, data, knowledge graphs, and interfaces people enjoy using.',
     portrait: '/images/profile/portrait.jpg',
     avatar: '/images/profile/avatar.webp',
-    resume: '/resume.pdf',
     // Rotating words in the hero (ported from the old Typed.js animation).
     typed: ['payment systems', 'APIs', 'AI / RAG tools', 'knowledge graphs', 'data products', 'interfaces'],
   },

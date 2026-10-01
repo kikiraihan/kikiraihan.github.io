@@ -22,7 +22,7 @@ export default defineNuxtPlugin((nuxtApp) => {
           loadGsap().then(gsap => gsap.to(target, {
             opacity: 1,
             y: 0,
-            duration: 0.9,
+            duration: 0.6,
             ease: 'expo.out',
             delay: Number(target.dataset.revealDelay ?? 0),
             clearProps: 'transform',
