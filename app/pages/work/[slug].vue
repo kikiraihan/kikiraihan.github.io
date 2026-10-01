@@ -17,6 +17,8 @@ const next = computed(() => {
   return list.length > 1 ? list[(i + 1) % list.length] : undefined
 })
 
+const { open: openPreview } = useLightbox()
+
 const { siteUrl } = useRuntimeConfig().public
 usePageSeo({
   title: project.value.title,
@@ -80,9 +82,14 @@ const overview = computed(() => [
     </header>
 
     <div class="container-page mt-12">
-      <div class="overflow-hidden rounded-lg border border-line">
+      <button
+        type="button"
+        class="block w-full cursor-zoom-in overflow-hidden rounded-lg border border-line"
+        @click="openPreview({ src: project.cover, alt: `${project.title} cover` })"
+      >
+        <span class="sr-only">Enlarge image: {{ project.title }} cover</span>
         <NuxtImg format="webp" :src="project.cover" :alt="`${project.title} cover`" sizes="xs:100vw lg:1280px" loading="eager" class="max-h-[80vh] w-full object-cover object-top" />
-      </div>
+      </button>
     </div>
 
     <div class="container-page mt-16 grid gap-12 lg:grid-cols-12">
