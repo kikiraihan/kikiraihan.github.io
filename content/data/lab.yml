@@ -5,7 +5,6 @@ items:
     year: 2026
     description: Nuxt 4 + Nuxt Content, an architecture explorer for case studies, and motion that switches off with prefers-reduced-motion.
     tags: [Nuxt, GSAP, Tailwind]
-    url: https://github.com/kikiraihan/kiki-profile-revamp
   - title: Melon leaf clustering
     kind: Machine learning
     year: 2023
