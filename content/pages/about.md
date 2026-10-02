@@ -1,11 +1,11 @@
 ---
 title: About
-description: Software engineer from Gorontalo, Indonesia, working across payments, backend systems, data, AI and visual design.
+description: Software engineer based in Greater Jakarta, Indonesia (originally from Gorontalo), working across payments, backend systems, data, AI and visual design.
 ---
 
 ## Introduction
 
-Hi, I'm Mohammad Zulkifli Katili — most people call me **Kiki**. I'm a software engineer from Gorontalo, Indonesia. I like problems where engineering, data and design meet, and I care as much about *why* something should be built as *how*.
+Hi, I'm Mohammad Zulkifli Katili — most people call me **Kiki**. I'm a software engineer originally from Gorontalo, now based in Tangerang, in Greater Jakarta, Indonesia. I like problems where engineering, data and design meet, and I care as much about *why* something should be built as *how*.
 
 ## Engineering journey
 
@@ -17,7 +17,9 @@ While studying I built production apps for real clients: **Raisa**, an inflation
 
 I'm working on payment systems — payment gateways, B2B/B2C flows and the APIs around them — where correctness, idempotency and consistency matter more than anything clever.
 
-As a Senior Fullstack Developer at **Singapay** I help maintain a payment gateway core that handles hundreds of thousands of transactions a day. Day to day that means bank integrations under **SNAP** (Bank Indonesia's open-API payment standard, including the access-token and request-signature layer), moving busy transaction jobs onto asynchronous message queues, and building new services as parts of the monolith are split out. I standardised the PPOB biller integrations — hundreds of service types and thousands of products — behind one internal schema and one abstract interface, which brought adding a new service down from about two weeks to about three days. I also build the tooling that keeps the ledger honest: nightly integrity checks, dry-run-first data patches that can always be reverted, and dispute-resolution tools that turned a 3–5 day case into a matter of hours.
+As a Senior Fullstack Developer at **Singapay** I help maintain a payment gateway core that handles hundreds of thousands of transactions a day. Day to day that means bank integrations under **SNAP** (Bank Indonesia's open-API payment standard, including the access-token and request-signature layer), moving busy transaction jobs onto asynchronous message queues, and building new services in Go as parts of the PHP monolith are split out. Releases go out with blue-green deployment, so the gateway needs no downtime window, on infrastructure that runs on Huawei Cloud with Alibaba Cloud as the disaster-recovery site. I standardised the PPOB biller integrations — hundreds of service types and thousands of products — behind one internal schema and one abstract interface, which brought adding a new service down from about two weeks to about three days. I now handle the PPOB project, working from Indonesia with a team that is almost entirely in Shanghai. Our bank integrations cover six banks directly, with dozens more reached through vendors. I also build the tooling that keeps the ledger honest: nightly integrity checks, dry-run-first data patches that can always be reverted, and dispute-resolution tools that turned a 3–5 day case into a matter of hours.
+
+Outside the day job I contribute to **Anveesa**, a suite of open-source developer tools (a database studio, database management, an AI retrieval tool and cloud storage), mostly on the front end in Vue.
 
 ## AI, knowledge graphs & RAG
 
@@ -53,9 +55,9 @@ Earlier, outside work, I chaired **Generasi Baru Indonesia (GenBI) Gorontalo** (
 | Year | Award |
 | --- | --- |
 | 2023 | Best Team & Best Local Participant — IPB International Summer Course (AI for Smart Agriculture) |
-| 2021 | 3rd Best Trainer — SIAPIK Trainers Contest, Bank Indonesia |
-| 2020 | 3rd Winner — Startup Idea Competition, Sekolah Startup |
-| 2019 | 1st Winner — Software Engineering, Smart Fest Gorontalo Regency |
+| 2021 | Best Trainer — SIAPIK (Financial Information Recording System), Bank Indonesia |
+| 2020 | Best Idea — Startup Building Competition, BuatStartup COVID-19 Edition |
+| 2019 | 1st Winner — Software Engineering, Smart Fest, Gorontalo Regency KOMINFO |
 | 2019 | 3rd Winner — UKSW FIT National Web Programming Competition |
 | 2018 | 6th Winner — UKSW FIT National Web Programming Competition |
 | 2017 | Finalist — National Graphic Design Competition UNITY-UNY |
