@@ -7,6 +7,7 @@ const kinds = [
   { value: 'all', label: 'All' },
   { value: 'work', label: 'Work' },
   { value: 'education', label: 'Education' },
+  { value: 'organization', label: 'Organization' },
 ] as const
 const kind = ref<(typeof kinds)[number]['value']>('all')
 const expanded = ref<number | null>(0)

@@ -32,11 +32,11 @@ export default defineAppConfig({
 
   // Capabilities, grouped by what they enable — not a giant tech list.
   skills: [
-    { group: 'Backend', note: 'APIs, services, transaction flows', items: ['PHP / Laravel', 'Node.js / NestJS', 'Python / FastAPI', 'REST APIs'] },
-    { group: 'Frontend', note: 'Interfaces that stay maintainable', items: ['Vue / Nuxt', 'TypeScript', 'Livewire', 'Tailwind CSS'] },
-    { group: 'Data', note: 'Storage, analysis, visualization', items: ['PostgreSQL', 'MySQL', 'Redis', 'SPARQL / RDF', 'Plotly'] },
-    { group: 'AI', note: 'From research to usable tools', items: ['RAG', 'LLM apps', 'Knowledge graphs', 'Network analysis', 'Classic ML'] },
-    { group: 'Infrastructure', note: 'Shipping and keeping it running', items: ['Docker', 'CI/CD', 'Linux', 'Git'] },
+    { group: 'Backend', note: 'APIs, services, transaction flows', items: ['PHP / Laravel', 'Go (GoFiber, Gin, go-zero)', 'Node.js / NestJS (TypeScript)', 'Python / FastAPI', 'REST APIs · SNAP bank integration', 'Kafka · Redis queues'] },
+    { group: 'Frontend', note: 'Interfaces that stay maintainable', items: ['React / Next.js', 'Vue / Nuxt', 'TypeScript', 'Livewire', 'Tailwind CSS', 'PWA'] },
+    { group: 'Data', note: 'Storage, analysis, visualization', items: ['PostgreSQL', 'MySQL', 'MongoDB · Neo4j', 'Redis', 'SPARQL / RDF', 'Pandas · Plotly', 'Ledger reconciliation'] },
+    { group: 'AI', note: 'From research to usable tools', items: ['RAG (pgvector)', 'LLM apps (Gemini, LangChain)', 'Tool calling', 'Prompt-injection guardrails', 'Knowledge graphs', 'Network analysis', 'Classic ML'] },
+    { group: 'Infrastructure', note: 'Shipping and keeping it running', items: ['Docker', 'CI/CD (GitHub Actions, Jenkins)', 'Blue-green deployment', 'Huawei Cloud · Alibaba Cloud', 'Kubernetes (deploy & operate)', 'Linux', 'Git'] },
     { group: 'Design', note: 'Brand, UI, and illustration', items: ['Figma', 'Illustrator', 'Photoshop', 'Design systems'] },
   ],
 

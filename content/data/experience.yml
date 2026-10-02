@@ -1,12 +1,46 @@
 # Professional history, newest first. `project` links to /work/<slug> when a case study exists.
 items:
-  - company: SingaPay
-    role: Software Engineer
-    period: 2025 — Present
+  - company: Singapay
+    role: Senior Fullstack Developer
+    period: Jan 2025 — Present
+    location: Tangerang
     kind: work
-    summary: Building payment systems — payment gateway, B2B/B2C flows and APIs.
+    summary: Building payment systems — payment gateway, PPOB, B2B/B2C flows and APIs.
     highlights:
-      - Backend services for payment processing and integrations.
+      - Maintain the payment gateway core, handling hundreds of thousands of transactions a day.
+      - Bank integrations under SNAP (Bank Indonesia's open-API standard), including the access-token and request-signature layer.
+      - Standardised PPOB biller integrations behind one schema and one interface — adding a new service went from about two weeks to about three days.
+      - Moved busy transaction jobs onto Kafka and Redis queues; Go microservices as parts of the PHP monolith are split out.
+      - Ledger integrity checks, revertible data patches and dispute-resolution tooling (Python, Laravel).
+      - Payment Link front end in React; code review and onboarding new engineers.
+  - company: Anveesa (open source)
+    role: Contributor
+    period: Apr 2026 — Present
+    kind: work
+    summary: A suite of open-source developer tools — database studio, database management, AI retrieval (RAG) and cloud storage.
+    highlights:
+      - Front-end contributions in Vue.
+  - company: Bank Indonesia — Regional Department
+    role: Machine Learning Consultant · Lead, TIARA v3 (Contract)
+    period: Jul 2025 — Aug 2025
+    location: Jakarta (remote)
+    kind: work
+    summary: Led development of TIARA v3, Bank Indonesia's AI policy chatbot — architecture, features and end-to-end deployment.
+    highlights:
+      - RAG over PostgreSQL + pgvector with Gemini, plus a pandas table-query tool the model can call.
+      - Self-hosted GLiClass classifier screening incoming prompts for injection attempts.
+      - 88% response accuracy and 100% feature-test success, including out-of-scope handling.
+      - User and admin portals in React / Next.js, with full technical documentation.
+  - company: Bank Indonesia — Regional Department
+    role: Machine Learning Consultant · Lead, RAISA (Contract)
+    period: Oct 2024 — Jan 2025
+    location: Jakarta
+    kind: work
+    summary: Led development of RAISA, a risk-assessment system for transaction data from payment service providers (PJP) and money changers (KUPVA).
+    highlights:
+      - Net Risk Assessment (NRA APU) prediction reaching 95% accuracy with machine learning.
+      - Analytical risk dashboard over 50+ million transactions a month.
+      - Cut manual analysis time by up to 30% through automation.
   - company: PT. Makassar Raya Motor
     role: Software Engineer & Data Analyst (Contract)
     period: Oct 2023 — Jun 2024
@@ -24,6 +58,7 @@ items:
     summary: API modules for a university academic-affairs SaaS.
     highlights:
       - 20+ NestJS API modules and 800+ commits, following SOLID principles.
+      - Written in TypeScript, backed by Supabase.
     project: contag
   - company: IPB University
     role: M.Sc. Computer Science
@@ -43,13 +78,25 @@ items:
     highlights:
       - v1 in 6 months of full-stack development; v2 in 3 months plus 6 months of maintenance.
     project: timemarket
+  - company: Generasi Baru Indonesia (GenBI) Gorontalo
+    role: Chairman
+    period: Aug 2020 — Sep 2021
+    location: Gorontalo
+    kind: organization
+    summary: Led the Bank Indonesia scholarship community — 6 departments and 3 university commissariats.
+    highlights:
+      - 60+ events and routine activities in one year.
+      - Rebuilt the member scoring system; active membership rose to 80%.
+      - Formulated the 2025 vision and designed the chapter's visual identity.
+    project: genbi-branding
   - company: Digimosque
     role: Web Developer (Project based)
-    period: 2022
+    period: Jan 2021 — Jun 2021
     kind: work
     summary: Nearest-mosque search API and the full admin panel.
     highlights:
       - 15-module admin panel in under two months with Livewire.
+      - Unit tests with PHPUnit.
     project: digimosque
   - company: Universitas Negeri Gorontalo
     role: B.Sc. Information Systems
@@ -64,3 +111,11 @@ items:
     location: Gorontalo
     kind: work
     summary: Built Raisa, a web app to monitor regional inflation with early warnings.
+    highlights:
+      - Built in 3 months of full-stack development.
+  - company: Linux Study Group — Gorontalo
+    role: Head of Multimedia Division
+    period: Feb 2017 — Jan 2018
+    location: Gorontalo
+    kind: organization
+    summary: Weekly IT-sharing sessions on graphic design and video editing, plus campus workshops with national speakers.
