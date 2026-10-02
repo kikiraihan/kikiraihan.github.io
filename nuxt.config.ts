@@ -76,7 +76,7 @@ export default defineNuxtConfig({
       // /work → work.html (GitHub Pages serves it without a trailing-slash redirect)
       autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: ['/', '/sitemap.xml', '/robots.txt'],
+      routes: ['/', '/sitemap.xml', '/robots.txt', '/github-contributions.json'],
     },
   },
 

@@ -13,7 +13,8 @@ featured: true
 order: 0
 draft: true
 cover: /images/profile/portrait.jpg
-technologies: [Laravel, PHP, PostgreSQL, Redis]
+# Stack kept generic on purpose (non-disclosable architecture, PRD §25).
+technologies: [Backend services, Relational database, Message queues, Caching]
 metrics:
   - value: "500K–800K"
     label: transactions / day (verify before publishing)

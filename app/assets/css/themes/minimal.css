@@ -135,6 +135,20 @@ html[data-theme="minimal"].dark {
   html[data-theme="minimal"] .ask-btn {
     @apply rounded-full border border-line bg-paper/80 text-sm font-medium shadow-[0_8px_30px_var(--shadow)] backdrop-blur-xl backdrop-saturate-150 transition hover:-translate-y-0.5 active:scale-[0.97];
   }
+
+  /* Layout shell: full-bleed page, no frame in this theme */
+  html[data-theme="minimal"] .site-shell {
+    @apply bg-paper;
+  }
+
+  /* GitHubContributions: rounded squares on the system-green ramp */
+  html[data-theme="minimal"] .contrib-cell {
+    @apply rounded-[3px] bg-paper-2;
+  }
+  html[data-theme="minimal"] .contrib-cell[data-level="1"] { background-color: color-mix(in oklab, var(--accent-2) 30%, var(--paper)); }
+  html[data-theme="minimal"] .contrib-cell[data-level="2"] { background-color: color-mix(in oklab, var(--accent-2) 55%, var(--paper)); }
+  html[data-theme="minimal"] .contrib-cell[data-level="3"] { background-color: color-mix(in oklab, var(--accent-2) 80%, var(--paper)); }
+  html[data-theme="minimal"] .contrib-cell[data-level="4"] { background-color: var(--accent-2); }
 }
 
 /* No fake oblique on headings: the italic second line ("Katili") reads as a gray subtitle instead.

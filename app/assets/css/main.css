@@ -10,6 +10,7 @@
 @import "./themes/editorial.css";
 @import "./themes/retro.css";
 @import "./themes/minimal.css";
+@import "./themes/apple-web-2.css";
 
 @plugin "@tailwindcss/typography";
 

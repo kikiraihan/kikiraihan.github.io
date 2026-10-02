@@ -6,7 +6,7 @@ const { profile } = useAppConfig()
   <section class="container-page mt-32 md:mt-48" aria-labelledby="about-preview">
     <div class="grid gap-10 md:grid-cols-12">
       <p class="eyebrow md:col-span-3">
-        <span class="text-accent">04</span> / About
+        <span class="text-accent">05</span> / About
       </p>
       <div class="md:col-span-9">
         <h2 id="about-preview" v-reveal class="font-serif text-headline">

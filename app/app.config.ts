@@ -30,6 +30,11 @@ export default defineAppConfig({
     { label: 'X / Twitter', icon: 'simple-icons:x', url: 'https://twitter.com/inikikikatili', handle: '@inikikikatili' },
   ],
 
+  // GitHub contribution graph on the home page (data fetched at build time, see server/routes/github-contributions.json.ts).
+  github: {
+    username: 'kikiraihan',
+  },
+
   // Capabilities, grouped by what they enable — not a giant tech list.
   skills: [
     { group: 'Backend', note: 'APIs, services, transaction flows', items: ['PHP / Laravel', 'Go (GoFiber, Gin, go-zero)', 'Node.js / NestJS (TypeScript)', 'Python / FastAPI', 'REST APIs · SNAP bank integration', 'Kafka · Redis queues'] },

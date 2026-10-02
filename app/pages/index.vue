@@ -47,6 +47,15 @@ usePageSeo({
       <CapabilityGrid />
     </section>
 
+    <section class="container-page mt-32 md:mt-48" aria-labelledby="github-activity">
+      <SectionHeading id="github-activity" index="04" eyebrow="GitHub activity" title="Shipping, week after week.">
+        <p>
+          My public contribution graph over the last twelve months — most client work lives in private repos, so this is the visible slice.
+        </p>
+      </SectionHeading>
+      <GitHubContributions />
+    </section>
+
     <AboutPreview />
     <ContactCta />
   </div>
