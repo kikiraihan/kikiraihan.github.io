@@ -18,7 +18,7 @@ const { profile } = useAppConfig()
             and went deep into knowledge graphs and machine learning during my master's at IPB University.
           </p>
           <p>
-            Today I build payment systems and backend services — and I still care about how things look and feel.
+            Today I build payment systems and backend services from Greater Jakarta — and I still care about how things look and feel.
             {{ profile.shortName }} is what most people call me.
           </p>
         </div>

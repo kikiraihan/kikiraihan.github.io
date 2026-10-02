@@ -10,7 +10,9 @@ items:
       - Maintain the payment gateway core, handling hundreds of thousands of transactions a day.
       - Bank integrations under SNAP (Bank Indonesia's open-API standard), including the access-token and request-signature layer.
       - Standardised PPOB biller integrations behind one schema and one interface — adding a new service went from about two weeks to about three days.
-      - Moved busy transaction jobs onto asynchronous message queues; new services as parts of the monolith are split out.
+      - Moved busy transaction jobs onto asynchronous message queues; new payment gateway and PPOB services in Go as parts of the monolith are split out.
+      - Handle the PPOB project with a team almost entirely in Shanghai.
+      - Zero-downtime releases with blue-green deployment, on Huawei Cloud with Alibaba Cloud as the disaster-recovery site.
       - Ledger integrity checks, revertible data patches and dispute-resolution tooling.
       - Payment Link front end; code review and onboarding new engineers.
   - company: Anveesa (open source)
@@ -34,7 +36,7 @@ items:
   - company: Bank Indonesia — Regional Department
     role: Machine Learning Consultant · Lead, RAISA (Contract)
     period: Oct 2024 — Jan 2025
-    location: Jakarta
+    location: Jakarta (onsite)
     kind: work
     summary: Led development of RAISA, a risk-assessment system for transaction data from payment service providers (PJP) and money changers (KUPVA).
     highlights:
@@ -42,9 +44,9 @@ items:
       - Analytical risk dashboard over 50+ million transactions a month.
       - Cut manual analysis time by up to 30% through automation.
   - company: PT. Makassar Raya Motor
-    role: Software Engineer & Data Analyst (Contract)
+    role: Software Engineer & Data Analyst (Remote Contract)
     period: Oct 2023 — Jun 2024
-    location: Makassar
+    location: Makassar (remote)
     kind: work
     summary: Spatial sales intelligence for a Daihatsu dealer group across three provinces.
     highlights:
@@ -52,8 +54,9 @@ items:
       - Plotly dashboards, FastAPI spatial backend and a Livewire web app.
     project: makassar-raya-motor
   - company: Contag School
-    role: Backend Engineer
+    role: Backend Developer (Project based)
     period: Mar 2023 — Oct 2023
+    location: Jakarta
     kind: work
     summary: API modules for a university academic-affairs SaaS.
     highlights:
@@ -62,7 +65,7 @@ items:
     project: contag
   - company: IPB University
     role: M.Sc. Computer Science
-    period: 2021 — 2024
+    period: 2021 — 2023
     location: Bogor
     kind: education
     summary: Computational Intelligence & Optimization. GPA 3.83 / 4.
@@ -92,6 +95,7 @@ items:
   - company: Digimosque
     role: Web Developer (Project based)
     period: Jan 2021 — Jun 2021
+    location: Gorontalo
     kind: work
     summary: Nearest-mosque search API and the full admin panel.
     highlights:
@@ -119,3 +123,12 @@ items:
     location: Gorontalo
     kind: organization
     summary: Weekly IT-sharing sessions on graphic design and video editing, plus campus workshops with national speakers.
+  - company: HEX Studio (@hexstudiogo)
+    role: Graphic & Interface Designer (Independent practice)
+    period: 2016 — Present
+    kind: work
+    summary: Personal design studio taking brand and interface briefs from clients and organisations.
+    highlights:
+      - Brand identities from brief to final mark — Katili Corp, Kotaluwuk.com and the HEX Studio mark.
+      - Responsive interface design for Kongkong, delivered as working front-end code.
+    project: hexstudio-logo

@@ -29,6 +29,10 @@ async function copyEmail() {
     <p class="mt-8 max-w-xl text-lg text-ink-2">
       Hiring, collaborating, or just curious about something I've built — email is the fastest way to reach me.
     </p>
+    <p class="mt-4 flex items-center gap-2 text-sm text-ink-3">
+      <Icon name="lucide:map-pin" class="size-4" aria-hidden="true" />
+      Based in {{ profile.location }} · WIB (UTC+7)
+    </p>
 
     <div class="mt-12 flex flex-wrap items-center gap-3">
       <AppButton :href="`mailto:${profile.email}`" icon="lucide:arrow-up-right" magnetic>

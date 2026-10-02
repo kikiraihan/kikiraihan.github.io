@@ -4,7 +4,7 @@ export default defineAppConfig({
     name: 'Moh. Zulkifli Katili',
     shortName: 'Kiki',
     role: 'Software Engineer',
-    location: 'Gorontalo, Indonesia',
+    location: 'Greater Jakarta, Indonesia',
     email: 'mohzulkiflikatili@gmail.com',
     tagline: 'I build systems, products, and experiences that solve real problems.',
     description:
@@ -25,7 +25,7 @@ export default defineAppConfig({
 
   socials: [
     { label: 'GitHub', icon: 'simple-icons:github', url: 'https://github.com/kikiraihan', handle: '@kikiraihan' },
-    { label: 'LinkedIn', icon: 'simple-icons:linkedin', url: 'https://www.linkedin.com/in/moh-zulkifli-katili-3ba18319a/', handle: 'Moh Zulkifli Katili' },
+    { label: 'LinkedIn', icon: 'simple-icons:linkedin', url: 'https://www.linkedin.com/in/moh-zulkifli-katili/', handle: 'Moh Zulkifli Katili' },
     { label: 'Instagram', icon: 'simple-icons:instagram', url: 'https://www.instagram.com/inikikikatili/', handle: '@inikikikatili' },
     { label: 'X / Twitter', icon: 'simple-icons:x', url: 'https://twitter.com/inikikikatili', handle: '@inikikikatili' },
   ],
@@ -37,12 +37,12 @@ export default defineAppConfig({
 
   // Capabilities, grouped by what they enable — not a giant tech list.
   skills: [
-    { group: 'Backend', note: 'APIs, services, transaction flows', items: ['PHP / Laravel', 'Go (GoFiber, Gin, go-zero)', 'Node.js / NestJS (TypeScript)', 'Python / FastAPI', 'REST APIs · SNAP bank integration', 'Kafka · Redis queues'] },
+    { group: 'Backend', note: 'APIs, services, transaction flows', items: ['PHP / Laravel', 'Go (GoFiber, Gin, go-zero)', 'Node.js / NestJS (TypeScript)', 'Python / FastAPI', 'C++ (CLI utilities)', 'REST APIs · SNAP bank integration', 'Kafka · Redis queues', 'PHPUnit'] },
     { group: 'Frontend', note: 'Interfaces that stay maintainable', items: ['React / Next.js', 'Vue / Nuxt', 'TypeScript', 'Livewire', 'Tailwind CSS', 'PWA'] },
-    { group: 'Data', note: 'Storage, analysis, visualization', items: ['PostgreSQL', 'MySQL', 'MongoDB · Neo4j', 'Redis', 'SPARQL / RDF', 'Pandas · Plotly', 'Ledger reconciliation'] },
-    { group: 'AI', note: 'From research to usable tools', items: ['RAG (pgvector)', 'LLM apps (Gemini, LangChain)', 'Tool calling', 'Prompt-injection guardrails', 'Knowledge graphs', 'Network analysis', 'Classic ML'] },
-    { group: 'Infrastructure', note: 'Shipping and keeping it running', items: ['Docker', 'CI/CD (GitHub Actions, Jenkins)', 'Blue-green deployment', 'Huawei Cloud · Alibaba Cloud', 'Kubernetes (deploy & operate)', 'Linux', 'Git'] },
-    { group: 'Design', note: 'Brand, UI, and illustration', items: ['Figma', 'Illustrator', 'Photoshop', 'Design systems'] },
+    { group: 'Data', note: 'Storage, analysis, visualization', items: ['PostgreSQL', 'MySQL', 'MongoDB · Neo4j', 'Redis', 'SPARQL / RDF', 'Pandas · psycopg2 · Plotly', 'Ledger reconciliation'] },
+    { group: 'AI', note: 'From research to usable tools', items: ['RAG (pgvector)', 'LLM apps (Gemini, LangChain)', 'Tool calling', 'Prompt-injection guardrails', 'Hugging Face open-weights models', 'Knowledge graphs', 'Network analysis', 'Classic ML'] },
+    { group: 'Infrastructure', note: 'Shipping and keeping it running', items: ['Docker', 'CI/CD (GitHub Actions, Jenkins)', 'Blue-green deployment', 'Huawei Cloud · Alibaba Cloud (DRC)', 'Kubernetes (deploy & operate)', 'Linux', 'Git'] },
+    { group: 'Design', note: 'Brand, UI, and illustration', items: ['Brand identity', 'Figma', 'Illustrator', 'Photoshop', 'Design systems'] },
   ],
 
   // Optional live chat (the old site used Crisp). Loaded lazily after user idle; set '' to disable.
