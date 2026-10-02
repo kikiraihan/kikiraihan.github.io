@@ -17,9 +17,11 @@ While studying I built production apps for real clients: **Raisa**, an inflation
 
 I'm working on payment systems — payment gateways, B2B/B2C flows and the APIs around them — where correctness, idempotency and consistency matter more than anything clever.
 
+As a Senior Fullstack Developer at **Singapay** I help maintain a payment gateway core that handles hundreds of thousands of transactions a day. Day to day that means bank integrations under **SNAP** (Bank Indonesia's open-API payment standard, including the access-token and request-signature layer), moving busy transaction jobs onto Kafka topics and Redis queues, and writing Go microservices as parts of the PHP monolith are split out. I standardised the PPOB biller integrations — hundreds of service types and thousands of products — behind one internal schema and one abstract interface, which brought adding a new service down from about two weeks to about three days. I also build the tooling that keeps the ledger honest: nightly integrity checks, dry-run-first data patches that can always be reverted, and dispute-resolution tools that turned a 3–5 day case into a matter of hours.
+
 ## AI, knowledge graphs & RAG
 
-My master's in Computer Science at **IPB University** (Computational Intelligence & Optimization, GPA 3.83) focused on knowledge graphs and network analysis. The thesis became **VektorPedia** and a Scopus-indexed paper. Knowledge graphs are one of the most useful ways to give language models real context, which is why I keep exploring retrieval-augmented generation and LLM tooling.
+My master's in Computer Science at **IPB University** (Computational Intelligence & Optimization, GPA 3.83) focused on knowledge graphs and network analysis. The thesis became **VektorPedia** and a Scopus-indexed paper. Knowledge graphs are one of the most useful ways to give language models real context, which is why I keep exploring retrieval-augmented generation and LLM tooling. That interest turned into production work at Bank Indonesia, where I led two AI projects — see Leadership below.
 
 ## Design background
 
@@ -34,7 +36,12 @@ Before I wrote much code, I designed. I led the multimedia division of the campu
 
 ## Leadership
 
-As chairman of **Generasi Baru Indonesia (GenBI) Gorontalo** (2020–2021), I led 60 activities in a year — community service, entrepreneurship seminars, capacity building — rebuilt the member scoring system, and initiated the community's 2025 vision.
+I have led the development of an AI application twice, both for **Bank Indonesia's Regional Department** in Jakarta:
+
+- **TIARA v3** (2025) — Bank Indonesia's AI policy chatbot. I led it end to end: architecture, features and deployment. Retrieval-augmented generation over PostgreSQL + pgvector with Gemini; a tool that lets the model query tabular data with pandas and return a summary; and a small self-hosted classification model (GLiClass, served on CPU) that screens every incoming prompt for injection attempts before it reaches the main model. Plus user and admin portals in React / Next.js and full technical documentation. The knowledge base reached **88% response accuracy**, with **100% of feature tests passing**, out-of-scope questions included.
+- **RAISA** (2024–2025) — a risk-assessment system for transaction data reported by payment service providers (PJP) and money changers (KUPVA). Machine-learning prediction for the Net Risk Assessment (NRA APU) reaching **95% accuracy**, an analytical dashboard over **50+ million transactions a month**, and automation that cut manual analysis time by **up to 30%**.
+
+Earlier, outside work, I chaired **Generasi Baru Indonesia (GenBI) Gorontalo** (2020–2021): 6 departments and 3 university commissariats, 60+ activities in a year, a rebuilt member scoring system that raised active membership to 80%, and the community's 2025 vision.
 
 ## Publications
 
