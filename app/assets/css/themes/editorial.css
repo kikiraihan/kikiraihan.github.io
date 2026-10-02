@@ -65,4 +65,18 @@
   html[data-theme="editorial"] .ask-btn {
     @apply rounded-full border border-line bg-paper text-sm shadow-lg shadow-black/5 transition hover:-translate-y-0.5 hover:border-ink;
   }
+
+  /* Layout shell: full-bleed page, no frame in this theme */
+  html[data-theme="editorial"] .site-shell {
+    @apply bg-paper;
+  }
+
+  /* GitHubContributions: soft squares on the accent ramp */
+  html[data-theme="editorial"] .contrib-cell {
+    @apply rounded-[2px] bg-paper-2;
+  }
+  html[data-theme="editorial"] .contrib-cell[data-level="1"] { background-color: color-mix(in oklab, var(--accent) 25%, var(--paper)); }
+  html[data-theme="editorial"] .contrib-cell[data-level="2"] { background-color: color-mix(in oklab, var(--accent) 50%, var(--paper)); }
+  html[data-theme="editorial"] .contrib-cell[data-level="3"] { background-color: color-mix(in oklab, var(--accent) 75%, var(--paper)); }
+  html[data-theme="editorial"] .contrib-cell[data-level="4"] { background-color: var(--accent); }
 }

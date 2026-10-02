@@ -10,9 +10,9 @@ items:
       - Maintain the payment gateway core, handling hundreds of thousands of transactions a day.
       - Bank integrations under SNAP (Bank Indonesia's open-API standard), including the access-token and request-signature layer.
       - Standardised PPOB biller integrations behind one schema and one interface — adding a new service went from about two weeks to about three days.
-      - Moved busy transaction jobs onto Kafka and Redis queues; Go microservices as parts of the PHP monolith are split out.
-      - Ledger integrity checks, revertible data patches and dispute-resolution tooling (Python, Laravel).
-      - Payment Link front end in React; code review and onboarding new engineers.
+      - Moved busy transaction jobs onto asynchronous message queues; new services as parts of the monolith are split out.
+      - Ledger integrity checks, revertible data patches and dispute-resolution tooling.
+      - Payment Link front end; code review and onboarding new engineers.
   - company: Anveesa (open source)
     role: Contributor
     period: Apr 2026 — Present

@@ -190,6 +190,20 @@ html[data-theme="retro"].dark {
   html[data-theme="retro"] .ask-btn {
     @apply bg-paper font-pixel text-sm uppercase;
   }
+
+  /* Layout shell: full-bleed page (the pixel grid on body shows through) */
+  html[data-theme="retro"] .site-shell {
+    @apply bg-transparent;
+  }
+
+  /* GitHubContributions: square pixels, coin-yellow → red ramp */
+  html[data-theme="retro"] .contrib-cell {
+    @apply border border-line bg-paper-2;
+  }
+  html[data-theme="retro"] .contrib-cell[data-level="1"] { background-color: color-mix(in oklab, var(--accent-2) 50%, var(--paper)); }
+  html[data-theme="retro"] .contrib-cell[data-level="2"] { background-color: var(--accent-2); }
+  html[data-theme="retro"] .contrib-cell[data-level="3"] { background-color: color-mix(in oklab, var(--accent) 70%, var(--accent-2)); }
+  html[data-theme="retro"] .contrib-cell[data-level="4"] { background-color: var(--accent); }
 }
 
 /* Markdown content: pixel headings need smaller sizes and more line height */

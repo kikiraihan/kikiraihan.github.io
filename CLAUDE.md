@@ -33,15 +33,16 @@ The whole look of the site is a **theme**, chosen by one hardcoded value:
 
 ```ts
 // app/theme.config.ts
-export const themes = ['editorial', 'retro', 'minimal'] as const
-export const activeTheme: ThemeName = 'minimal'   // ← change this and rebuild
+export const themes = ['editorial', 'retro', 'minimal', 'apple-web-2'] as const
+export const activeTheme: ThemeName = 'apple-web-2'   // ← change this and rebuild
 ```
 
 | Theme       | Look                                                                                     |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `editorial` | The original design: Instrument Serif headlines, soft paper colors, rounded pill buttons. |
 | `retro`     | Old-school video game: Press Start 2P pixel font, square corners, hard offset shadows, pixel grid background, CRT scanlines, blinking cursors. |
-| `minimal`   | Clean Apple-like UI à la mobbin.com (current): white / true-black canvas, Inter semibold headlines with tight tracking, gray pill buttons and chips, large radii, frosted header. |
+| `minimal`   | Clean Apple-like UI à la mobbin.com: white / true-black canvas, Inter semibold headlines with tight tracking, gray pill buttons and chips, large radii, frosted header. |
+| `apple-web-2` | Compact designer-portfolio "sheet" (current): the whole site is a white rounded sheet on a gray canvas, small dense Inter type, modest semibold headlines, hairline-bordered cards, small black/white pill buttons, orange accent, green contribution graph. |
 
 ### How it works
 
@@ -81,6 +82,8 @@ theme-specific (shape, border, shadow, font, colors, markers) is defined per the
 | `.status-dot`                         | `HomeHero` eyebrow dot   | shape + animation (pulse / blink)                        |
 | `.prompt`, `.cursor`                  | `HomeHero` typewriter    | prefix (`> `) and cursor glyph (`_` / `█`) via pseudo-elements |
 | `.ask-btn`                            | `AskChat` button         | shape, font, border, shadow                              |
+| `.site-shell`                         | `layouts/default.vue` root | page frame (full-bleed, or apple-web-2's floating sheet) |
+| `.contrib-cell` (+ `[data-level]` 0–4) | `GitHubContributions`   | cell shape and the 5-step color ramp                     |
 
 **Every theme must define every hook** — a missing hook means that element renders unstyled
 (e.g. a button with no background) in that theme.
@@ -115,6 +118,19 @@ table above.
   `.font-serif`; `italic` on headings is neutralised (the gray color carries the contrast instead).
 - Tags are switched to the sans font by an unlayered rule (the template uses `font-mono`).
 - No `.prompt` prefix; the cursor is a thin accent caret. Active nav item is a gray pill.
+
+### apple-web-2 theme notes
+
+- `--canvas` (theme-only variable) is the gray backdrop on `body`; `.site-shell` is the white sheet
+  (`overflow-x: clip`, not `hidden`, so the sticky header keeps working). The header gets matching top radius.
+- `.container-page` is narrowed to `max-w-5xl`; button padding is made compact by an unlayered rule.
+
+## GitHub contributions
+
+`GitHubContributions` (home page) reads `/github-contributions.json`, a server route
+(`server/routes/github-contributions.json.ts`) prerendered at build time from the public
+github-contributions-api.jogruber.de API for `github.username` in `app.config.ts`. If the build can't
+reach it, the JSON is empty and the component retries once from the browser, then shows an empty state.
 
 ## Chat (Crisp)
 
