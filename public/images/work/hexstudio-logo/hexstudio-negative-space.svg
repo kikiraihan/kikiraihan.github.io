@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <title>How the HEXSTUDIO mark spells H, E and X with negative space</title>
+  <rect width="960" height="400" fill="#ffffff"/>
+
+  <!-- H: two red blocks, the gap between them is the crossbar -->
+  <g transform="translate(103 70) scale(0.7)">
+    <rect x="5" y="8" width="150" height="102" fill="#E74C3C"/>
+    <rect x="5" y="160" width="150" height="102" fill="#E74C3C"/>
+    <rect x="-20" y="110" width="200" height="50" fill="none" stroke="#1d1d1f" stroke-width="3" stroke-dasharray="8 6"/>
+    <path d="M-20 -14 V284 M180 -14 V284" stroke="#1d1d1f" stroke-width="3" stroke-dasharray="8 6" fill="none"/>
+  </g>
+
+  <!-- E: one green block, three slots carved out -->
+  <g transform="translate(247 70) scale(0.7)">
+    <rect x="205" y="8" width="255" height="254" fill="#2FAB63"/>
+    <rect x="242" y="42" width="191" height="35" fill="#ffffff" stroke="#1d1d1f" stroke-width="3" stroke-dasharray="8 6"/>
+    <rect x="242" y="120" width="191" height="35" fill="#ffffff" stroke="#1d1d1f" stroke-width="3" stroke-dasharray="8 6"/>
+    <rect x="242" y="195" width="191" height="35" fill="#ffffff" stroke="#1d1d1f" stroke-width="3" stroke-dasharray="8 6"/>
+  </g>
+
+  <!-- X: three blue triangles, the white channels between them cross -->
+  <g transform="translate(358 70) scale(0.7)">
+    <polygon points="550,8 730,8 640,95" fill="#6CB8BE"/>
+    <polygon points="510,45 510,222 605,133" fill="#6CB8BE"/>
+    <polygon points="550,262 730,262 640,178" fill="#6CB8BE"/>
+    <path d="M520 18 L752 254 M520 252 L752 16" stroke="#1d1d1f" stroke-width="3" stroke-dasharray="8 6" fill="none"/>
+  </g>
+
+  <g fill="#1d1d1f" text-anchor="middle">
+    <text x="160" y="300" font-size="40" font-weight="600">H</text>
+    <text x="480" y="300" font-size="40" font-weight="600">E</text>
+    <text x="800" y="300" font-size="40" font-weight="600">X</text>
+  </g>
+  <g fill="#6e6e73" text-anchor="middle" font-size="15">
+    <text x="160" y="332">The gap between two blocks</text>
+    <text x="160" y="352">becomes the crossbar.</text>
+    <text x="480" y="332">Three bars carved out</text>
+    <text x="480" y="352">of one solid block.</text>
+    <text x="800" y="332">The white channels between</text>
+    <text x="800" y="352">the triangles cross.</text>
+  </g>
+  <text x="32" y="40" fill="#6e6e73" font-size="13" letter-spacing="2">NEGATIVE SPACE · DASHED = WHAT THE EYE READS</text>
+</svg>

@@ -30,6 +30,13 @@ export default defineAppConfig({
     { label: 'X / Twitter', icon: 'simple-icons:x', url: 'https://twitter.com/inikikikatili', handle: '@inikikikatili' },
   ],
 
+  // Which kinds of work are shown (Work page, home "Selected work", case-study pages, sitemap).
+  // Set one to false to hide those projects everywhere; links to them elsewhere become plain text.
+  work: {
+    engineering: true,
+    design: true,
+  },
+
   // GitHub contribution graph on the home page (data fetched at build time, see server/routes/github-contributions.json.ts).
   github: {
     username: 'kikiraihan',

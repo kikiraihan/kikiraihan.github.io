@@ -3,7 +3,8 @@ const { data: projects } = await useProjects('featured-projects', { featured: tr
 </script>
 
 <template>
-  <section class="container-page mt-24 md:mt-32" aria-labelledby="selected-work">
+  <!-- hidden when nothing featured is left (e.g. a kind of work switched off in app.config.ts) -->
+  <section v-if="projects?.length" class="container-page mt-24 md:mt-32" aria-labelledby="selected-work">
     <div class="mb-12 flex items-end justify-between gap-6 md:mb-16">
       <div>
         <p class="eyebrow">

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+  <title>The two journeys the Kongkong interface was designed around</title>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#8e8e93"/>
+    </marker>
+  </defs>
+  <rect width="960" height="400" fill="#F4F6F8"/>
+
+  <!-- lane 1: supporters -->
+  <text x="40" y="52" fill="#6e6e73" font-size="12" letter-spacing="2">SUPPORTER · NO ACCOUNT NEEDED</text>
+  <g font-size="15" fill="#1d1d1f">
+    <rect x="40" y="70" width="190" height="96" rx="12" fill="#ffffff" stroke="#dcdfe3"/>
+    <text x="58" y="102" font-weight="600">Search or browse</text>
+    <text x="58" y="126" fill="#6e6e73" font-size="13">One search field, right</text>
+    <text x="58" y="144" fill="#6e6e73" font-size="13">under the headline</text>
+
+    <rect x="270" y="70" width="190" height="96" rx="12" fill="#ffffff" stroke="#dcdfe3"/>
+    <text x="288" y="102" font-weight="600">Scan project cards</text>
+    <text x="288" y="126" fill="#6e6e73" font-size="13">Title, owner, date and</text>
+    <text x="288" y="144" fill="#6e6e73" font-size="13">a funding bar</text>
+
+    <rect x="500" y="70" width="190" height="96" rx="12" fill="#ffffff" stroke="#dcdfe3"/>
+    <text x="518" y="102" font-weight="600">Open a project</text>
+    <text x="518" y="126" fill="#6e6e73" font-size="13">The story behind the</text>
+    <text x="518" y="144" fill="#6e6e73" font-size="13">proposal</text>
+
+    <rect x="730" y="70" width="190" height="96" rx="12" fill="#007BFF"/>
+    <text x="748" y="102" font-weight="600" fill="#ffffff">Support it</text>
+    <text x="748" y="126" fill="#dbeafe" font-size="13">The one action the</text>
+    <text x="748" y="144" fill="#dbeafe" font-size="13">page exists for</text>
+  </g>
+  <g stroke="#8e8e93" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="232" y1="118" x2="266" y2="118"/>
+    <line x1="462" y1="118" x2="496" y2="118"/>
+    <line x1="692" y1="118" x2="726" y2="118"/>
+  </g>
+
+  <!-- lane 2: students and student organisations -->
+  <text x="40" y="232" fill="#6e6e73" font-size="12" letter-spacing="2">STUDENT / STUDENT ORGANISATION · SIGNED IN</text>
+  <g font-size="15" fill="#1d1d1f">
+    <rect x="40" y="250" width="190" height="96" rx="12" fill="#ffffff" stroke="#dcdfe3"/>
+    <text x="58" y="282" font-weight="600">Log in</text>
+    <text x="58" y="306" fill="#6e6e73" font-size="13">Always one tap away</text>
+    <text x="58" y="324" fill="#6e6e73" font-size="13">in the bottom bar</text>
+
+    <rect x="270" y="250" width="190" height="96" rx="12" fill="#ffffff" stroke="#dcdfe3"/>
+    <text x="288" y="282" font-weight="600">Profile</text>
+    <text x="288" y="306" fill="#6e6e73" font-size="13">Who they are, links,</text>
+    <text x="288" y="324" fill="#6e6e73" font-size="13">and an activity summary</text>
+
+    <rect x="500" y="250" width="190" height="96" rx="12" fill="#007BFF"/>
+    <text x="518" y="282" font-weight="600" fill="#ffffff">New proposal</text>
+    <text x="518" y="306" fill="#dbeafe" font-size="13">Centre "+" tab on</text>
+    <text x="518" y="324" fill="#dbeafe" font-size="13">mobile, top button on web</text>
+
+    <rect x="730" y="250" width="190" height="96" rx="12" fill="#ffffff" stroke="#dcdfe3"/>
+    <text x="748" y="282" font-weight="600">Track progress</text>
+    <text x="748" y="306" fill="#6e6e73" font-size="13">Proposal · Event · Wait</text>
+    <text x="748" y="324" fill="#6e6e73" font-size="13">counts at a glance</text>
+  </g>
+  <g stroke="#8e8e93" stroke-width="1.5" marker-end="url(#arrow)">
+    <line x1="232" y1="298" x2="266" y2="298"/>
+    <line x1="462" y1="298" x2="496" y2="298"/>
+    <line x1="692" y1="298" x2="726" y2="298"/>
+  </g>
+  <text x="40" y="380" fill="#8e8e93" font-size="12">Filled box = the primary action of each journey.</text>
+</svg>

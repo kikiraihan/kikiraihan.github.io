@@ -8,17 +8,20 @@ const route = useRoute()
 const router = useRouter()
 const { data: projects } = await useProjects('all-projects')
 
-const filters = [
+const workTypes = useWorkTypes()
+const allFilters = [
   { value: 'all', label: 'All' },
   { value: 'engineering', label: 'Engineering' },
   { value: 'design', label: 'Design' },
 ] as const
-type Filter = (typeof filters)[number]['value']
+type Filter = (typeof allFilters)[number]['value']
+// Kinds switched off in app.config.ts (`work`) get no button; with a single kind left the filter is hidden.
+const filters = allFilters.filter(f => f.value === 'all' || workTypes.includes(f.value))
 
 // Filter lives in the URL (?type=design) so it is shareable and old /design links land here.
 const active = computed<Filter>(() => {
   const t = route.query.type
-  return t === 'engineering' || t === 'design' ? t : 'all'
+  return (t === 'engineering' || t === 'design') && workTypes.includes(t) ? t : 'all'
 })
 const setFilter = (value: Filter) => router.replace({ query: value === 'all' ? {} : { type: value } })
 
@@ -34,7 +37,7 @@ const count = (value: Filter) => (projects.value ?? []).filter(p => value === 'a
       <p>Each project explains the problem, the constraints, what was built, and what I personally contributed.</p>
     </SectionHeading>
 
-    <div class="mb-12 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
+    <div v-if="filters.length > 2" class="mb-12 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
       <button
         v-for="f in filters"
         :key="f.value"
@@ -50,6 +53,7 @@ const count = (value: Filter) => (projects.value ?? []).filter(p => value === 'a
 
     <TransitionGroup
       tag="div"
+      :class="{ 'mt-12': filters.length <= 2 }"
       class="grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3"
       move-class="transition duration-500"
       enter-active-class="transition duration-500"

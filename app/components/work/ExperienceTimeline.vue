@@ -2,6 +2,7 @@
 // Interactive career timeline: filter by kind, expand an entry for highlights.
 const props = withDefaults(defineProps<{ limit?: number, filters?: boolean }>(), { limit: undefined, filters: true })
 const { data } = await useExperience()
+const { data: hiddenProjects } = await useHiddenProjectSlugs()
 
 const kinds = [
   { value: 'all', label: 'All' },
@@ -78,7 +79,7 @@ const items = computed(() => {
                     <span class="mt-2 size-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />{{ h }}
                   </li>
                 </ul>
-                <NuxtLink v-if="item.project" :to="`/work/${item.project}`" class="link-underline mt-4 inline-flex items-center gap-1 text-ink">
+                <NuxtLink v-if="item.project && !hiddenProjects.includes(item.project)" :to="`/work/${item.project}`" class="link-underline mt-4 inline-flex items-center gap-1 text-ink">
                   Read the case study <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
                 </NuxtLink>
               </div>
