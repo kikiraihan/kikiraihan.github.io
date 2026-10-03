@@ -3,15 +3,17 @@ import { queryCollection } from '@nuxt/content/server'
 // Prerendered to /sitemap.xml at build time.
 export default defineEventHandler(async (event) => {
   const { siteUrl } = useRuntimeConfig(event).public
+  const { work } = useAppConfig()
 
   const [projects, articles] = await Promise.all([
-    queryCollection(event, 'projects').where('draft', '=', false).select('path').all(),
+    queryCollection(event, 'projects').where('draft', '=', false).select('path', 'type').all(),
     queryCollection(event, 'writing').where('draft', '=', false).select('path', 'date').all(),
   ])
 
   const urls: { path: string, lastmod?: string }[] = [
     ...['/', '/work', '/about', '/writing', '/lab', '/contact'].map(path => ({ path })),
-    ...projects.map(p => ({ path: p.path.replace(/^\/projects/, '/work') })),
+    // only the kinds of work switched on in app.config.ts (`work`)
+    ...projects.filter(p => work?.[p.type ?? 'engineering'] !== false).map(p => ({ path: p.path.replace(/^\/projects/, '/work') })),
     ...articles.map(a => ({ path: a.path, lastmod: a.date })),
   ]
 

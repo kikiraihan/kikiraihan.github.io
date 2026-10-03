@@ -6,7 +6,8 @@ const { data: project } = await useAsyncData(`project-${slug}`, () =>
   queryCollection('projects').path(`/projects/${slug}`).first(),
 )
 
-if (!project.value || project.value.draft) {
+// Drafts and kinds of work switched off in app.config.ts (`work`) are not published.
+if (!project.value || project.value.draft || !useWorkTypes().includes(project.value.type ?? 'engineering')) {
   throw createError({ statusCode: 404, statusMessage: 'Project not found', fatal: true })
 }
 

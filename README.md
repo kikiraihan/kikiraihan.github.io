@@ -24,7 +24,8 @@ app/
 │   ├── layout/            # SiteHeader, SiteFooter, ThemeToggle, ImageLightbox, AskChat
 │   ├── home/              # HomeHero, SelectedWork, AboutPreview, ContactCta
 │   ├── work/              # ProjectCard, ExperienceTimeline, CapabilityGrid
-│   └── content/           # usable inside Markdown: Gallery, MetricGrid, ArchitectureExplorer, ProseImg
+│   └── content/           # usable inside Markdown: Gallery, MetricGrid, ArchitectureExplorer, ProseImg,
+│                          #   ColorPalette, SymbolExplorer, ProcessSteps (design case studies), ProseA
 ├── composables/           # useColorScheme, useLightbox, useTypewriter, usePageSeo, useContentQueries
 ├── plugins/motion.ts      # v-reveal (scroll reveal) and v-magnetic directives
 ├── utils/                 # motion (lazy GSAP), content helpers (reading time, dates)
@@ -94,7 +95,48 @@ images:
 ::
 ```
 
-Plain Markdown images `![alt](/images/…)` are optimised and open in the lightbox automatically.
+Plain Markdown images `![alt](/images/…)` are optimised and open in the lightbox automatically
+(`.svg` diagrams are served as-is, not rasterised).
+
+**Design case studies** have extra blocks for breaking a piece down (see `content/projects/genbi-branding.md`):
+
+```md
+::process-steps
+---
+steps:
+  - { title: Words first, text: "What happened in this step." }
+---
+::
+
+::color-palette
+---
+colors:
+  - { hex: "#184E78", name: Navy, role: Symbols and headings }   # click a swatch to copy the hex
+---
+::
+
+::symbol-explorer
+---
+items:
+  - { src: /images/work/my-project/symbols/a.png, label: Name, meaning: What it stands for. }
+---
+::
+
+::gallery
+---
+fit: contain        # show the whole image (logos, crops); small crops are never upscaled
+cols: 3             # optional, default 2
+images:
+  - { src: /images/work/my-project/detail.png, alt: Hover label, caption: Always-visible caption. }
+---
+::
+```
+
+Quote YAML values that contain a comma or a colon (`text: "A, B: C"`), otherwise the flow mapping splits them.
+
+**Show / hide engineering or design work** — `work.engineering` / `work.design` in `app/app.config.ts` (both `true` by default).
+A kind switched off disappears from the Work page (its filter button too), home "Selected work", its case-study pages
+(not generated) and the sitemap; links to those projects from Markdown, the experience timeline and the Lab render as plain text.
 
 **Article** — `content/writing/slug.md` with `title`, `description`, `date`, `tags`, optional `cover` and `lang: id` for Indonesian posts. Reading time and related articles (by shared tags) are computed.
 

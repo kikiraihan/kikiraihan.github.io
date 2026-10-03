@@ -4,6 +4,7 @@ usePageSeo({
   description: 'Experiments in machine learning, knowledge graphs, interfaces and illustration.',
 })
 const { data } = await useAsyncData('lab', () => queryCollection('lab').first())
+const { data: hiddenProjects } = await useHiddenProjectSlugs()
 const isInternal = (url?: string) => !!url && url.startsWith('/')
 </script>
 
@@ -38,10 +39,10 @@ const isInternal = (url?: string) => !!url && url.startsWith('/')
             {{ item.kind }} · {{ item.year }}
           </p>
           <h2 class="mt-2 font-serif text-3xl">
-            <NuxtLink v-if="isInternal(item.url)" :to="item.url" class="after:absolute after:inset-0">
+            <NuxtLink v-if="isInternal(item.url) && !isHiddenWorkLink(item.url, hiddenProjects)" :to="item.url" class="after:absolute after:inset-0">
               {{ item.title }}
             </NuxtLink>
-            <a v-else-if="item.url" :href="item.url" target="_blank" rel="noopener" class="after:absolute after:inset-0">{{ item.title }}</a>
+            <a v-else-if="item.url && !isInternal(item.url)" :href="item.url" target="_blank" rel="noopener" class="after:absolute after:inset-0">{{ item.title }}</a>
             <template v-else>
               {{ item.title }}
             </template>

@@ -125,6 +125,20 @@ table above.
   (`overflow-x: clip`, not `hidden`, so the sticky header keeps working). The header gets matching top radius.
 - `.container-page` is narrowed to `max-w-5xl`; button padding is made compact by an unlayered rule.
 
+## Work visibility
+
+`work: { engineering, design }` in `app.config.ts` (both default `true`) picks which kinds of projects are published.
+Always query projects through `useProjects()` (`app/composables/useContentQueries.ts`), which applies it; `[slug].vue`
+404s a switched-off kind, `sitemap.xml` filters it, and links to hidden projects (Markdown via `ProseA`, `ExperienceTimeline`,
+the Lab page) go through `useHiddenProjectSlugs()` / `isHiddenWorkLink()` so the prerender crawler never hits a 404.
+
+## Design case studies
+
+Design projects use extra Markdown components on top of `gallery`: `process-steps`, `color-palette` (brand hex values are
+content, so swatches use inline styles), `symbol-explorer`, and `gallery` with `fit: contain` / `cols: 3` / per-image
+`caption`. Crops of an original image live next to it in `public/images/work/<slug>/`; new diagrams are SVGs there too
+(served as-is by `ProseImg`). Quote YAML values that contain a comma or colon.
+
 ## GitHub contributions
 
 `GitHubContributions` (home page) reads `/github-contributions.json`, a server route
