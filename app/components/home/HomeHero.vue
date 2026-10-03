@@ -43,7 +43,7 @@ onMounted(async () => {
 
         <div class="hero-in mt-10 flex flex-wrap gap-3" style="--d: 480ms">
           <AppButton to="/work" icon="lucide:arrow-right" magnetic>
-            View selected work
+            See my work
           </AppButton>
           <AppButton to="/about" variant="outline">
             About me

@@ -8,7 +8,7 @@ const year = new Date().getFullYear()
     <div class="container-page grid gap-10 py-12 md:grid-cols-12">
       <div class="md:col-span-6">
         <p class="font-serif text-3xl leading-tight">
-          Intellectual power &amp; technical prowess.
+          Systems that hold up. Interfaces people enjoy.
         </p>
         <a :href="`mailto:${profile.email}`" class="link-underline mt-4 inline-block text-ink-2 hover:text-ink">
           {{ profile.email }}

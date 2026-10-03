@@ -3,12 +3,12 @@ export default defineAppConfig({
   profile: {
     name: 'Moh. Zulkifli Katili',
     shortName: 'Kiki',
-    role: 'Software Engineer',
+    role: 'Senior Fullstack Engineer',
     location: 'Greater Jakarta, Indonesia',
     email: 'mohzulkiflikatili@gmail.com',
-    tagline: 'I build systems, products, and experiences that solve real problems.',
+    tagline: 'Software engineer for payments, data and AI — with a designer\'s eye for the interface.',
     description:
-      'Software engineer combining backend engineering, product thinking, AI, and visual design. Payments, data, knowledge graphs, and interfaces people enjoy using.',
+      'I\'m a software engineer in Greater Jakarta. By day I build payment systems; the rest of the time I\'m bringing AI, data and design into what I make.',
     portrait: '/images/profile/portrait.jpg',
     avatar: '/images/profile/avatar.webp',
     // Rotating words in the hero (ported from the old Typed.js animation).

@@ -47,9 +47,9 @@ onMounted(() => {
     target="_blank"
     rel="noopener noreferrer"
     class="ask-btn fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 px-4 py-2.5"
-    aria-label="Ask something on WhatsApp"
+    aria-label="Chat with me on WhatsApp"
   >
     <Icon name="simple-icons:whatsapp" class="size-4" aria-hidden="true" />
-    Ask something
+    Chat with me
   </a>
 </template>
