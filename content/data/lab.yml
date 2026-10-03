@@ -1,10 +1,11 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
-  - title: This website
-    kind: UI · Motion
+  - title: ASCII playground
+    kind: Game
     year: 2026
-    description: Nuxt 4 + Nuxt Content, an architecture explorer for case studies, and motion that switches off with prefers-reduced-motion.
-    tags: [Nuxt, GSAP, Tailwind]
+    description: A small browser game rendered entirely in ASCII characters.
+    tags: [ASCII, Game]
+    url: https://katili.dev/playground-ascii
   - title: Melon leaf clustering
     kind: Machine learning
     year: 2023
