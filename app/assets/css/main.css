@@ -125,13 +125,13 @@
  * Screenshots and artwork are mostly bright and saturated; in dark mode they are
  * toned down slightly (not grayscale) so they sit in the interface instead of glaring.
  * Full color returns on hover/focus of the card or tile, and always in the lightbox.
- * Leaning monochrome (~45% desaturated) so screenshots blend with the dark neutrals;
+ * Nearly monochrome (~75% desaturated) so screenshots blend with the dark neutrals;
  * `filter` is GPU-composited, so it costs no extra requests and practically no render time.
  * Unlayered on purpose: `transition-property` must add `filter` to the utilities'
  * `transition-transform` without replacing their duration/easing.
  * ------------------------------------------------------------------------- */
 .dark :where(img, video) {
-  filter: saturate(0.55) brightness(0.85) contrast(1.05);
+  filter: saturate(0.25) brightness(0.85) contrast(1.05);
   transition-property: transform, filter;
 }
 .dark :where(.group, a, button):is(:hover, :focus-visible) :where(img, video),
