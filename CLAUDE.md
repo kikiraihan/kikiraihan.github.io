@@ -19,7 +19,7 @@ Keep `package-lock.json` in sync when adding dependencies (`npm ci` fails otherw
 
 ## Conventions
 
-- Site data (profile, nav, socials, Crisp id) lives in `app/app.config.ts`, not in components.
+- Site data (profile, nav, socials, chat provider, Crisp id) lives in `app/app.config.ts`, not in components.
 - Components use flat names (`<ProjectCard>`); folders under `app/components/` are only for organisation.
 - Fonts are self-hosted via `@fontsource*` packages — no third-party font/CDN requests.
 - Colors are always token utilities (`bg-paper`, `text-ink-2`, `border-line`, `text-accent`, …), never raw hex
@@ -132,8 +132,11 @@ table above.
 github-contributions-api.jogruber.de API for `github.username` in `app.config.ts`. If the build can't
 reach it, the JSON is empty and the component retries once from the browser, then shows an empty state.
 
-## Chat (Crisp)
+## Chat ("Ask something")
 
-`app/components/layout/AskChat.vue` lazy-loads Crisp only when the visitor clicks "Ask something". Crisp's
-own launcher is hidden (`chat:hide` on `chat:closed`) so our button is always the entry point; it is shown
-again on `message:received`. Don't remove that, or Crisp's default bubble replaces the custom button.
+`app/components/layout/AskChat.vue` is the floating chat entry point; `askChat.provider` in `app.config.ts` picks it:
+
+- `'whatsapp'` (default): our own button with the `.ask-btn` theme hook, linking to `wa.me/<askChat.whatsapp.number>`
+  with a pre-filled message. Hidden while the number is empty.
+- `'crisp'`: no button of ours — Crisp is loaded once the browser is idle and shows its own launcher. Don't restyle or
+  hide Crisp's widget; its look is managed in the Crisp dashboard.

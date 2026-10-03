@@ -15,7 +15,7 @@ npm run lint && npm run typecheck
 
 ```text
 app/
-├── app.config.ts          # profile, nav, socials, skills, typed words, Crisp id  ← edit here
+├── app.config.ts          # profile, nav, socials, skills, typed words, chat (WhatsApp/Crisp)  ← edit here
 ├── assets/css/main.css    # Tailwind + design tokens (colors, fonts, type scale, motion)
 ├── assets/css/themes/     # one CSS file per theme (editorial, retro, minimal) — see CLAUDE.md → Theming
 ├── theme.config.ts        # active theme (hardcoded)  ← switch themes here
@@ -107,7 +107,7 @@ Plain Markdown images `![alt](/images/…)` are optimised and open in the lightb
 | Typed.js "I make …" | `useTypewriter` (no dependency; static when reduced motion) |
 | `darkmode.js` + many `!important` overrides | `.dark` class + CSS tokens; same `localStorage("color-scheme")` key, no flash on load |
 | Click image → `#previewContainer` | `ImageLightbox` (native `<dialog>`: Esc, focus trap) |
-| Crisp chat on every page | "Ask something" button — Crisp loads only when clicked |
+| Crisp chat on every page | "Ask something": WhatsApp button by default, or Crisp (loaded when idle) via `askChat.provider` |
 | `/projects`, `/design`, `/resume`, `/blogs` | Redirects to `/work`, `/work?type=design`, `/about`, `/writing` |
 | Google Translate widget | Removed (was mostly disabled) |
 
