@@ -52,7 +52,7 @@ export default defineAppConfig({
     provider: 'whatsapp' as 'whatsapp' | 'crisp',
     whatsapp: {
       // international format, digits only (e.g. '6281234567890'); '' hides the button
-      number: '',
+      number: '6282291501085',
       // pre-filled first message
       message: 'Hi Kiki, I came across your website and would like to ask something.',
     },
