@@ -45,6 +45,20 @@ export default defineAppConfig({
     { group: 'Design', note: 'Brand, UI, and illustration', items: ['Brand identity', 'Figma', 'Illustrator', 'Photoshop', 'Design systems'] },
   ],
 
+  // Floating "Ask something" entry point (app/components/layout/AskChat.vue).
+  // - 'whatsapp' (default): our own theme-styled button that opens a WhatsApp chat with `whatsapp.number`.
+  // - 'crisp': Crisp's own launcher bubble, loaded when the browser is idle, with Crisp's styling untouched.
+  askChat: {
+    provider: 'whatsapp' as 'whatsapp' | 'crisp',
+    whatsapp: {
+      // international format, digits only (e.g. '6281234567890'); '' hides the button
+      number: '6282291501085',
+      // pre-filled first message
+      message: 'Hi Kiki, I came across your website and would like to ask something.',
+    },
+  },
+
   // Optional live chat (the old site used Crisp). Loaded lazily after user idle; set '' to disable.
+  // Used only when askChat.provider is 'crisp'.
   crispWebsiteId: '3dea4f52-4980-41f6-abc6-6146629b7981',
 })
