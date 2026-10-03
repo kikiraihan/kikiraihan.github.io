@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 430" font-family="Inter, system-ui, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Content plan to draft article flow</title>
+  <desc id="d">Claude Code on a laptop or the web calls a small token-protected API on katili.dev through a bash script. One subagent per article reads the guide, the item prompt and its references, writes the JSON, validates it and imports it as a draft.</desc>
+  <rect width="880" height="430" rx="16" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- left column: Claude Code -->
+  <text x="40" y="44" font-size="13" font-weight="600" fill="#888" letter-spacing=".08em">CLAUDE CODE · LAPTOP OR WEB</text>
+  <rect x="40" y="60" width="380" height="58" rx="10" fill="#f4f4f5" stroke="#d4d4d8"/>
+  <text x="58" y="85" font-size="15" font-weight="600" fill="#111">Main session</text>
+  <text x="58" y="105" font-size="13" fill="#444">/generate-blog → pick plan, items, model</text>
+
+  <rect x="40" y="140" width="380" height="250" rx="10" fill="#fff7ed" stroke="#fdba74"/>
+  <text x="58" y="166" font-size="15" font-weight="600" fill="#111">Subagent × 1 per article</text>
+  <text x="58" y="194" font-size="13" fill="#444">1. read writing guide (from the repo)</text>
+  <text x="58" y="218" font-size="13" fill="#444">2. bin/content-plan show &lt;id&gt; → prompt</text>
+  <text x="58" y="242" font-size="13" fill="#444">3. fetch reference URLs</text>
+  <text x="58" y="266" font-size="13" fill="#444">4. write bilingual JSON (id + en)</text>
+  <text x="58" y="290" font-size="13" fill="#444">5. check (dry run) → fix → check</text>
+  <text x="58" y="314" font-size="13" fill="#444">6. import</text>
+  <text x="58" y="350" font-size="13" font-weight="600" fill="#c2410c">replies with ONE line:</text>
+  <text x="58" y="370" font-size="12.5" font-family="ui-monospace, Menlo, monospace" fill="#c2410c">OK 42 | title | #101 (id), #102 (en)</text>
+
+  <!-- right column: server -->
+  <text x="520" y="44" font-size="13" font-weight="600" fill="#888" letter-spacing=".08em">KATILI.DEV · LARAVEL</text>
+  <rect x="520" y="60" width="320" height="58" rx="10" fill="#f4f4f5" stroke="#d4d4d8"/>
+  <text x="538" y="85" font-size="15" font-weight="600" fill="#111">Content Plan API</text>
+  <text x="538" y="105" font-size="13" fill="#444">Bearer token · ?format=text</text>
+
+  <rect x="520" y="140" width="320" height="110" rx="10" fill="#f4f4f5" stroke="#d4d4d8"/>
+  <text x="538" y="166" font-size="15" font-weight="600" fill="#111">POST …/import</text>
+  <text x="538" y="190" font-size="13" fill="#444">lock item · validate JSON</text>
+  <text x="538" y="212" font-size="13" fill="#444">existing blog:import-json</text>
+  <text x="538" y="234" font-size="13" fill="#444">(same path as the admin page)</text>
+
+  <rect x="520" y="280" width="320" height="110" rx="10" fill="#ecfdf5" stroke="#6ee7b7"/>
+  <text x="538" y="306" font-size="15" font-weight="600" fill="#111">Result</text>
+  <text x="538" y="330" font-size="13" fill="#444">2 posts (id + en) as drafts</text>
+  <text x="538" y="352" font-size="13" fill="#444">plan item linked + marked done</text>
+  <text x="538" y="374" font-size="13" fill="#444">I review &amp; publish by hand</text>
+
+  <!-- arrows -->
+  <path d="M420 89H512" stroke="#555" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <text x="430" y="80" font-size="11.5" fill="#666">plans · items</text>
+  <path d="M420 213H512" stroke="#555" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+  <text x="430" y="204" font-size="11.5" fill="#666">show · import</text>
+  <path d="M680 250V272" stroke="#555" stroke-width="1.6" fill="none" marker-end="url(#a)"/>
+</svg>
