@@ -19,6 +19,22 @@ const items = computed(() => {
   const filtered = kind.value === 'all' ? all : all.filter(i => i.kind === kind.value)
   return props.limit ? filtered.slice(0, props.limit) : filtered
 })
+
+// With a limit, the oldest entry is still shown after a "…" gap, so the timeline reads as
+// spanning the whole career rather than just the latest few entries.
+const startOf = (period: string) => {
+  const year = Number(period.match(/\d{4}/)?.[0] ?? 9999)
+  const month = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+    .indexOf(period.slice(0, 3).toLowerCase())
+  return year * 12 + Math.max(month, 0)
+}
+const hiddenCount = computed(() => props.limit ? Math.max((data.value?.items.length ?? 0) - props.limit, 0) : 0)
+const earliest = computed(() => {
+  if (!hiddenCount.value) return null
+  const rest = (data.value?.items ?? []).slice(props.limit)
+  return rest.reduce((a, b) => (startOf(b.period) < startOf(a.period) ? b : a))
+})
+const shown = computed(() => earliest.value ? [...items.value, earliest.value] : items.value)
 </script>
 
 <template>
@@ -38,7 +54,16 @@ const items = computed(() => {
     </div>
 
     <ol class="relative border-l border-line">
-      <li v-for="(item, i) in items" :key="`${item.company}-${item.period}`" class="relative pl-6 md:pl-10">
+      <template v-for="(item, i) in shown" :key="`${item.company}-${item.period}`">
+      <li v-if="earliest && i === items.length" class="relative py-6 pl-6 md:pl-10" aria-hidden="true">
+        <!-- gap marker: breaks the line with "⋮" to show skipped entries -->
+        <span class="absolute -left-[2px] inset-y-0 w-[3px] bg-paper" />
+        <span class="absolute -left-[2px] top-1/2 flex -translate-y-1/2 flex-col gap-1">
+          <span v-for="d in 3" :key="d" class="size-[3px] rounded-full bg-ink-3" />
+        </span>
+        <span class="font-mono text-xs text-ink-3">+{{ hiddenCount - 1 }} more</span>
+      </li>
+      <li class="relative pl-6 md:pl-10">
         <span
           class="absolute -left-[5px] top-7 size-[9px] rounded-full border transition-colors"
           :class="expanded === i ? 'border-accent bg-accent' : 'border-ink-3 bg-paper'"
@@ -86,6 +111,11 @@ const items = computed(() => {
             </div>
           </div>
         </div>
+      </li>
+      </template>
+      <li v-if="$slots.footer" class="relative pl-6 pt-8 md:pl-10">
+        <span class="absolute -left-[5px] top-1/2 mt-4 size-[9px] -translate-y-1/2 rounded-full border border-ink-3 bg-ink-3" aria-hidden="true" />
+        <slot name="footer" />
       </li>
     </ol>
   </div>

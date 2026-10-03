@@ -35,12 +35,13 @@ usePageSeo({
 
     <section class="container-page mt-32 md:mt-48" aria-labelledby="experience">
       <SectionHeading id="experience" index="02" eyebrow="Experience" title="Where I've been building." />
-      <ExperienceTimeline :limit="4" :filters="false" />
-      <div class="mt-10">
-        <AppButton to="/about#about-experience" variant="outline" icon="lucide:arrow-right">
-          See more
-        </AppButton>
-      </div>
+      <ExperienceTimeline :limit="4" :filters="false">
+        <template #footer>
+          <AppButton to="/about#about-experience" variant="outline" icon="lucide:arrow-right">
+            See more
+          </AppButton>
+        </template>
+      </ExperienceTimeline>
     </section>
 
     <section class="container-page mt-32 md:mt-48" aria-labelledby="capabilities">
