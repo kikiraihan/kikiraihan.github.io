@@ -120,6 +120,23 @@
   }
 }
 
+/* ---------------------------------------------------------------------------
+ * Dark mode image tone
+ * Screenshots and artwork are mostly bright and saturated; in dark mode they are
+ * toned down slightly (not grayscale) so they sit in the interface instead of glaring.
+ * Full color returns on hover/focus of the card or tile, and always in the lightbox.
+ * Unlayered on purpose: `transition-property` must add `filter` to the utilities'
+ * `transition-transform` without replacing their duration/easing.
+ * ------------------------------------------------------------------------- */
+.dark :where(img, video) {
+  filter: saturate(0.8) brightness(0.86) contrast(1.04);
+  transition-property: transform, filter;
+}
+.dark :where(.group, a, button):is(:hover, :focus-visible) :where(img, video),
+.dark :where(dialog) :where(img, video) {
+  filter: none;
+}
+
 /* Markdown content (Nuxt Content) */
 .prose-page {
   @apply prose prose-lg max-w-none dark:prose-invert;

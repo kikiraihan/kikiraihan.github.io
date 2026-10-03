@@ -25,6 +25,8 @@ Keep `package-lock.json` in sync when adding dependencies (`npm ci` fails otherw
 - Colors are always token utilities (`bg-paper`, `text-ink-2`, `border-line`, `text-accent`, …), never raw hex
   in templates, so light/dark and themes only swap variable values.
 - Dark mode is class-based (`.dark` on `<html>`, see `useColorScheme` + the head script in `nuxt.config.ts`).
+- In dark mode every `img`/`video` is slightly toned down (`saturate/brightness` filter in `main.css`, "Dark mode image tone"),
+  back to full color on hover/focus of its card and in the lightbox. Images need no extra class for this.
 - Keep existing comments when editing code.
 
 ## Theming
