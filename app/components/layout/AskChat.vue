@@ -10,8 +10,10 @@ const isWhatsApp = computed(() => askChat.provider === 'whatsapp')
 const whatsappUrl = computed(() => {
   const number = askChat.whatsapp.number.replace(/\D/g, '')
   if (!number) return ''
-  const text = askChat.whatsapp.message ? `?text=${encodeURIComponent(askChat.whatsapp.message)}` : ''
-  return `https://wa.me/${number}${text}`
+  const text = askChat.whatsapp.message ? `&text=${encodeURIComponent(askChat.whatsapp.message)}` : ''
+  // api.whatsapp.com directly instead of wa.me: wa.me redirects there cross-origin, and Firefox can
+  // block that redirect in a new tab with NS_ERROR_DOM_COOP_FAILED (WhatsApp sends a COOP header).
+  return `https://api.whatsapp.com/send?phone=${number}${text}`
 })
 
 type CrispWindow = Window & { $crisp?: unknown[][], CRISP_WEBSITE_ID?: string }
@@ -43,7 +45,7 @@ onMounted(() => {
     v-if="isWhatsApp && whatsappUrl"
     :href="whatsappUrl"
     target="_blank"
-    rel="noopener"
+    rel="noopener noreferrer"
     class="ask-btn fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 px-4 py-2.5"
     aria-label="Chat with me on WhatsApp"
   >

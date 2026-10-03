@@ -136,7 +136,8 @@ reach it, the JSON is empty and the component retries once from the browser, the
 
 `app/components/layout/AskChat.vue` is the floating chat entry point; `askChat.provider` in `app.config.ts` picks it:
 
-- `'whatsapp'` (default): our own button with the `.ask-btn` theme hook, linking to `wa.me/<askChat.whatsapp.number>`
+- `'whatsapp'` (default): our own button with the `.ask-btn` theme hook, linking to `api.whatsapp.com/send?phone=<askChat.whatsapp.number>`
+  (not `wa.me`: its cross-origin redirect trips Firefox's COOP check, `NS_ERROR_DOM_COOP_FAILED`)
   with a pre-filled message. Hidden while the number is empty.
 - `'crisp'`: no button of ours — Crisp is loaded once the browser is idle and shows its own launcher. Don't restyle or
   hide Crisp's widget; its look is managed in the Crisp dashboard.
