@@ -99,6 +99,6 @@ function openChat() {
     @click="openChat"
   >
     <Icon :name="loading ? 'lucide:loader-circle' : 'lucide:message-circle'" class="size-4" :class="{ 'animate-spin': loading }" aria-hidden="true" />
-    Ask something
+    Chat with me
   </button>
 </template>

@@ -14,12 +14,11 @@ const { profile } = useAppConfig()
         </h2>
         <div v-reveal="{ delay: 0.1 }" class="mt-8 grid gap-6 text-ink-2 md:grid-cols-2">
           <p>
-            I started as a graphic designer in a campus open-source community, moved into web development,
+            {{ profile.shortName }} is what most people call me. I started as a graphic designer in a campus open-source community, moved into web development,
             and went deep into knowledge graphs and machine learning during my master's at IPB University.
           </p>
           <p>
             Today I build payment systems and backend services from Greater Jakarta — and I still care about how things look and feel.
-            {{ profile.shortName }} is what most people call me.
           </p>
         </div>
         <AppButton v-reveal="{ delay: 0.2 }" to="/about" variant="ghost" icon="lucide:arrow-right" class="mt-6 -ml-5">

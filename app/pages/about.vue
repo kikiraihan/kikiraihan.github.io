@@ -50,7 +50,7 @@ usePageSeo({
     </section>
 
     <section class="container-page mt-32" aria-labelledby="about-tools">
-      <SectionHeading id="about-tools" eyebrow="Tools I use" title="Capabilities, grouped." />
+      <SectionHeading id="about-tools" eyebrow="Capabilities" title="Capabilities, grouped." />
       <CapabilityGrid />
     </section>
 
