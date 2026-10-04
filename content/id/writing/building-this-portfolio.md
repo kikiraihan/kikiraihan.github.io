@@ -1,18 +1,18 @@
 ---
 title: Membangun ulang portofolio saya dengan Nuxt 4 dan Nuxt Content
-description: Mengapa saya pindah dari tema Hugo ke Nuxt, dan bagaimana konten, gambar, dan animasi diatur sehingga menambah proyek cukup dengan satu file Markdown.
+description: Kenapa saya pindah dari tema Hugo ke Nuxt, dan bagaimana content, image, serta animasinya saya susun supaya menambah project cukup dengan satu file Markdown.
 date: 2026-09-29
 original: en
 tags: [Engineering, Nuxt, Desain]
 ---
 
-Situs lama saya adalah tema Hugo dengan Bootstrap, beberapa script inline, dan banyak `!important` untuk dark mode. Situs itu berfungsi, tapi menambah proyek berarti menyalin tabel gambar dalam Markdown sambil berharap layoutnya tetap rapi.
+Situs lama saya memakai tema Hugo berbasis Bootstrap, ditambah beberapa inline script dan segudang `!important` demi dark mode. Situsnya jalan, tapi setiap kali menambah project saya harus meng-copy tabel gambar di Markdown sambil berharap layout-nya tidak berantakan.
 
-Tujuan pembangunan ulang ini: **konten terpisah dari tampilan**, dan sebuah situs yang dengan sendirinya menjadi salah satu karya portofolio.
+Target rebuild ini: **content terpisah dari presentation**, dan situsnya sendiri bisa jadi salah satu karya di portofolio.
 
-## Konten adalah sumber kebenaran
+## Content sebagai source of truth
 
-Setiap proyek adalah satu file Markdown. Front-matter divalidasi dengan skema, jadi field yang hilang akan menggagalkan build alih-alih merusak halaman.
+Setiap project cukup satu file Markdown. Front-matter-nya divalidasi dengan schema, jadi kalau ada field yang lupa diisi, build-nya yang gagal — bukan halamannya yang rusak.
 
 ```ts
 // content.config.ts
@@ -30,11 +30,11 @@ projects: defineCollection({
 }),
 ```
 
-Menambahkan `content/projects/my-project.md` otomatis membuat `/work/my-project` — tanpa mengubah komponen apa pun.
+Cukup tambahkan `content/projects/my-project.md`, halaman `/work/my-project` langsung tersedia — tanpa menyentuh satu component pun.
 
-## Komponen di dalam Markdown
+## Component langsung di Markdown
 
-Studi kasus memakai beberapa komponen langsung dari Markdown, misalnya architecture explorer dan metrik yang beranimasi:
+Case study bisa memanggil component langsung dari Markdown, misalnya architecture explorer dan animated metrics:
 
 ```md
 ::architecture-explorer{:nodes="architecture"}
@@ -44,10 +44,10 @@ Studi kasus memakai beberapa komponen langsung dari Markdown, misalnya architect
 ::
 ```
 
-## Animasi, tapi hanya saat membantu
+## Animasi secukupnya, hanya kalau membantu
 
-Satu library animasi (GSAP), dimuat hanya di sisi klien. Animasi saat scroll dan counter menghormati `prefers-reduced-motion`; jika pengaturan itu aktif, semuanya langsung terlihat begitu saja.
+Cukup satu animation library (GSAP), dan hanya di-load di client-side. Scroll animation dan counter mengikuti setting `prefers-reduced-motion`; kalau setting itu aktif, semua konten langsung tampil tanpa animasi.
 
-## Statis secara default
+## Static by default
 
-Setiap halaman di-prerender, gambar dioptimalkan saat build, dan seluruh situs di-deploy ke GitHub Pages sebagai file statis.
+Semua halaman di-prerender, image dioptimasi saat build, lalu seluruh situs di-deploy ke GitHub Pages sebagai static file.
