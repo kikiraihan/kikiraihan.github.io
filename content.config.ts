@@ -1,5 +1,11 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
+// Content is split per language: content/en/** and content/id/** (same file names in both).
+// Every collection below exists once per locale, e.g. `projects_en` and `projects_id`.
+// Query them through the helpers in app/composables/useContentQueries.ts, which fall back to English
+// when a translation is missing.
+export const contentLocales = ['en', 'id'] as const
+
 const metric = z.object({
   value: z.string(),
   label: z.string(),
@@ -11,12 +17,13 @@ const architectureNode = z.object({
   detail: z.string().optional(),
 })
 
-export default defineContentConfig({
-  collections: {
-    // content/projects/*.md  →  /work/[slug]
-    projects: defineCollection({
+function localeCollections(locale: (typeof contentLocales)[number]) {
+  return {
+    // content/<locale>/projects/*.md  →  /work/[slug]
+    [`projects_${locale}`]: defineCollection({
       type: 'page',
-      source: 'projects/*.md',
+      // prefix keeps the path locale-free (/projects/<slug>), the same in every language
+      source: { include: `${locale}/projects/*.md`, prefix: '/projects' },
       schema: z.object({
         type: z.enum(['engineering', 'design']).default('engineering'),
         category: z.string(),
@@ -39,29 +46,30 @@ export default defineContentConfig({
       }),
     }),
 
-    // content/writing/*.md  →  /writing/[slug]
-    writing: defineCollection({
+    // content/<locale>/writing/*.md  →  /writing/[slug]
+    [`writing_${locale}`]: defineCollection({
       type: 'page',
-      source: 'writing/*.md',
+      source: { include: `${locale}/writing/*.md`, prefix: '/writing' },
       schema: z.object({
         date: z.string(),
         tags: z.array(z.string()).default([]),
         cover: z.string().optional(),
-        lang: z.string().default('en'),
+        // language the article was originally written in; a different value marks this file as a translation
+        original: z.enum(contentLocales).optional(),
         draft: z.boolean().default(false),
       }),
     }),
 
-    // content/pages/*.md — long-form copy for static pages (e.g. About)
-    pages: defineCollection({
+    // content/<locale>/pages/*.md — long-form copy for static pages (e.g. About)
+    [`pages_${locale}`]: defineCollection({
       type: 'page',
-      source: 'pages/*.md',
+      source: { include: `${locale}/pages/*.md`, prefix: '/pages' },
     }),
 
-    // content/data/experience.yml
-    experience: defineCollection({
+    // content/<locale>/data/experience.yml
+    [`experience_${locale}`]: defineCollection({
       type: 'data',
-      source: 'data/experience.yml',
+      source: `${locale}/data/experience.yml`,
       schema: z.object({
         items: z.array(z.object({
           company: z.string(),
@@ -76,10 +84,10 @@ export default defineContentConfig({
       }),
     }),
 
-    // content/data/lab.yml
-    lab: defineCollection({
+    // content/<locale>/data/lab.yml
+    [`lab_${locale}`]: defineCollection({
       type: 'data',
-      source: 'data/lab.yml',
+      source: `${locale}/data/lab.yml`,
       schema: z.object({
         items: z.array(z.object({
           title: z.string(),
@@ -92,5 +100,12 @@ export default defineContentConfig({
         })),
       }),
     }),
+  }
+}
+
+export default defineContentConfig({
+  collections: {
+    ...localeCollections('en'),
+    ...localeCollections('id'),
   },
 })

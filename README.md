@@ -16,25 +16,29 @@ npm run lint && npm run typecheck
 ```text
 app/
 ├── app.config.ts          # profile, nav, socials, skills, typed words, chat (WhatsApp/Crisp)  ← edit here
+│                          #   visitor-facing text as { en: '…', id: '…' }
 ├── assets/css/main.css    # Tailwind + design tokens (colors, fonts, type scale, motion)
 ├── assets/css/themes/     # one CSS file per theme (editorial, retro, minimal) — see CLAUDE.md → Theming
 ├── theme.config.ts        # active theme (hardcoded)  ← switch themes here
 ├── components/
 │   ├── base/              # AppButton, SectionHeading, TagList
-│   ├── layout/            # SiteHeader, SiteFooter, ThemeToggle, ImageLightbox, AskChat
+│   ├── layout/            # SiteHeader, SiteFooter, ThemeToggle, LanguageSwitch, ImageLightbox, AskChat
 │   ├── home/              # HomeHero, SelectedWork, AboutPreview, ContactCta
 │   ├── work/              # ProjectCard, ExperienceTimeline, CapabilityGrid
 │   └── content/           # usable inside Markdown: Gallery, MetricGrid, ArchitectureExplorer, ProseImg,
 │                          #   ColorPalette, SymbolExplorer, ProcessSteps (design case studies), ProseA
-├── composables/           # useColorScheme, useLightbox, useTypewriter, usePageSeo, useContentQueries
+├── composables/           # useColorScheme, useLightbox, useTypewriter, usePageSeo, useContentQueries, useSiteConfig
 ├── plugins/motion.ts      # v-reveal (scroll reveal) and v-magnetic directives
 ├── utils/                 # motion (lazy GSAP), content helpers (reading time, dates)
 ├── layouts/ pages/ error.vue
 content/
-├── projects/*.md          # → /work/[slug]   (engineering + design, `type` field)
-├── writing/*.md           # → /writing/[slug]
-├── pages/about.md         # copy for /about
-└── data/                  # experience.yml, lab.yml
+├── en/                    # English (site root: /work, /writing, …)
+│   ├── projects/*.md      # → /work/[slug]   (engineering + design, `type` field)
+│   ├── writing/*.md       # → /writing/[slug]
+│   ├── pages/about.md     # copy for /about
+│   └── data/              # experience.yml, lab.yml
+└── id/                    # Indonesian (/id/work, /id/writing, …) — same file names as en/
+i18n/locales/              # en.json, id.json — interface text (buttons, headings, labels)
 public/
 ├── images/profile/        # portrait, avatar
 ├── images/work/<slug>/    # one folder per project, same name as the Markdown file
@@ -46,9 +50,23 @@ content.config.ts          # content schemas (validated front-matter)
 
 Components use flat names (`<ProjectCard>`); folders are only for organisation.
 
+## Languages (English / Indonesian)
+
+The site is bilingual with [`@nuxtjs/i18n`](https://i18n.nuxtjs.org): English at the root (`/work`), Indonesian under `/id`
+(`/id/work`). The **EN / ID** switch in the header links to the same page in the other language.
+
+- **Interface text** (buttons, headings, labels) — `i18n/locales/en.json` and `id.json`, used as `$t('key')`.
+- **Profile, nav, skills, chat message** — `app/app.config.ts`, written as `{ en: '…', id: '…' }`; components read it through `useSiteConfig()`.
+- **Content** — the same file name in `content/en/…` and `content/id/…`. A page without an Indonesian file falls back to
+  English (and an article that exists only in Indonesian still opens on the English site, with a note).
+- Links between pages in Markdown use the English path (`/work/kongkong`); `ProseA` points them to `/id/…` on the Indonesian site.
+- An article that is a translation can say where it came from with `original: id` (or `en`) — a small "translated from" note is shown.
+- Keep the non-text front-matter (type, year, order, featured, cover, technologies, date) identical in both languages, and
+  write metric numbers with a comma as the thousands separator in both (`"7,394"`; shown as 7.394 in Indonesian).
+
 ## Adding content
 
-**Project** — create `content/projects/my-project.md` and put images in `public/images/work/my-project/`:
+**Project** — create `content/en/projects/my-project.md` (and its translation in `content/id/projects/`) and put images in `public/images/work/my-project/`:
 
 ```md
 ---
@@ -98,7 +116,7 @@ images:
 Plain Markdown images `![alt](/images/…)` are optimised and open in the lightbox automatically
 (`.svg` diagrams are served as-is, not rasterised).
 
-**Design case studies** have extra blocks for breaking a piece down (see `content/projects/genbi-branding.md`):
+**Design case studies** have extra blocks for breaking a piece down (see `content/en/projects/genbi-branding.md`):
 
 ```md
 ::process-steps
@@ -138,9 +156,9 @@ Quote YAML values that contain a comma or a colon (`text: "A, B: C"`), otherwise
 A kind switched off disappears from the Work page (its filter button too), home "Selected work", its case-study pages
 (not generated) and the sitemap; links to those projects from Markdown, the experience timeline and the Lab render as plain text.
 
-**Article** — `content/writing/slug.md` with `title`, `description`, `date`, `tags`, optional `cover` and `lang: id` for Indonesian posts. Reading time and related articles (by shared tags) are computed.
+**Article** — `content/en/writing/slug.md` and/or `content/id/writing/slug.md` with `title`, `description`, `date`, `tags`, optional `cover`, and `original: en|id` on the translated copy. Reading time and related articles (by shared tags) are computed.
 
-**Experience / Lab** — edit `content/data/experience.yml` and `content/data/lab.yml`.
+**Experience / Lab** — edit `content/<en|id>/data/experience.yml` and `content/<en|id>/data/lab.yml`.
 
 ## Features carried over from the old site
 
@@ -151,7 +169,7 @@ A kind switched off disappears from the Work page (its filter button too), home 
 | Click image → `#previewContainer` | `ImageLightbox` (native `<dialog>`: Esc, focus trap) |
 | Crisp chat on every page | "Ask something": WhatsApp button by default, or Crisp (loaded when idle) via `askChat.provider` |
 | `/projects`, `/design`, `/resume`, `/blogs` | Redirects to `/work`, `/work?type=design`, `/about`, `/writing` |
-| Google Translate widget | Removed (was mostly disabled) |
+| Google Translate widget | Real English / Indonesian versions of every page (`/id/…`) |
 
 ## Motion & accessibility
 
@@ -162,7 +180,7 @@ A kind switched off disappears from the Work page (its filter button too), home 
 
 ## SEO
 
-`usePageSeo()` sets a unique title, description, canonical URL, Open Graph/Twitter card and JSON-LD (`Person`, `WebSite`, `CreativeWork`, `Article`) per page. `/sitemap.xml` and `/robots.txt` are generated from content. Set `NUXT_PUBLIC_SITE_URL` for another domain.
+`usePageSeo()` sets a unique title, description, canonical URL, Open Graph/Twitter card and JSON-LD (`Person`, `WebSite`, `CreativeWork`, `Article`) per page. `/sitemap.xml` (both languages, with hreflang alternates) and `/robots.txt` are generated from content; every page carries `hreflang` alternate links and the right `<html lang>`. Set `NUXT_PUBLIC_SITE_URL` for another domain.
 
 ## Deployment
 
@@ -172,6 +190,6 @@ The site assumes it is served from the domain root (e.g. `kikiraihan.github.io` 
 
 ## Before launch
 
-- Review `content/projects/payment-gateway.md` (currently `draft: true`) — every metric must be public and verified (PRD §25).
+- Review `content/en/projects/payment-gateway.md` (currently `draft: true`) — every metric must be public and verified (PRD §25).
 - Review all metrics and team/individual contribution text.
-- Add “Personal interests” to `content/pages/about.md`.
+- Add “Personal interests” to `content/en/pages/about.md` and `content/id/pages/about.md`.

@@ -1,26 +1,37 @@
 // Site-wide profile data. Edit here instead of inside components.
+// Text shown to visitors is written as `{ en: '…', id: '…' }` (English / Indonesian); components read it through
+// useSiteConfig() (app/composables/useSiteConfig.ts), which picks the current language. Plain strings are the same in both.
 export default defineAppConfig({
   profile: {
     name: 'Moh. Zulkifli Katili',
     shortName: 'Kiki',
-    role: 'Senior Fullstack Engineer',
-    location: 'Greater Jakarta, Indonesia',
+    role: { en: 'Senior Fullstack Engineer', id: 'Senior Fullstack Engineer' },
+    location: { en: 'Greater Jakarta, Indonesia', id: 'Jabodetabek, Indonesia' },
     email: 'mohzulkiflikatili@gmail.com',
-    tagline: 'Software engineer for payments, data and AI — with a designer\'s eye for the interface.',
-    description:
-      'I\'m a software engineer in Greater Jakarta. By day I build payment systems; the rest of the time I\'m bringing AI, data and design into what I make.',
+    tagline: {
+      en: 'Software engineer for payments, data and AI — with a designer\'s eye for the interface.',
+      id: 'Software engineer untuk sistem pembayaran, data, dan AI — dengan mata seorang desainer untuk antarmuka.',
+    },
+    description: {
+      en: 'I\'m a software engineer in Greater Jakarta. By day I build payment systems; the rest of the time I\'m bringing AI, data and design into what I make.',
+      id: 'Saya software engineer di Jabodetabek. Sehari-hari saya membangun sistem pembayaran; di luar itu saya membawa AI, data, dan desain ke dalam apa yang saya buat.',
+    },
     portrait: '/images/profile/portrait.jpg',
     avatar: '/images/profile/avatar.webp',
     // Rotating words in the hero (ported from the old Typed.js animation).
-    typed: ['payment systems', 'APIs', 'AI / RAG tools', 'knowledge graphs', 'data products', 'interfaces'],
+    typed: {
+      en: ['payment systems', 'APIs', 'AI / RAG tools', 'knowledge graphs', 'data products', 'interfaces'],
+      id: ['sistem pembayaran', 'API', 'tools AI / RAG', 'knowledge graph', 'produk data', 'antarmuka'],
+    },
   },
 
+  // `to` is the English path; components localize it (e.g. /work → /id/work) with useLocalePath().
   nav: [
-    { label: 'Work', to: '/work' },
-    { label: 'About', to: '/about' },
-    { label: 'Writing', to: '/writing' },
-    { label: 'Lab', to: '/lab' },
-    { label: 'Contact', to: '/contact' },
+    { label: { en: 'Work', id: 'Karya' }, to: '/work' },
+    { label: { en: 'About', id: 'Tentang' }, to: '/about' },
+    { label: { en: 'Writing', id: 'Tulisan' }, to: '/writing' },
+    { label: { en: 'Lab', id: 'Lab' }, to: '/lab' },
+    { label: { en: 'Contact', id: 'Kontak' }, to: '/contact' },
   ],
 
   socials: [
@@ -44,12 +55,12 @@ export default defineAppConfig({
 
   // Capabilities, grouped by what they enable — not a giant tech list.
   skills: [
-    { group: 'Backend', note: 'APIs, services, transaction flows', items: ['PHP / Laravel', 'Go (GoFiber, Gin, go-zero)', 'Node.js / NestJS (TypeScript)', 'Python / FastAPI', 'C++ (CLI utilities)', 'REST APIs · SNAP bank integration', 'Kafka · Redis queues', 'PHPUnit'] },
-    { group: 'Frontend', note: 'Interfaces that stay maintainable', items: ['React / Next.js', 'Vue / Nuxt', 'TypeScript', 'Livewire', 'Tailwind CSS', 'PWA'] },
-    { group: 'Data', note: 'Storage, analysis, visualization', items: ['PostgreSQL', 'MySQL', 'MongoDB · Neo4j', 'Redis', 'SPARQL / RDF', 'Pandas · psycopg2 · Plotly', 'Ledger reconciliation'] },
-    { group: 'AI', note: 'From research to usable tools', items: ['RAG (pgvector)', 'LLM apps (Gemini, LangChain)', 'Tool calling', 'Prompt-injection guardrails', 'Hugging Face open-weights models', 'Knowledge graphs', 'Network analysis', 'Classic ML'] },
-    { group: 'Infrastructure', note: 'Shipping and keeping it running', items: ['Docker', 'CI/CD (GitHub Actions, Jenkins)', 'Blue-green deployment', 'Huawei Cloud · Alibaba Cloud (DRC)', 'Kubernetes (deploy & operate)', 'Linux', 'Git'] },
-    { group: 'Design', note: 'Brand, UI, and illustration', items: ['Brand identity', 'Figma', 'Illustrator', 'Photoshop', 'Design systems'] },
+    { group: 'Backend', note: { en: 'APIs, services, transaction flows', id: 'API, layanan, alur transaksi' }, items: ['PHP / Laravel', 'Go (GoFiber, Gin, go-zero)', 'Node.js / NestJS (TypeScript)', 'Python / FastAPI', { en: 'C++ (CLI utilities)', id: 'C++ (utilitas CLI)' }, { en: 'REST APIs · SNAP bank integration', id: 'REST API · integrasi bank SNAP' }, 'Kafka · Redis queues', 'PHPUnit'] },
+    { group: 'Frontend', note: { en: 'Interfaces that stay maintainable', id: 'Antarmuka yang tetap mudah dirawat' }, items: ['React / Next.js', 'Vue / Nuxt', 'TypeScript', 'Livewire', 'Tailwind CSS', 'PWA'] },
+    { group: 'Data', note: { en: 'Storage, analysis, visualization', id: 'Penyimpanan, analisis, visualisasi' }, items: ['PostgreSQL', 'MySQL', 'MongoDB · Neo4j', 'Redis', 'SPARQL / RDF', 'Pandas · psycopg2 · Plotly', { en: 'Ledger reconciliation', id: 'Rekonsiliasi ledger' }] },
+    { group: 'AI', note: { en: 'From research to usable tools', id: 'Dari riset menjadi tools yang bisa dipakai' }, items: ['RAG (pgvector)', { en: 'LLM apps (Gemini, LangChain)', id: 'Aplikasi LLM (Gemini, LangChain)' }, 'Tool calling', 'Prompt-injection guardrails', { en: 'Hugging Face open-weights models', id: 'Model open-weights Hugging Face' }, 'Knowledge graphs', { en: 'Network analysis', id: 'Analisis jaringan' }, { en: 'Classic ML', id: 'ML klasik' }] },
+    { group: { en: 'Infrastructure', id: 'Infrastruktur' }, note: { en: 'Shipping and keeping it running', id: 'Merilis dan menjaganya tetap berjalan' }, items: ['Docker', 'CI/CD (GitHub Actions, Jenkins)', 'Blue-green deployment', 'Huawei Cloud · Alibaba Cloud (DRC)', { en: 'Kubernetes (deploy & operate)', id: 'Kubernetes (deploy & operasional)' }, 'Linux', 'Git'] },
+    { group: { en: 'Design', id: 'Desain' }, note: { en: 'Brand, UI, and illustration', id: 'Brand, UI, dan ilustrasi' }, items: ['Brand identity', 'Figma', 'Illustrator', 'Photoshop', 'Design systems'] },
   ],
 
   // Floating "Ask something" entry point (app/components/layout/AskChat.vue).
@@ -61,7 +72,10 @@ export default defineAppConfig({
       // international format, digits only (e.g. '6281234567890'); '' hides the button
       number: '6282291501085',
       // pre-filled first message
-      message: 'Hi Kiki, I came across your website and would like to ask something.',
+      message: {
+        en: 'Hi Kiki, I came across your website and would like to ask something.',
+        id: 'Halo Kiki, saya menemukan website kamu dan ingin bertanya sesuatu.',
+      },
     },
   },
 

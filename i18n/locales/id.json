@@ -1,0 +1,162 @@
+{
+  "common": {
+    "skipToContent": "Langsung ke konten",
+    "darkMode": "Mode gelap",
+    "openMenu": "Buka menu",
+    "closeMenu": "Tutup menu",
+    "home": "{name}, beranda",
+    "mainNav": "Utama",
+    "footerNav": "Footer",
+    "switchLanguage": "Read in English",
+    "all": "Semua",
+    "enlargeImage": "Perbesar gambar: {alt}",
+    "copy": "Salin",
+    "copied": "Tersalin"
+  },
+  "hero": {
+    "iBuild": "Saya membangun",
+    "iBuildSr": "Saya membangun {list}.",
+    "seeWork": "Lihat karya saya",
+    "aboutMe": "Tentang saya",
+    "portraitAlt": "Potret {name}"
+  },
+  "home": {
+    "selectedWork": "Karya pilihan",
+    "selectedWorkTitle": "Masalah yang terselesaikan, bukan sekadar koleksi stack.",
+    "allProjects": "Semua proyek",
+    "experience": "Pengalaman",
+    "experienceTitle": "Tempat saya membangun selama ini.",
+    "seeMore": "Lihat selengkapnya",
+    "capabilities": "Kapabilitas",
+    "capabilitiesTitle": "Apa yang saya bawa ke dalam tim.",
+    "capabilitiesText": "Dikelompokkan berdasarkan apa yang bisa saya lakukan dengannya. Tools berganti; kemampuan menalar tentang sistem, data, dan manusia tidak.",
+    "github": "Aktivitas GitHub",
+    "githubTitle": "Merilis, minggu demi minggu.",
+    "githubText": "Grafik kontribusi publik saya selama dua belas bulan terakhir — sebagian besar pekerjaan klien ada di repo privat, jadi ini hanya bagian yang terlihat.",
+    "about": "Tentang",
+    "aboutTitle": "Engineer karena pendidikan, desainer karena kebiasaan, peneliti dari hati.",
+    "aboutText1": "Kebanyakan orang memanggil saya {name}. Saya memulai sebagai desainer grafis di komunitas open-source kampus, lalu beralih ke pengembangan web, dan mendalami knowledge graph serta machine learning selama studi magister di IPB University.",
+    "aboutText2": "Kini saya membangun sistem pembayaran dan layanan backend dari Jabodetabek — dan saya tetap peduli pada tampilan dan rasa dari setiap hal.",
+    "moreAboutMe": "Selengkapnya tentang saya"
+  },
+  "contactCta": {
+    "eyebrow": "Kontak",
+    "title": "Mari membangun",
+    "titleEm": "sesuatu."
+  },
+  "github": {
+    "contributionsLastYear": "kontribusi dalam setahun terakhir",
+    "activeDays": "Hari aktif",
+    "longestStreak": "Streak terpanjang",
+    "days": "{n} hari",
+    "busiestDay": "Hari tersibuk",
+    "less": "Sedikit",
+    "more": "Banyak",
+    "graphLabel": "Grafik kontribusi GitHub: {total} kontribusi dalam setahun terakhir.",
+    "several": "beberapa",
+    "cell": "Tidak ada kontribusi pada {date} | {n} kontribusi pada {date} | {n} kontribusi pada {date}",
+    "unavailable": "Grafik kontribusi sedang tidak tersedia.",
+    "viewOnGitHub": "Lihat di GitHub"
+  },
+  "footer": {
+    "tagline": "Sistem yang kokoh. Antarmuka yang menyenangkan.",
+    "pages": "Halaman",
+    "elsewhere": "Di tempat lain",
+    "builtWith": "Dibangun dengan Nuxt, Tailwind & GSAP. Di-hosting di GitHub Pages."
+  },
+  "askChat": {
+    "label": "Chat dengan saya",
+    "aria": "Chat dengan saya di WhatsApp"
+  },
+  "lightbox": {
+    "label": "Pratinjau gambar",
+    "close": "Tutup pratinjau"
+  },
+  "about": {
+    "seoTitle": "Tentang",
+    "eyebrow": "Tentang",
+    "hi": "Halo, saya",
+    "getInTouch": "Hubungi saya",
+    "experience": "Pengalaman & pendidikan",
+    "experienceTitle": "Linimasa.",
+    "capabilities": "Kapabilitas",
+    "capabilitiesTitle": "Kapabilitas, dikelompokkan."
+  },
+  "contact": {
+    "seoTitle": "Kontak",
+    "seoDescription": "Hubungi {name} — lewat email, GitHub, atau LinkedIn.",
+    "eyebrow": "Kontak",
+    "intro": "Ingin merekrut, berkolaborasi, atau sekadar penasaran dengan sesuatu yang saya buat — email adalah cara tercepat untuk menghubungi saya.",
+    "basedIn": "Berdomisili di {location} · WIB (UTC+7)",
+    "copyEmail": "Salin email"
+  },
+  "lab": {
+    "seoTitle": "Lab",
+    "seoDescription": "Eksperimen di bidang machine learning, knowledge graph, antarmuka, dan ilustrasi.",
+    "eyebrow": "Lab",
+    "title": "Rasa penasaran, apa adanya.",
+    "intro": "Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap — tempat saya mencoba hal-hal lebih dulu."
+  },
+  "work": {
+    "seoTitle": "Karya",
+    "seoDescription": "Studi kasus di bidang pembayaran, sistem backend, data, AI, dan knowledge graph — plus desain brand dan antarmuka.",
+    "eyebrow": "Karya",
+    "title": "Hal-hal yang saya desain, bangun, dan rilis.",
+    "intro": "Setiap proyek menjelaskan masalahnya, batasannya, apa yang dibangun, dan apa kontribusi saya secara pribadi.",
+    "filter": "Filter proyek",
+    "engineering": "Engineering",
+    "design": "Desain",
+    "back": "Karya",
+    "role": "Peran",
+    "timeline": "Durasi",
+    "context": "Konteks",
+    "stack": "Stack",
+    "contribution": "Kontribusi saya",
+    "team": "Tim:",
+    "links": "Tautan",
+    "cover": "Sampul {title}",
+    "nextProject": "Proyek berikutnya",
+    "notFound": "Proyek tidak ditemukan"
+  },
+  "writing": {
+    "seoTitle": "Tulisan",
+    "seoDescription": "Catatan tentang engineering, AI, desain, dan sesekali cerita pribadi.",
+    "eyebrow": "Tulisan",
+    "title": "Catatan dari pekerjaan.",
+    "intro": "Engineering, AI, desain — dan terkadang sekadar cerita.",
+    "filter": "Filter berdasarkan tag",
+    "back": "Tulisan",
+    "min": "{n} mnt",
+    "minRead": "{n} menit baca",
+    "tags": "Tag",
+    "related": "Artikel terkait",
+    "translated": "Diterjemahkan dari bahasa Inggris",
+    "untranslated": "Artikel ini hanya tersedia dalam bahasa Inggris.",
+    "notFound": "Artikel tidak ditemukan"
+  },
+  "timeline": {
+    "filter": "Filter linimasa",
+    "work": "Pekerjaan",
+    "education": "Pendidikan",
+    "organization": "Organisasi",
+    "readCaseStudy": "Baca studi kasusnya"
+  },
+  "error": {
+    "label": "Error {code}",
+    "notFoundTitle": "Tidak ada apa-apa di sini.",
+    "brokeTitle": "Ada yang rusak.",
+    "notFoundText": "Halaman yang kamu cari sudah dipindahkan atau memang tidak pernah ada.",
+    "backHome": "Kembali ke beranda"
+  },
+  "content": {
+    "technologies": "Teknologi",
+    "systemLayers": "Lapisan sistem",
+    "layerDetail": "Detail lapisan",
+    "architectureCaption": "Arsitektur yang disederhanakan — pilih satu lapisan untuk melihatnya.",
+    "colorPalette": "Palet warna",
+    "copyHex": "{name}, {hex} — salin kode hex",
+    "copiedHex": "{hex} tersalin",
+    "symbols": "Simbol",
+    "symbolCaption": "Pilih sebuah simbol untuk membaca maknanya."
+  }
+}

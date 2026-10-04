@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const { profile, socials } = useAppConfig()
+const site = useSiteConfig()
+const { profile, socials } = site.value
 const { siteUrl } = useRuntimeConfig().public
+const localePath = useLocalePath()
 
 usePageSeo({
   title: profile.name,
@@ -34,28 +36,28 @@ usePageSeo({
     <SelectedWork />
 
     <section class="container-page mt-32 md:mt-48" aria-labelledby="experience">
-      <SectionHeading id="experience" index="02" eyebrow="Experience" title="Where I've been building." />
+      <SectionHeading id="experience" index="02" :eyebrow="$t('home.experience')" :title="$t('home.experienceTitle')" />
       <ExperienceTimeline :limit="4" :filters="false" />
       <div class="mt-10">
-        <AppButton to="/about#about-experience" variant="outline" icon="lucide:arrow-right">
-          See more
+        <AppButton :to="localePath('/about#about-experience')" variant="outline" icon="lucide:arrow-right">
+          {{ $t('home.seeMore') }}
         </AppButton>
       </div>
     </section>
 
     <section class="container-page mt-32 md:mt-48" aria-labelledby="capabilities">
-      <SectionHeading id="capabilities" index="03" eyebrow="Capabilities" title="What I bring to a team.">
+      <SectionHeading id="capabilities" index="03" :eyebrow="$t('home.capabilities')" :title="$t('home.capabilitiesTitle')">
         <p>
-          Grouped by what they let me do. Tools change; the ability to reason about systems, data and people doesn't.
+          {{ $t('home.capabilitiesText') }}
         </p>
       </SectionHeading>
       <CapabilityGrid />
     </section>
 
     <section class="container-page mt-32 md:mt-48" aria-labelledby="github-activity">
-      <SectionHeading id="github-activity" index="04" eyebrow="GitHub activity" title="Shipping, week after week.">
+      <SectionHeading id="github-activity" index="04" :eyebrow="$t('home.github')" :title="$t('home.githubTitle')">
         <p>
-          My public contribution graph over the last twelve months — most client work lives in private repos, so this is the visible slice.
+          {{ $t('home.githubText') }}
         </p>
       </SectionHeading>
       <GitHubContributions />

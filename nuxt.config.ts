@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-09-01',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/icon', '@nuxt/eslint'],
+  modules: ['@nuxt/content', '@nuxt/image', '@nuxt/icon', '@nuxt/eslint', '@nuxtjs/i18n'],
 
   // Flat component names (<ProjectCard>, not <WorkProjectCard>); folders are only for organisation.
   components: [{ path: '~/components', pathPrefix: false }],
@@ -29,7 +29,8 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       // data-theme selects the CSS theme (app/assets/css/themes/*.css); pick it in app/theme.config.ts
-      htmlAttrs: { 'lang': 'en', 'data-theme': activeTheme },
+      // `lang` is set per locale by useLocaleHead() in layouts/default.vue
+      htmlAttrs: { 'data-theme': activeTheme },
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
       script: [
         {
@@ -58,6 +59,20 @@ export default defineNuxtConfig({
     quality: 80,
   },
 
+  // English is the default language at the root (/work); Indonesian lives under /id (/id/work).
+  // UI strings: i18n/locales/<code>.json. Content: content/<code>/** (see content.config.ts).
+  i18n: {
+    baseUrl: siteUrl,
+    defaultLocale: 'en',
+    strategy: 'prefix_except_default',
+    locales: [
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'id', language: 'id-ID', name: 'Bahasa Indonesia', file: 'id.json' },
+    ],
+    // No automatic redirect: every URL always shows the same language (static hosting, good for SEO).
+    detectBrowserLanguage: false,
+  },
+
   // Icons are bundled locally (no runtime requests to the Iconify API).
   icon: {
     serverBundle: 'local',
@@ -76,7 +91,7 @@ export default defineNuxtConfig({
       // /work → work.html (GitHub Pages serves it without a trailing-slash redirect)
       autoSubfolderIndex: false,
       crawlLinks: true,
-      routes: ['/', '/sitemap.xml', '/robots.txt', '/github-contributions.json'],
+      routes: ['/', '/id', '/sitemap.xml', '/robots.txt', '/github-contributions.json'],
     },
   },
 

@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { skills } = useAppConfig()
+const site = useSiteConfig()
 </script>
 
 <template>
   <div class="grid gap-px overflow-hidden rounded-lg border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
-    <section v-for="(s, i) in skills" :key="s.group" v-reveal="{ delay: (i % 3) * 0.06 }" class="bg-paper p-6 md:p-8">
+    <section v-for="(s, i) in site.skills" :key="s.group" v-reveal="{ delay: (i % 3) * 0.06 }" class="bg-paper p-6 md:p-8">
       <p class="font-mono text-xs text-accent">
         {{ String(i + 1).padStart(2, '0') }}
       </p>

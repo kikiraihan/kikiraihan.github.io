@@ -2,13 +2,15 @@
 const route = useRoute()
 const slug = route.params.slug as string
 
-const { data: project } = await useAsyncData(`project-${slug}`, () =>
-  queryCollection('projects').path(`/projects/${slug}`).first(),
-)
+const { t } = useI18n()
+const localePath = useLocalePath()
+
+// current language, or English when the project has no translation yet
+const { data: project } = await useProject(slug)
 
 // Drafts and kinds of work switched off in app.config.ts (`work`) are not published.
 if (!project.value || project.value.draft || !useWorkTypes().includes(project.value.type ?? 'engineering')) {
-  throw createError({ statusCode: 404, statusMessage: 'Project not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: t('work.notFound'), fatal: true })
 }
 
 const { data: all } = await useProjects('all-projects')
@@ -39,17 +41,17 @@ usePageSeo({
 })
 
 const overview = computed(() => [
-  { label: 'Role', value: project.value!.role },
-  { label: 'Timeline', value: project.value!.timeline ?? String(project.value!.year) },
-  { label: 'Context', value: project.value!.company },
+  { label: t('work.role'), value: project.value!.role },
+  { label: t('work.timeline'), value: project.value!.timeline ?? String(project.value!.year) },
+  { label: t('work.context'), value: project.value!.company },
 ].filter(i => i.value))
 </script>
 
 <template>
   <article v-if="project" class="pt-12 md:pt-20">
     <header class="container-page">
-      <NuxtLink to="/work" class="eyebrow link-underline inline-flex items-center gap-1 hover:text-ink">
-        <Icon name="lucide:arrow-left" class="size-3" aria-hidden="true" /> Work
+      <NuxtLink :to="localePath('/work')" class="eyebrow link-underline inline-flex items-center gap-1 hover:text-ink">
+        <Icon name="lucide:arrow-left" class="size-3" aria-hidden="true" /> {{ $t('work.back') }}
       </NuxtLink>
       <p class="eyebrow mt-10 text-accent">
         {{ project.category }}
@@ -73,7 +75,7 @@ const overview = computed(() => [
         </div>
         <div>
           <dt class="eyebrow">
-            Stack
+            {{ $t('work.stack') }}
           </dt>
           <dd class="mt-2">
             <TagList :tags="project.technologies" />
@@ -86,10 +88,10 @@ const overview = computed(() => [
       <button
         type="button"
         class="block w-full cursor-zoom-in overflow-hidden rounded-lg border border-line"
-        @click="openPreview({ src: project.cover, alt: `${project.title} cover` })"
+        @click="openPreview({ src: project.cover, alt: $t('work.cover', { title: project.title }) })"
       >
-        <span class="sr-only">Enlarge image: {{ project.title }} cover</span>
-        <NuxtImg format="webp" :src="project.cover" :alt="`${project.title} cover`" sizes="xs:100vw lg:1280px" loading="eager" class="max-h-[80vh] w-full object-cover object-top" />
+        <span class="sr-only">{{ $t('common.enlargeImage', { alt: $t('work.cover', { title: project.title }) }) }}</span>
+        <NuxtImg format="webp" :src="project.cover" :alt="$t('work.cover', { title: project.title })" sizes="xs:100vw lg:1280px" loading="eager" class="max-h-[80vh] w-full object-cover object-top" />
       </button>
     </div>
 
@@ -99,18 +101,18 @@ const overview = computed(() => [
           <!-- 8.8 Contribution: team vs. individual -->
           <section v-if="project.contribution" aria-labelledby="contribution">
             <h2 id="contribution" class="eyebrow mb-3">
-              My contribution
+              {{ $t('work.contribution') }}
             </h2>
             <p v-if="project.contribution.mine" class="text-sm leading-relaxed">
               {{ project.contribution.mine }}
             </p>
             <p v-if="project.contribution.team" class="mt-3 border-l-2 border-line pl-3 text-sm leading-relaxed text-ink-3">
-              <span class="font-medium text-ink-2">Team:</span> {{ project.contribution.team }}
+              <span class="font-medium text-ink-2">{{ $t('work.team') }}</span> {{ project.contribution.team }}
             </p>
           </section>
           <section v-if="project.links?.length" aria-labelledby="links">
             <h2 id="links" class="eyebrow mb-3">
-              Links
+              {{ $t('work.links') }}
             </h2>
             <ul class="space-y-2 text-sm">
               <li v-for="l in project.links" :key="l.url">
@@ -126,10 +128,10 @@ const overview = computed(() => [
       <ContentRenderer :value="project" class="prose-page lg:col-span-8 lg:col-start-5" />
     </div>
 
-    <nav v-if="next" class="container-page mt-32" aria-label="Next project">
-      <NuxtLink :to="`/work/${slugFromPath(next.path)}`" class="group block border-t border-line pt-10">
+    <nav v-if="next" class="container-page mt-32" :aria-label="$t('work.nextProject')">
+      <NuxtLink :to="localePath(`/work/${slugFromPath(next.path)}`)" class="group block border-t border-line pt-10">
         <p class="eyebrow">
-          Next project
+          {{ $t('work.nextProject') }}
         </p>
         <p class="mt-4 flex items-center gap-4 font-serif text-headline transition-colors group-hover:text-accent">
           {{ next.title }}

@@ -1,17 +1,19 @@
 <script setup lang="ts">
+const { t } = useI18n()
+const localePath = useLocalePath()
 usePageSeo({
-  title: 'Lab',
-  description: 'Experiments in machine learning, knowledge graphs, interfaces and illustration.',
+  title: t('lab.seoTitle'),
+  description: t('lab.seoDescription'),
 })
-const { data } = await useAsyncData('lab', () => queryCollection('lab').first())
+const { data } = await useLab()
 const { data: hiddenProjects } = await useHiddenProjectSlugs()
 const isInternal = (url?: string) => !!url && url.startsWith('/')
 </script>
 
 <template>
   <div class="container-page pt-16 md:pt-24">
-    <SectionHeading as="h1" eyebrow="Lab" title="Curiosity, unpolished.">
-      <p>Experiments and side-explorations that don't need a full case study — the places I try things first.</p>
+    <SectionHeading as="h1" :eyebrow="$t('lab.eyebrow')" :title="$t('lab.title')">
+      <p>{{ $t('lab.intro') }}</p>
     </SectionHeading>
 
     <ul class="grid gap-6 sm:grid-cols-2">
@@ -39,7 +41,7 @@ const isInternal = (url?: string) => !!url && url.startsWith('/')
             {{ item.kind }} · {{ item.year }}
           </p>
           <h2 class="mt-2 font-serif text-3xl">
-            <NuxtLink v-if="isInternal(item.url) && !isHiddenWorkLink(item.url, hiddenProjects)" :to="item.url" class="after:absolute after:inset-0">
+            <NuxtLink v-if="isInternal(item.url) && !isHiddenWorkLink(item.url, hiddenProjects)" :to="localePath(item.url!)" class="after:absolute after:inset-0">
               {{ item.title }}
             </NuxtLink>
             <a v-else-if="item.url && !isInternal(item.url)" :href="item.url" target="_blank" rel="noopener" class="after:absolute after:inset-0">{{ item.title }}</a>

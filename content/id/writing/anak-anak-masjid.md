@@ -2,7 +2,7 @@
 title: Anak-anak di Masjid Umar Bin Khattab Bypass
 description: Catatan kecil selepas sholat Jum'at — tentang senyum anak-anak yang merapikan karpet masjid.
 date: 2022-05-24
-lang: id
+original: id
 tags: [Personal, Cerita]
 cover: /images/writing/anak-anak-masjid/cover.png
 ---

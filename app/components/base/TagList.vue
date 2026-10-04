@@ -1,9 +1,9 @@
 <script setup lang="ts">
-withDefaults(defineProps<{ tags?: string[], label?: string }>(), { tags: () => [], label: 'Technologies' })
+withDefaults(defineProps<{ tags?: string[], label?: string }>(), { tags: () => [], label: undefined })
 </script>
 
 <template>
-  <ul class="flex flex-wrap gap-1.5" :aria-label="label">
+  <ul class="flex flex-wrap gap-1.5" :aria-label="label ?? $t('content.technologies')">
     <li
       v-for="tag in tags"
       :key="tag"

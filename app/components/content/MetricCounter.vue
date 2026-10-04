@@ -1,7 +1,10 @@
 <script setup lang="ts">
 // Counts up the numeric part of a metric ("7,394", "20+", "< 2 mo") when it enters the viewport.
+// Values are always written with a comma as the thousands separator (in every language's content);
+// grouped numbers are shown in the current language's format (7,394 → 7.394 in Indonesian).
 const props = defineProps<{ value: string }>()
 const el = ref<HTMLElement>()
+const { locale } = useI18n()
 
 const parsed = computed(() => {
   const m = props.value.match(/^([^\d]*)([\d][\d,.]*)(.*)$/)
@@ -13,8 +16,10 @@ const parsed = computed(() => {
 const format = (n: number) => {
   const p = parsed.value!
   const rounded = Math.round(n)
-  return `${p.prefix}${p.grouped ? rounded.toLocaleString('en-US') : rounded}${p.suffix}`
+  return `${p.prefix}${p.grouped ? rounded.toLocaleString(locale.value) : rounded}${p.suffix}`
 }
+
+const display = computed(() => (parsed.value?.grouped ? format(parsed.value.num) : props.value))
 
 onMounted(() => {
   if (!parsed.value || !el.value || !motionAllowed()) return
@@ -38,5 +43,5 @@ onMounted(() => {
 
 <template>
   <!-- SSR renders the final value, so it is correct without JS and for screen readers -->
-  <span ref="el" class="tabular-nums">{{ value }}</span>
+  <span ref="el" class="tabular-nums">{{ display }}</span>
 </template>
