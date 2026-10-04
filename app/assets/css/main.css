@@ -154,6 +154,10 @@
   --tw-prose-th-borders: var(--line);
   --tw-prose-td-borders: var(--line);
   --tw-prose-code: var(--ink);
+  /* Code blocks sit on bg-paper-2 (see `pre` below), so plain/unhighlighted text (```text, ```md) must use the
+     ink tokens — typography's default pre colors are light-on-dark and vanish on the light card. */
+  --tw-prose-pre-code: var(--ink);
+  --tw-prose-pre-bg: var(--paper-2);
   --tw-prose-invert-body: var(--ink-2);
   --tw-prose-invert-headings: var(--ink);
   --tw-prose-invert-links: var(--ink);
@@ -166,6 +170,8 @@
   --tw-prose-invert-th-borders: var(--line);
   --tw-prose-invert-td-borders: var(--line);
   --tw-prose-invert-code: var(--ink);
+  --tw-prose-invert-pre-code: var(--ink);
+  --tw-prose-invert-pre-bg: var(--paper-2);
 }
 .prose-page :where(h2) {
   @apply font-serif font-normal text-4xl tracking-tight;

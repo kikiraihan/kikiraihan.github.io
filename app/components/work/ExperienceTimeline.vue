@@ -81,6 +81,9 @@ const items = computed(() => {
                     <span class="mt-2 size-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />{{ h }}
                   </li>
                 </ul>
+                <a v-if="item.url" :href="item.url" target="_blank" rel="noopener" class="link-underline mt-4 mr-4 inline-flex items-center gap-1 text-ink">
+                  {{ item.url.replace(/^https?:\/\//, '').replace(/\/$/, '') }} <Icon name="lucide:arrow-up-right" class="size-3.5" aria-hidden="true" />
+                </a>
                 <NuxtLink v-if="item.project && !hiddenProjects.includes(item.project)" :to="localePath(`/work/${item.project}`)" class="link-underline mt-4 inline-flex items-center gap-1 text-ink">
                   {{ $t('timeline.readCaseStudy') }} <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
                 </NuxtLink>

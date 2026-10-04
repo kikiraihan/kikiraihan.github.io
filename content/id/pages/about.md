@@ -27,7 +27,7 @@ Sebagai Senior Fullstack Developer di **Singapay**, saya ikut merawat inti payme
 
 Kini saya menangani proyek PPOB, bekerja dari Indonesia bersama tim yang hampir seluruhnya berada di Shanghai.
 
-Di luar pekerjaan utama, saya berkontribusi di **Anveesa**, rangkaian developer tools open-source (database studio, manajemen database, AI retrieval tool, dan cloud storage), sebagian besar di sisi front end dengan Vue.
+Di luar pekerjaan utama, saya berkontribusi di **[Anveesa](https://anveesa.com/)**, rangkaian developer tools open-source (database studio, manajemen database, AI retrieval tool, dan cloud storage), sebagian besar di sisi front end dengan Vue. Saya terlibat di Anveesa Aras, Anveesa Vestra, Anveesa Nias, dan Anveesa Workflow.
 
 ## AI, knowledge graph & RAG
 
