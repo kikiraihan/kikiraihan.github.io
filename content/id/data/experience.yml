@@ -1,0 +1,134 @@
+# Riwayat profesional, terbaru di atas. `project` menautkan ke /work/<slug> jika ada studi kasusnya.
+items:
+  - company: Singapay
+    role: Senior Fullstack Developer
+    period: Jan 2025 — Sekarang
+    location: Tangerang
+    kind: work
+    summary: Membangun sistem pembayaran — payment gateway, PPOB, alur B2B/B2C, dan API-nya.
+    highlights:
+      - Merawat inti payment gateway yang menangani ratusan ribu transaksi per hari.
+      - Integrasi bank dengan standar SNAP (standar open API Bank Indonesia), termasuk lapisan access token dan tanda tangan request.
+      - Menstandarkan integrasi biller PPOB di balik satu skema dan satu interface — menambah layanan baru yang dulu sekitar dua minggu kini sekitar tiga hari.
+      - Memindahkan job transaksi yang padat ke message queue asinkron; layanan payment gateway dan PPOB baru dibangun dengan Go seiring monolit dipecah.
+      - Menangani proyek PPOB bersama tim yang hampir seluruhnya berada di Shanghai.
+      - Rilis tanpa downtime dengan blue-green deployment, di Huawei Cloud dengan Alibaba Cloud sebagai situs disaster recovery.
+      - Pengecekan integritas ledger, patch data yang bisa di-revert, dan tooling penyelesaian sengketa transaksi.
+      - Front end Payment Link; code review dan onboarding engineer baru.
+  - company: Anveesa (open source)
+    role: Kontributor
+    period: Apr 2026 — Sekarang
+    kind: work
+    summary: Rangkaian developer tools open-source — database studio, manajemen database, AI retrieval (RAG), dan cloud storage.
+    highlights:
+      - Kontribusi front-end dengan Vue.
+  - company: Bank Indonesia — Departemen Regional
+    role: Machine Learning Consultant · Lead, TIARA v3 (Kontrak)
+    period: Jul 2025 — Agu 2025
+    location: Jakarta (remote)
+    kind: work
+    summary: Memimpin pengembangan TIARA v3, chatbot kebijakan berbasis AI milik Bank Indonesia — arsitektur, fitur, hingga deployment end-to-end.
+    highlights:
+      - RAG di atas PostgreSQL + pgvector dengan Gemini, ditambah tool query tabel berbasis pandas yang bisa dipanggil model.
+      - Classifier GLiClass self-hosted untuk menyaring prompt masuk dari upaya prompt injection.
+      - Akurasi respons 88% dan keberhasilan uji fitur 100%, termasuk penanganan pertanyaan di luar cakupan.
+      - Portal pengguna dan admin dengan React / Next.js, lengkap dengan dokumentasi teknis.
+  - company: Bank Indonesia — Departemen Regional
+    role: Machine Learning Consultant · Lead, RAISA (Kontrak)
+    period: Okt 2024 — Jan 2025
+    location: Jakarta (onsite)
+    kind: work
+    summary: Memimpin pengembangan RAISA, sistem penilaian risiko untuk data transaksi penyelenggara jasa pembayaran (PJP) dan kegiatan usaha penukaran valuta asing (KUPVA).
+    highlights:
+      - Prediksi Net Risk Assessment (NRA APU) dengan machine learning mencapai akurasi 95%.
+      - Dashboard analisis risiko atas lebih dari 50 juta transaksi per bulan.
+      - Memangkas waktu analisis manual hingga 30% melalui otomatisasi.
+  - company: PT. Makassar Raya Motor
+    role: Software Engineer & Data Analyst (Kontrak Remote)
+    period: Okt 2023 — Jun 2024
+    location: Makassar (remote)
+    kind: work
+    summary: Intelijen penjualan spasial untuk grup dealer Daihatsu di tiga provinsi.
+    highlights:
+      - Analisis spasial penjualan di 3 provinsi, 54 kabupaten/kota, 709 kecamatan, dan 7.394 desa.
+      - Dashboard Plotly, backend spasial FastAPI, dan aplikasi web Livewire.
+    project: makassar-raya-motor
+  - company: Contag School
+    role: Backend Developer (Berbasis proyek)
+    period: Mar 2023 — Okt 2023
+    location: Jakarta
+    kind: work
+    summary: Modul API untuk SaaS akademik perguruan tinggi.
+    highlights:
+      - Lebih dari 20 modul API NestJS dan 800+ commit, mengikuti prinsip SOLID.
+      - Ditulis dengan TypeScript, didukung Supabase.
+    project: contag
+  - company: IPB University
+    role: M.Kom. Ilmu Komputer
+    period: 2021 — 2023
+    location: Bogor
+    kind: education
+    summary: Kecerdasan Komputasional & Optimasi. IPK 3,83 / 4.
+    highlights:
+      - Tesis tentang knowledge graph interaksi biotik dan analisis jaringan (terindeks Scopus).
+    project: vektorpedia
+  - company: Bank Indonesia — Kantor Perwakilan Gorontalo
+    role: Web Developer (Kontrak)
+    period: Mei 2021 — Agu 2022
+    location: Gorontalo
+    kind: work
+    summary: Membangun TimeMarket, PWA manajemen beban kerja, lalu versi keduanya.
+    highlights:
+      - v1 dalam 6 bulan pengembangan full-stack; v2 dalam 3 bulan ditambah 6 bulan pemeliharaan.
+    project: timemarket
+  - company: Generasi Baru Indonesia (GenBI) Gorontalo
+    role: Ketua
+    period: Agu 2020 — Sep 2021
+    location: Gorontalo
+    kind: organization
+    summary: Memimpin komunitas penerima beasiswa Bank Indonesia — 6 departemen dan 3 komisariat kampus.
+    highlights:
+      - Lebih dari 60 acara dan kegiatan rutin dalam satu tahun.
+      - Membangun ulang sistem penilaian anggota; keanggotaan aktif naik menjadi 80%.
+      - Merumuskan visi 2025 dan merancang identitas visual organisasi.
+    project: genbi-branding
+  - company: Digimosque
+    role: Web Developer (Berbasis proyek)
+    period: Jan 2021 — Jun 2021
+    location: Gorontalo
+    kind: work
+    summary: API pencarian masjid terdekat dan seluruh panel admin.
+    highlights:
+      - Panel admin 15 modul dalam waktu kurang dari dua bulan dengan Livewire.
+      - Unit test dengan PHPUnit.
+    project: digimosque
+  - company: Universitas Negeri Gorontalo
+    role: S.Kom. Sistem Informasi
+    period: 2016 — 2021
+    location: Gorontalo
+    kind: education
+    summary: Lulusan terbaik Fakultas Teknik. IPK 3,53 / 4.
+    project: sindasi
+  - company: Bank Indonesia — Kantor Perwakilan Gorontalo
+    role: Web Developer (Magang)
+    period: Sep 2019 — Des 2019
+    location: Gorontalo
+    kind: work
+    summary: Membangun Raisa, aplikasi web untuk memantau inflasi daerah dengan peringatan dini.
+    highlights:
+      - Dibangun dalam 3 bulan pengembangan full-stack.
+  - company: Linux Study Group — Gorontalo
+    role: Kepala Divisi Multimedia
+    period: Feb 2017 — Jan 2018
+    location: Gorontalo
+    kind: organization
+    summary: Sesi berbagi IT mingguan tentang desain grafis dan editing video, ditambah workshop kampus dengan pembicara nasional.
+  - company: HEX Studio (@hexstudiogo)
+    role: Desainer Grafis & Antarmuka (Praktik independen)
+    period: 2016 — Sekarang
+    kind: work
+    summary: Studio desain pribadi yang menerima brief brand dan antarmuka dari klien dan organisasi.
+    highlights:
+      - Identitas brand dari brief hingga logo final — Katili Corp, Kotaluwuk.com, dan logo HEX Studio.
+      - Desain antarmuka responsif untuk Kongkong, diserahkan dalam bentuk kode front-end yang berfungsi.
+    project: hexstudio-logo

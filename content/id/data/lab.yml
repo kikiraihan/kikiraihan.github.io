@@ -1,0 +1,22 @@
+# Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
+items:
+  - title: ASCII playground
+    kind: Game
+    year: 2026
+    description: Game browser kecil yang seluruhnya dirender dengan karakter ASCII.
+    tags: [ASCII, Game]
+    url: https://katili.dev/playground-ascii
+  - title: Klasterisasi daun melon
+    kind: Machine learning
+    year: 2023
+    description: K-Means pada fitur tekstur GLCM, divalidasi bersama pakar tanaman selama summer course di IPB.
+    tags: [Python, K-Means, OpenCV]
+    image: /images/work/ipb-summer-2023/1.jpeg
+    url: /work/ipb-summer-2023
+  - title: Jaringan serangga–virus–tanaman
+    kind: Knowledge graph · Visualisasi data
+    year: 2023
+    description: Graf interaksi dan embedding takson yang dieksplorasi saat meneliti VektorPedia.
+    tags: [Knowledge Graph, Network Science]
+    image: /images/work/vektorpedia/3.jpeg
+    url: /work/vektorpedia

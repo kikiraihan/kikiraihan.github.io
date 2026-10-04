@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Personal portfolio of Moh. Zulkifli Katili ("Kiki"). Nuxt 4 · Vue 3 · TypeScript · Nuxt Content 3 ·
-Tailwind CSS 4 · Nuxt Image · Nuxt Icon · GSAP (lazy-loaded). Fully prerendered static site, deployed
+Tailwind CSS 4 · Nuxt Image · Nuxt Icon · Nuxt i18n (English / Indonesian) · GSAP (lazy-loaded). Fully prerendered static site, deployed
 to GitHub Pages. See `README.md` for structure and how to add content, `prd.md` for the product spec.
 
 ## Commands
@@ -20,6 +20,7 @@ Keep `package-lock.json` in sync when adding dependencies (`npm ci` fails otherw
 ## Conventions
 
 - Site data (profile, nav, socials, chat provider, Crisp id) lives in `app/app.config.ts`, not in components.
+- No hardcoded visitor-facing text in components — see "Languages" below.
 - Components use flat names (`<ProjectCard>`); folders under `app/components/` are only for organisation.
 - Fonts are self-hosted via `@fontsource*` packages — no third-party font/CDN requests.
 - Colors are always token utilities (`bg-paper`, `text-ink-2`, `border-line`, `text-accent`, …), never raw hex
@@ -28,6 +29,26 @@ Keep `package-lock.json` in sync when adding dependencies (`npm ci` fails otherw
 - In dark mode every `img`/`video` is slightly toned down (`saturate/brightness` filter in `main.css`, "Dark mode image tone"),
   back to full color on hover/focus of its card and in the lightbox. Images need no extra class for this.
 - Keep existing comments when editing code.
+
+## Languages (i18n)
+
+English is the default at the root (`/work`), Indonesian under `/id` (`/id/work`) — `@nuxtjs/i18n`, strategy
+`prefix_except_default`, configured in `nuxt.config.ts`. `LanguageSwitch` (header) links to the same page in the other language;
+`layouts/default.vue` sets `<html lang>`, hreflang alternates and `og:locale` via `useLocaleHead()`.
+
+- **UI strings**: `i18n/locales/en.json` / `id.json`, used as `$t('key')` / `t('key')`. Add every new key to **both** files.
+- **app.config.ts**: visitor-facing values are `{ en: '…', id: '…' }`; read them through `useSiteConfig()` (a computed, localized
+  copy of the app config), not `useAppConfig()`. Non-text values (email, urls, `work`, `github`) are plain.
+- **Internal links**: always `localePath('/work')` (`useLocalePath()`), never a bare `to="/work"`. Markdown links use English paths;
+  `ProseA` localizes them.
+- **Content**: `content/en/**` and `content/id/**` with the same file names; each collection exists per locale
+  (`projects_en` / `projects_id`, …, see `content.config.ts`, paths stay locale-free: `/projects/<slug>`). Query only through the
+  helpers in `useContentQueries.ts` (`useProjects`, `useProject`, `useArticles`, `useArticle`, `usePage`, `useExperience`, `useLab`):
+  they use the current locale and fall back to English for anything untranslated. `useAsyncData` keys must include the locale.
+- When changing a case study or article, update both languages and keep non-text front-matter identical. Metric values use a comma
+  as thousands separator in both languages (`MetricCounter` formats them per locale).
+- Dates and numbers: `formatDate(date, locale)`, `Intl`/`toLocaleString(locale)` — never a hardcoded `'en'`.
+- `sitemap.xml` lists every page in both languages with hreflang alternates.
 
 ## Theming
 
