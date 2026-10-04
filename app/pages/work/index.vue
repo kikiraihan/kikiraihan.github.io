@@ -1,7 +1,8 @@
 <script setup lang="ts">
+const { t } = useI18n()
 usePageSeo({
-  title: 'Work',
-  description: 'Case studies in payments, backend systems, data, AI and knowledge graphs — plus brand and interface design.',
+  title: t('work.seoTitle'),
+  description: t('work.seoDescription'),
 })
 
 const route = useRoute()
@@ -9,10 +10,11 @@ const router = useRouter()
 const { data: projects } = await useProjects('all-projects')
 
 const workTypes = useWorkTypes()
+// labels are i18n keys (i18n/locales/*.json)
 const allFilters = [
-  { value: 'all', label: 'All' },
-  { value: 'engineering', label: 'Engineering' },
-  { value: 'design', label: 'Design' },
+  { value: 'all', label: 'common.all' },
+  { value: 'engineering', label: 'work.engineering' },
+  { value: 'design', label: 'work.design' },
 ] as const
 type Filter = (typeof allFilters)[number]['value']
 // Kinds switched off in app.config.ts (`work`) get no button; with a single kind left the filter is hidden.
@@ -33,11 +35,11 @@ const count = (value: Filter) => (projects.value ?? []).filter(p => value === 'a
 
 <template>
   <div class="container-page pt-16 md:pt-24">
-    <SectionHeading as="h1" eyebrow="Work" title="Things I've designed, built and shipped.">
-      <p>Each project explains the problem, the constraints, what was built, and what I personally contributed.</p>
+    <SectionHeading as="h1" :eyebrow="$t('work.eyebrow')" :title="$t('work.title')">
+      <p>{{ $t('work.intro') }}</p>
     </SectionHeading>
 
-    <div v-if="filters.length > 2" class="mb-12 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
+    <div v-if="filters.length > 2" class="mb-12 flex flex-wrap gap-2" role="group" :aria-label="$t('work.filter')">
       <button
         v-for="f in filters"
         :key="f.value"
@@ -47,7 +49,7 @@ const count = (value: Filter) => (projects.value ?? []).filter(p => value === 'a
         :aria-pressed="active === f.value"
         @click="setFilter(f.value)"
       >
-        {{ f.label }} <span class="ml-1 font-mono text-xs opacity-60">{{ count(f.value) }}</span>
+        {{ $t(f.label) }} <span class="ml-1 font-mono text-xs opacity-60">{{ count(f.value) }}</span>
       </button>
     </div>
 

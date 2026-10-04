@@ -9,7 +9,7 @@ const { isDark, toggle } = useColorScheme()
     :aria-pressed="isDark"
     @click="toggle"
   >
-    <span class="sr-only">Dark mode</span>
+    <span class="sr-only">{{ $t('common.darkMode') }}</span>
     <Icon
       :name="isDark ? 'lucide:sun' : 'lucide:moon'"
       class="size-[18px] transition-transform duration-300 group-hover:rotate-[20deg]"

@@ -1,0 +1,162 @@
+{
+  "common": {
+    "skipToContent": "Skip to content",
+    "darkMode": "Dark mode",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "home": "{name}, home",
+    "mainNav": "Main",
+    "footerNav": "Footer",
+    "switchLanguage": "Baca dalam Bahasa Indonesia",
+    "all": "All",
+    "enlargeImage": "Enlarge image: {alt}",
+    "copy": "Copy",
+    "copied": "Copied"
+  },
+  "hero": {
+    "iBuild": "I build",
+    "iBuildSr": "I build {list}.",
+    "seeWork": "See my work",
+    "aboutMe": "About me",
+    "portraitAlt": "Portrait of {name}"
+  },
+  "home": {
+    "selectedWork": "Selected work",
+    "selectedWorkTitle": "Problems solved, not stacks collected.",
+    "allProjects": "All projects",
+    "experience": "Experience",
+    "experienceTitle": "Where I've been building.",
+    "seeMore": "See more",
+    "capabilities": "Capabilities",
+    "capabilitiesTitle": "What I bring to a team.",
+    "capabilitiesText": "Grouped by what they let me do. Tools change; the ability to reason about systems, data and people doesn't.",
+    "github": "GitHub activity",
+    "githubTitle": "Shipping, week after week.",
+    "githubText": "My public contribution graph over the last twelve months — most client work lives in private repos, so this is the visible slice.",
+    "about": "About",
+    "aboutTitle": "Engineer by training, designer by habit, researcher at heart.",
+    "aboutText1": "{name} is what most people call me. I started as a graphic designer in a campus open-source community, moved into web development, and went deep into knowledge graphs and machine learning during my master's at IPB University.",
+    "aboutText2": "Today I build payment systems and backend services from Greater Jakarta — and I still care about how things look and feel.",
+    "moreAboutMe": "More about me"
+  },
+  "contactCta": {
+    "eyebrow": "Contact",
+    "title": "Let's build",
+    "titleEm": "something."
+  },
+  "github": {
+    "contributionsLastYear": "contributions in the last year",
+    "activeDays": "Active days",
+    "longestStreak": "Longest streak",
+    "days": "{n} days | {n} day | {n} days",
+    "busiestDay": "Busiest day",
+    "less": "Less",
+    "more": "More",
+    "graphLabel": "GitHub contribution graph: {total} contributions in the last year.",
+    "several": "several",
+    "cell": "No contributions on {date} | {n} contribution on {date} | {n} contributions on {date}",
+    "unavailable": "The contribution graph is unavailable right now.",
+    "viewOnGitHub": "View on GitHub"
+  },
+  "footer": {
+    "tagline": "Systems that hold up. Interfaces people enjoy.",
+    "pages": "Pages",
+    "elsewhere": "Elsewhere",
+    "builtWith": "Built with Nuxt, Tailwind & GSAP. Hosted on GitHub Pages."
+  },
+  "askChat": {
+    "label": "Chat with me",
+    "aria": "Chat with me on WhatsApp"
+  },
+  "lightbox": {
+    "label": "Image preview",
+    "close": "Close preview"
+  },
+  "about": {
+    "seoTitle": "About",
+    "eyebrow": "About",
+    "hi": "Hi, I'm",
+    "getInTouch": "Get in touch",
+    "experience": "Experience & education",
+    "experienceTitle": "The timeline.",
+    "capabilities": "Capabilities",
+    "capabilitiesTitle": "Capabilities, grouped."
+  },
+  "contact": {
+    "seoTitle": "Contact",
+    "seoDescription": "Get in touch with {name} — email, GitHub or LinkedIn.",
+    "eyebrow": "Contact",
+    "intro": "Hiring, collaborating, or just curious about something I've built — email is the fastest way to reach me.",
+    "basedIn": "Based in {location} · WIB (UTC+7)",
+    "copyEmail": "Copy email"
+  },
+  "lab": {
+    "seoTitle": "Lab",
+    "seoDescription": "Experiments in machine learning, knowledge graphs, interfaces and illustration.",
+    "eyebrow": "Lab",
+    "title": "Curiosity, unpolished.",
+    "intro": "Experiments and side-explorations that don't need a full case study — the places I try things first."
+  },
+  "work": {
+    "seoTitle": "Work",
+    "seoDescription": "Case studies in payments, backend systems, data, AI and knowledge graphs — plus brand and interface design.",
+    "eyebrow": "Work",
+    "title": "Things I've designed, built and shipped.",
+    "intro": "Each project explains the problem, the constraints, what was built, and what I personally contributed.",
+    "filter": "Filter projects",
+    "engineering": "Engineering",
+    "design": "Design",
+    "back": "Work",
+    "role": "Role",
+    "timeline": "Timeline",
+    "context": "Context",
+    "stack": "Stack",
+    "contribution": "My contribution",
+    "team": "Team:",
+    "links": "Links",
+    "cover": "{title} cover",
+    "nextProject": "Next project",
+    "notFound": "Project not found"
+  },
+  "writing": {
+    "seoTitle": "Writing",
+    "seoDescription": "Notes on engineering, AI, design and the occasional personal story.",
+    "eyebrow": "Writing",
+    "title": "Notes from the work.",
+    "intro": "Engineering, AI, design — and sometimes just a story.",
+    "filter": "Filter by tag",
+    "back": "Writing",
+    "min": "{n} min",
+    "minRead": "{n} min read",
+    "tags": "Tags",
+    "related": "Related articles",
+    "translated": "Translated from Indonesian",
+    "untranslated": "This article is only available in Indonesian.",
+    "notFound": "Article not found"
+  },
+  "timeline": {
+    "filter": "Filter timeline",
+    "work": "Work",
+    "education": "Education",
+    "organization": "Organization",
+    "readCaseStudy": "Read the case study"
+  },
+  "error": {
+    "label": "Error {code}",
+    "notFoundTitle": "Nothing here.",
+    "brokeTitle": "Something broke.",
+    "notFoundText": "The page you're looking for moved or never existed.",
+    "backHome": "Back home"
+  },
+  "content": {
+    "technologies": "Technologies",
+    "systemLayers": "System layers",
+    "layerDetail": "Layer detail",
+    "architectureCaption": "Simplified architecture — select a layer to inspect it.",
+    "colorPalette": "Color palette",
+    "copyHex": "{name}, {hex} — copy hex code",
+    "copiedHex": "Copied {hex}",
+    "symbols": "Symbols",
+    "symbolCaption": "Select a symbol to read what it stands for."
+  }
+}

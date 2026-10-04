@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const { profile } = useAppConfig()
-const typed = useTypewriter(profile.typed)
+const site = useSiteConfig()
+const profile = computed(() => site.value.profile)
+const localePath = useLocalePath()
+const typed = useTypewriter(profile.value.typed)
 const portrait = ref<HTMLElement>()
 
 // Subtle parallax on the portrait while scrolling past the hero.
@@ -34,19 +36,19 @@ onMounted(async () => {
         </p>
 
         <p class="hero-in mt-4 font-mono text-sm text-ink-3" style="--d: 400ms">
-          <span class="sr-only">I build {{ profile.typed.join(', ') }}.</span>
+          <span class="sr-only">{{ $t('hero.iBuildSr', { list: profile.typed.join(', ') }) }}</span>
           <span aria-hidden="true">
             <!-- prompt prefix and cursor glyph come from the theme (.prompt::before / .cursor::after) -->
-            <span class="prompt">I build</span> <span class="text-accent">{{ typed }}</span><span class="cursor" />
+            <span class="prompt">{{ $t('hero.iBuild') }}</span> <span class="text-accent">{{ typed }}</span><span class="cursor" />
           </span>
         </p>
 
         <div class="hero-in mt-10 flex flex-wrap gap-3" style="--d: 480ms">
-          <AppButton to="/work" icon="lucide:arrow-right" magnetic>
-            See my work
+          <AppButton :to="localePath('/work')" icon="lucide:arrow-right" magnetic>
+            {{ $t('hero.seeWork') }}
           </AppButton>
-          <AppButton to="/about" variant="outline">
-            About me
+          <AppButton :to="localePath('/about')" variant="outline">
+            {{ $t('hero.aboutMe') }}
           </AppButton>
         </div>
       </div>
@@ -57,7 +59,7 @@ onMounted(async () => {
             <NuxtImg
               format="webp"
               :src="profile.portrait"
-              alt="Portrait of Moh. Zulkifli Katili"
+              :alt="$t('hero.portraitAlt', { name: profile.name })"
               sizes="xs:60vw md:33vw lg:400px"
               loading="eager"
               fetchpriority="high"

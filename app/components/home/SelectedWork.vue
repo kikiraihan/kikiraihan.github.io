@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { data: projects } = await useProjects('featured-projects', { featured: true })
+const localePath = useLocalePath()
 </script>
 
 <template>
@@ -8,14 +9,14 @@ const { data: projects } = await useProjects('featured-projects', { featured: tr
     <div class="mb-12 flex items-end justify-between gap-6 md:mb-16">
       <div>
         <p class="eyebrow">
-          <span class="text-accent">01</span> / Selected work
+          <span class="text-accent">01</span> / {{ $t('home.selectedWork') }}
         </p>
         <h2 id="selected-work" class="mt-4 max-w-3xl font-serif text-headline">
-          Problems solved, not stacks collected.
+          {{ $t('home.selectedWorkTitle') }}
         </h2>
       </div>
-      <NuxtLink to="/work" class="link-underline hidden shrink-0 text-sm md:inline">
-        All projects →
+      <NuxtLink :to="localePath('/work')" class="link-underline hidden shrink-0 text-sm md:inline">
+        {{ $t('home.allProjects') }} →
       </NuxtLink>
     </div>
 
@@ -32,8 +33,8 @@ const { data: projects } = await useProjects('featured-projects', { featured: tr
     </div>
 
     <div class="mt-16 md:hidden">
-      <AppButton to="/work" variant="outline" icon="lucide:arrow-right">
-        All projects
+      <AppButton :to="localePath('/work')" variant="outline" icon="lucide:arrow-right">
+        {{ $t('home.allProjects') }}
       </AppButton>
     </div>
   </section>

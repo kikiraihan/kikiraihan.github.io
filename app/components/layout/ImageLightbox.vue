@@ -163,7 +163,7 @@ onBeforeUnmount(() => {
   <dialog
     ref="dialog"
     class="m-auto max-h-none max-w-none bg-transparent p-0 backdrop:bg-black/85 backdrop:backdrop-blur-sm"
-    aria-label="Image preview"
+    :aria-label="$t('lightbox.label')"
     @close="close"
   >
     <div
@@ -198,7 +198,7 @@ onBeforeUnmount(() => {
       class="fixed right-4 top-4 grid size-11 place-items-center rounded-full bg-white/10 text-white backdrop-blur hover:bg-white/20"
       @click="close"
     >
-      <span class="sr-only">Close preview</span>
+      <span class="sr-only">{{ $t('lightbox.close') }}</span>
       <Icon name="lucide:x" class="size-5" aria-hidden="true" />
     </button>
   </dialog>

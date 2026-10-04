@@ -1,10 +1,13 @@
 <script setup lang="ts">
-const { profile } = useAppConfig()
-const { data: page } = await useAsyncData('page-about', () => queryCollection('pages').path('/pages/about').first())
+const site = useSiteConfig()
+const profile = computed(() => site.value.profile)
+const { t } = useI18n()
+const localePath = useLocalePath()
+const { data: page } = await usePage('about')
 
 usePageSeo({
-  title: 'About',
-  description: page.value?.description ?? profile.description,
+  title: t('about.seoTitle'),
+  description: page.value?.description ?? profile.value.description,
   type: 'profile',
 })
 </script>
@@ -14,17 +17,17 @@ usePageSeo({
     <div class="container-page grid gap-12 md:grid-cols-12">
       <div class="md:col-span-7">
         <p class="eyebrow">
-          About
+          {{ $t('about.eyebrow') }}
         </p>
         <h1 class="mt-6 font-serif text-display">
-          Hi, I'm <em class="text-accent">Kiki.</em>
+          {{ $t('about.hi') }} <em class="text-accent">{{ profile.shortName }}.</em>
         </h1>
         <p class="mt-8 max-w-xl text-lg leading-relaxed text-ink-2 md:text-xl">
           {{ profile.description }}
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <AppButton to="/contact">
-            Get in touch
+          <AppButton :to="localePath('/contact')">
+            {{ $t('about.getInTouch') }}
           </AppButton>
         </div>
       </div>
@@ -32,7 +35,7 @@ usePageSeo({
         <NuxtImg
           format="webp"
           :src="profile.avatar"
-          alt="Moh. Zulkifli Katili"
+          :alt="profile.name"
           sizes="xs:80vw md:33vw lg:400px"
           loading="eager"
           class="aspect-[4/5] w-full rounded-lg object-cover"
@@ -45,12 +48,12 @@ usePageSeo({
     </div>
 
     <section class="container-page mt-32" aria-labelledby="about-experience">
-      <SectionHeading id="about-experience" eyebrow="Experience & education" title="The timeline." />
+      <SectionHeading id="about-experience" :eyebrow="$t('about.experience')" :title="$t('about.experienceTitle')" />
       <ExperienceTimeline />
     </section>
 
     <section class="container-page mt-32" aria-labelledby="about-tools">
-      <SectionHeading id="about-tools" eyebrow="Capabilities" title="Capabilities, grouped." />
+      <SectionHeading id="about-tools" :eyebrow="$t('about.capabilities')" :title="$t('about.capabilitiesTitle')" />
       <CapabilityGrid />
     </section>
 

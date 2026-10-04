@@ -20,7 +20,7 @@ function onKey(e: KeyboardEvent, i: number) {
 <template>
   <figure class="not-prose my-10 overflow-hidden rounded-lg border border-line bg-paper-2/60">
     <div class="grid md:grid-cols-5">
-      <ol class="relative p-5 md:col-span-3 md:p-8" aria-label="System layers">
+      <ol class="relative p-5 md:col-span-3 md:p-8" :aria-label="$t('content.systemLayers')">
         <li v-for="(node, i) in nodes" :key="node.id" class="relative">
           <button
             ref="buttons"
@@ -49,7 +49,7 @@ function onKey(e: KeyboardEvent, i: number) {
         aria-live="polite"
       >
         <p class="eyebrow mb-3">
-          Layer detail
+          {{ $t('content.layerDetail') }}
         </p>
         <Transition mode="out-in" enter-active-class="transition duration-300" enter-from-class="opacity-0 translate-y-1" leave-active-class="transition duration-150" leave-to-class="opacity-0">
           <div v-if="current" :key="current.id">
@@ -64,7 +64,7 @@ function onKey(e: KeyboardEvent, i: number) {
       </div>
     </div>
     <figcaption class="border-t border-line px-5 py-3 text-xs text-ink-3 md:px-8">
-      Simplified architecture — select a layer to inspect it.
+      {{ $t('content.architectureCaption') }}
     </figcaption>
   </figure>
 </template>

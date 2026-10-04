@@ -43,7 +43,7 @@ function onKey(e: KeyboardEvent, i: number) {
           </div>
         </Transition>
       </div>
-      <ul class="grid grid-cols-3 gap-2 p-4 sm:grid-cols-4 md:col-span-3 md:p-6" aria-label="Symbols">
+      <ul class="grid grid-cols-3 gap-2 p-4 sm:grid-cols-4 md:col-span-3 md:p-6" :aria-label="$t('content.symbols')">
         <li v-for="(item, i) in items" :key="item.src">
           <button
             ref="buttons"
@@ -64,7 +64,7 @@ function onKey(e: KeyboardEvent, i: number) {
       </ul>
     </div>
     <figcaption class="border-t border-line px-5 py-3 text-xs text-ink-3 md:px-8">
-      {{ caption ?? 'Select a symbol to read what it stands for.' }}
+      {{ caption ?? $t('content.symbolCaption') }}
     </figcaption>
   </figure>
 </template>

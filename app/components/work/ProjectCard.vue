@@ -1,8 +1,10 @@
 <script setup lang="ts">
-import type { ProjectsCollectionItem } from '@nuxt/content'
+// every language shares one schema, so the English collection's item type stands for all of them
+import type { ProjectsEnCollectionItem as ProjectsCollectionItem } from '@nuxt/content'
 
 const props = defineProps<{ project: ProjectsCollectionItem, size?: 'lg' | 'md', eager?: boolean }>()
 const slug = computed(() => slugFromPath(props.project.path))
+const localePath = useLocalePath()
 const metric = computed(() => props.project.metrics?.[0])
 </script>
 
@@ -37,7 +39,7 @@ const metric = computed(() => props.project.metrics?.[0])
         </p>
         <h3 class="mt-1.5 font-serif text-3xl leading-tight">
           <!-- whole card is clickable via the stretched link -->
-          <NuxtLink :to="`/work/${slug}`" class="after:absolute after:inset-0 after:content-['']">
+          <NuxtLink :to="localePath(`/work/${slug}`)" class="after:absolute after:inset-0 after:content-['']">
             {{ project.title }}
           </NuxtLink>
         </h3>

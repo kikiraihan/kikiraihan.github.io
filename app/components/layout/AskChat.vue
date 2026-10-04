@@ -4,13 +4,16 @@
 // - 'crisp': Crisp's own launcher bubble. We don't render a button or restyle anything; Crisp looks
 //   exactly as configured in the Crisp dashboard.
 const { askChat, crispWebsiteId } = useAppConfig()
+const site = useSiteConfig()
 
 const isWhatsApp = computed(() => askChat.provider === 'whatsapp')
 
 const whatsappUrl = computed(() => {
   const number = askChat.whatsapp.number.replace(/\D/g, '')
   if (!number) return ''
-  const text = askChat.whatsapp.message ? `&text=${encodeURIComponent(askChat.whatsapp.message)}` : ''
+  // pre-filled message in the visitor's current language
+  const message = site.value.askChat.whatsapp.message
+  const text = message ? `&text=${encodeURIComponent(message)}` : ''
   // api.whatsapp.com directly instead of wa.me: wa.me redirects there cross-origin, and Firefox can
   // block that redirect in a new tab with NS_ERROR_DOM_COOP_FAILED (WhatsApp sends a COOP header).
   return `https://api.whatsapp.com/send?phone=${number}${text}`
@@ -47,9 +50,9 @@ onMounted(() => {
     target="_blank"
     rel="noopener noreferrer"
     class="ask-btn fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 px-4 py-2.5"
-    aria-label="Chat with me on WhatsApp"
+    :aria-label="$t('askChat.aria')"
   >
     <Icon name="simple-icons:whatsapp" class="size-4" aria-hidden="true" />
-    Chat with me
+    {{ $t('askChat.label') }}
   </a>
 </template>

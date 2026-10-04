@@ -1,26 +1,28 @@
 <script setup lang="ts">
-const { nav, profile } = useAppConfig()
+const site = useSiteConfig()
 const route = useRoute()
+const localePath = useLocalePath()
 const open = ref(false)
 
 watch(() => route.fullPath, () => { open.value = false })
 
-const isActive = (to: string) => route.path === to || route.path.startsWith(`${to}/`)
+// nav paths in app.config.ts are the English ones; compare against the localized path (/work or /id/work)
+const isActive = (to: string) => route.path === localePath(to) || route.path.startsWith(`${localePath(to)}/`)
 </script>
 
 <template>
   <header class="site-header sticky top-0 z-40 backdrop-blur-md">
-    <nav class="container-page flex h-16 items-center justify-between" aria-label="Main">
-      <NuxtLink to="/" class="group flex items-baseline gap-2" :aria-label="`${profile.name}, home`">
+    <nav class="container-page flex h-16 items-center justify-between" :aria-label="$t('common.mainNav')">
+      <NuxtLink :to="localePath('/')" class="group flex items-baseline gap-2" :aria-label="$t('common.home', { name: site.profile.name })">
         <span class="font-serif text-2xl leading-none">Kiki</span>
         <span class="eyebrow hidden transition-colors group-hover:text-accent sm:inline">Katili</span>
       </NuxtLink>
 
       <div class="flex items-center gap-1">
         <ul class="hidden items-center gap-1 md:flex">
-          <li v-for="item in nav" :key="item.to">
+          <li v-for="item in site.nav" :key="item.to">
             <NuxtLink
-              :to="item.to"
+              :to="localePath(item.to)"
               class="nav-link px-3 py-1.5 transition-colors hover:text-accent"
               :class="isActive(item.to) ? 'text-ink' : 'text-ink-2'"
               :aria-current="isActive(item.to) ? 'page' : undefined"
@@ -30,6 +32,7 @@ const isActive = (to: string) => route.path === to || route.path.startsWith(`${t
             </NuxtLink>
           </li>
         </ul>
+        <LanguageSwitch />
         <ThemeToggle />
         <button
           type="button"
@@ -38,7 +41,7 @@ const isActive = (to: string) => route.path === to || route.path.startsWith(`${t
           aria-controls="mobile-menu"
           @click="open = !open"
         >
-          <span class="sr-only">{{ open ? 'Close menu' : 'Open menu' }}</span>
+          <span class="sr-only">{{ open ? $t('common.closeMenu') : $t('common.openMenu') }}</span>
           <Icon :name="open ? 'lucide:x' : 'lucide:menu'" class="size-5" aria-hidden="true" />
         </button>
       </div>
@@ -53,9 +56,9 @@ const isActive = (to: string) => route.path === to || route.path.startsWith(`${t
     >
       <div v-if="open" id="mobile-menu" class="border-t border-line bg-paper md:hidden">
         <ul class="container-page py-6">
-          <li v-for="(item, i) in nav" :key="item.to" class="border-b border-line last:border-0">
+          <li v-for="(item, i) in site.nav" :key="item.to" class="border-b border-line last:border-0">
             <NuxtLink
-              :to="item.to"
+              :to="localePath(item.to)"
               class="flex items-baseline justify-between py-4 font-serif text-4xl"
               :aria-current="isActive(item.to) ? 'page' : undefined"
             >

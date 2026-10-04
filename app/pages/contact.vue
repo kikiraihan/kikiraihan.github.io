@@ -1,19 +1,22 @@
 <script setup lang="ts">
-const { profile, socials } = useAppConfig()
+const site = useSiteConfig()
+const profile = computed(() => site.value.profile)
+const { socials } = useAppConfig()
+const { t } = useI18n()
 usePageSeo({
-  title: 'Contact',
-  description: `Get in touch with ${profile.name} — email, GitHub or LinkedIn.`,
+  title: t('contact.seoTitle'),
+  description: t('contact.seoDescription', { name: profile.value.name }),
 })
 
 const copied = ref(false)
 async function copyEmail() {
   try {
-    await navigator.clipboard.writeText(profile.email)
+    await navigator.clipboard.writeText(profile.value.email)
     copied.value = true
     setTimeout(() => (copied.value = false), 2000)
   }
   catch {
-    window.location.href = `mailto:${profile.email}`
+    window.location.href = `mailto:${profile.value.email}`
   }
 }
 </script>
@@ -21,17 +24,17 @@ async function copyEmail() {
 <template>
   <div class="container-page pt-16 md:pt-24">
     <p class="eyebrow">
-      Contact
+      {{ $t('contact.eyebrow') }}
     </p>
     <h1 class="mt-6 font-serif text-display">
-      Let's build <em class="text-accent">something.</em>
+      {{ $t('contactCta.title') }} <em class="text-accent">{{ $t('contactCta.titleEm') }}</em>
     </h1>
     <p class="mt-8 max-w-xl text-lg text-ink-2">
-      Hiring, collaborating, or just curious about something I've built — email is the fastest way to reach me.
+      {{ $t('contact.intro') }}
     </p>
     <p class="mt-4 flex items-center gap-2 text-sm text-ink-3">
       <Icon name="lucide:map-pin" class="size-4" aria-hidden="true" />
-      Based in {{ profile.location }} · WIB (UTC+7)
+      {{ $t('contact.basedIn', { location: profile.location }) }}
     </p>
 
     <div class="mt-12 flex flex-wrap items-center gap-3">
@@ -40,7 +43,7 @@ async function copyEmail() {
       </AppButton>
       <button type="button" class="inline-flex items-center gap-2 rounded-full border border-line px-5 py-3 text-sm hover:border-ink" @click="copyEmail">
         <Icon :name="copied ? 'lucide:check' : 'lucide:copy'" class="size-4" aria-hidden="true" />
-        <span aria-live="polite">{{ copied ? 'Copied' : 'Copy email' }}</span>
+        <span aria-live="polite">{{ copied ? $t('common.copied') : $t('contact.copyEmail') }}</span>
       </button>
     </div>
 

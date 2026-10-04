@@ -3,12 +3,14 @@
 const props = withDefaults(defineProps<{ limit?: number, filters?: boolean }>(), { limit: undefined, filters: true })
 const { data } = await useExperience()
 const { data: hiddenProjects } = await useHiddenProjectSlugs()
+const localePath = useLocalePath()
 
+// labels are i18n keys (i18n/locales/*.json)
 const kinds = [
-  { value: 'all', label: 'All' },
-  { value: 'work', label: 'Work' },
-  { value: 'education', label: 'Education' },
-  { value: 'organization', label: 'Organization' },
+  { value: 'all', label: 'common.all' },
+  { value: 'work', label: 'timeline.work' },
+  { value: 'education', label: 'timeline.education' },
+  { value: 'organization', label: 'timeline.organization' },
 ] as const
 const kind = ref<(typeof kinds)[number]['value']>('all')
 const expanded = ref<number | null>(0)
@@ -23,7 +25,7 @@ const items = computed(() => {
 
 <template>
   <div>
-    <div v-if="filters" class="mb-6 flex gap-1" role="group" aria-label="Filter timeline">
+    <div v-if="filters" class="mb-6 flex gap-1" role="group" :aria-label="$t('timeline.filter')">
       <button
         v-for="k in kinds"
         :key="k.value"
@@ -33,7 +35,7 @@ const items = computed(() => {
         :aria-pressed="kind === k.value"
         @click="kind = k.value; expanded = null"
       >
-        {{ k.label }}
+        {{ $t(k.label) }}
       </button>
     </div>
 
@@ -79,8 +81,8 @@ const items = computed(() => {
                     <span class="mt-2 size-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />{{ h }}
                   </li>
                 </ul>
-                <NuxtLink v-if="item.project && !hiddenProjects.includes(item.project)" :to="`/work/${item.project}`" class="link-underline mt-4 inline-flex items-center gap-1 text-ink">
-                  Read the case study <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
+                <NuxtLink v-if="item.project && !hiddenProjects.includes(item.project)" :to="localePath(`/work/${item.project}`)" class="link-underline mt-4 inline-flex items-center gap-1 text-ink">
+                  {{ $t('timeline.readCaseStudy') }} <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
                 </NuxtLink>
               </div>
             </div>

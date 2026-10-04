@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { profile, socials, nav } = useAppConfig()
+const site = useSiteConfig()
+const { profile, socials } = useAppConfig()
+const localePath = useLocalePath()
 const year = new Date().getFullYear()
 </script>
 
@@ -8,19 +10,19 @@ const year = new Date().getFullYear()
     <div class="container-page grid gap-10 py-12 md:grid-cols-12">
       <div class="md:col-span-6">
         <p class="font-serif text-3xl leading-tight">
-          Systems that hold up. Interfaces people enjoy.
+          {{ $t('footer.tagline') }}
         </p>
         <a :href="`mailto:${profile.email}`" class="link-underline mt-4 inline-block text-ink-2 hover:text-ink">
           {{ profile.email }}
         </a>
       </div>
-      <nav class="md:col-span-3" aria-label="Footer">
+      <nav class="md:col-span-3" :aria-label="$t('common.footerNav')">
         <p class="eyebrow mb-3">
-          Pages
+          {{ $t('footer.pages') }}
         </p>
         <ul class="space-y-1.5 text-sm">
-          <li v-for="item in nav" :key="item.to">
-            <NuxtLink :to="item.to" class="link-underline text-ink-2 hover:text-ink">
+          <li v-for="item in site.nav" :key="item.to">
+            <NuxtLink :to="localePath(item.to)" class="link-underline text-ink-2 hover:text-ink">
               {{ item.label }}
             </NuxtLink>
           </li>
@@ -28,7 +30,7 @@ const year = new Date().getFullYear()
       </nav>
       <div class="md:col-span-3">
         <p class="eyebrow mb-3">
-          Elsewhere
+          {{ $t('footer.elsewhere') }}
         </p>
         <ul class="space-y-1.5 text-sm">
           <li v-for="s in socials" :key="s.url">
@@ -41,7 +43,7 @@ const year = new Date().getFullYear()
     </div>
     <div class="container-page flex flex-wrap justify-between gap-2 border-t border-line py-6 text-xs text-ink-3">
       <p>© {{ year }} {{ profile.name }}</p>
-      <p>Built with Nuxt, Tailwind &amp; GSAP. Hosted on GitHub Pages.</p>
+      <p>{{ $t('footer.builtWith') }}</p>
     </div>
   </footer>
 </template>

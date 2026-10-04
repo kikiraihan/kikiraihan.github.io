@@ -20,12 +20,12 @@ async function copy(hex: string) {
 </script>
 
 <template>
-  <ul class="not-prose my-10 grid grid-cols-2 gap-3 sm:grid-cols-4" aria-label="Color palette">
+  <ul class="not-prose my-10 grid grid-cols-2 gap-3 sm:grid-cols-4" :aria-label="$t('content.colorPalette')">
     <li v-for="(c, i) in colors" :key="`${c.hex}-${c.name}`" v-reveal="{ delay: (i % 4) * 0.06 }">
       <button
         type="button"
         class="group block h-full w-full overflow-hidden rounded-lg border border-line bg-paper text-left transition-colors hover:border-ink"
-        :aria-label="`${c.name}, ${c.hex} — copy hex code`"
+        :aria-label="$t('content.copyHex', { name: c.name, hex: c.hex })"
         @click="copy(c.hex)"
       >
         <span class="relative block aspect-[4/3] border-b border-line" :style="{ backgroundColor: c.hex }">
@@ -33,7 +33,7 @@ async function copy(hex: string) {
             class="absolute right-2 top-2 rounded-full bg-paper px-2 py-0.5 font-mono text-[10px] text-ink transition-opacity"
             :class="copied === c.hex ? 'opacity-100' : 'opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100'"
             aria-hidden="true"
-          >{{ copied === c.hex ? 'Copied' : 'Copy' }}</span>
+          >{{ copied === c.hex ? $t('common.copied') : $t('common.copy') }}</span>
         </span>
         <span class="block p-3">
           <span class="block text-sm font-medium text-ink">{{ c.name }}</span>
@@ -44,6 +44,6 @@ async function copy(hex: string) {
     </li>
   </ul>
   <p class="sr-only" aria-live="polite">
-    {{ copied ? `Copied ${copied}` : '' }}
+    {{ copied ? $t('content.copiedHex', { hex: copied }) : '' }}
   </p>
 </template>

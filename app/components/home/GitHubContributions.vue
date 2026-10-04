@@ -4,6 +4,7 @@
 interface ContributionDay { date: string, count: number, level: 0 | 1 | 2 | 3 | 4 }
 
 const { github, socials } = useAppConfig()
+const { t, locale } = useI18n()
 const profileUrl = socials.find(s => s.label === 'GitHub')?.url ?? `https://github.com/${github.username}`
 
 const { data } = await useFetch('/github-contributions.json', { key: 'github-contributions' })
@@ -32,8 +33,9 @@ onMounted(async () => {
 })
 
 const dayOf = (date: string) => new Date(`${date}T00:00:00Z`)
-const fmt = new Intl.DateTimeFormat('en', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
-const monthFmt = new Intl.DateTimeFormat('en', { month: 'short', timeZone: 'UTC' })
+// dates and month labels follow the current language
+const fmt = computed(() => new Intl.DateTimeFormat(locale.value, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' }))
+const monthFmt = computed(() => new Intl.DateTimeFormat(locale.value, { month: 'short', timeZone: 'UTC' }))
 
 // Columns = weeks (Sunday first), like GitHub; the first week is padded with empty cells.
 const weeks = computed(() => {
@@ -60,7 +62,7 @@ const months = computed(() => weeks.value.map((week, i) => {
   // a partial first week right before a month change would overlap the next label
   const next = weeks.value[i + 1]?.find(Boolean)
   if (i === 0 && next && dayOf(next.date).getUTCMonth() !== m) return ''
-  return !prev || dayOf(prev.date).getUTCMonth() !== m ? monthFmt.format(dayOf(first.date)) : ''
+  return !prev || dayOf(prev.date).getUTCMonth() !== m ? monthFmt.value.format(dayOf(first.date)) : ''
 }))
 
 const stats = computed(() => {
@@ -77,7 +79,7 @@ const stats = computed(() => {
 })
 
 const label = (d: ContributionDay) =>
-  `${d.count === 0 ? 'No' : d.count} contribution${d.count === 1 ? '' : 's'} on ${fmt.format(dayOf(d.date))}`
+  t('github.cell', { n: d.count, date: fmt.value.format(dayOf(d.date)) }, d.count)
 </script>
 
 <template>
@@ -85,24 +87,24 @@ const label = (d: ContributionDay) =>
     <div v-if="weeks.length" v-reveal class="rounded-2xl border border-line p-4 sm:p-6">
       <div class="mb-5 flex flex-wrap items-end justify-between gap-x-8 gap-y-3">
         <p class="text-sm text-ink-2">
-          <span class="font-serif text-2xl text-ink">{{ total?.toLocaleString('en') ?? '—' }}</span>
-          contributions in the last year
+          <span class="font-serif text-2xl text-ink">{{ total?.toLocaleString(locale) ?? '—' }}</span>
+          {{ $t('github.contributionsLastYear') }}
         </p>
         <dl class="flex gap-6 text-xs text-ink-3">
           <div>
-            <dt>Active days</dt>
+            <dt>{{ $t('github.activeDays') }}</dt>
             <dd class="mt-0.5 text-sm font-medium text-ink">
               {{ stats.activeDays }}
             </dd>
           </div>
           <div>
-            <dt>Longest streak</dt>
+            <dt>{{ $t('github.longestStreak') }}</dt>
             <dd class="mt-0.5 text-sm font-medium text-ink">
-              {{ stats.longest }} day{{ stats.longest === 1 ? '' : 's' }}
+              {{ $t('github.days', { n: stats.longest }, stats.longest) }}
             </dd>
           </div>
           <div v-if="stats.best?.count">
-            <dt>Busiest day</dt>
+            <dt>{{ $t('github.busiestDay') }}</dt>
             <dd class="mt-0.5 text-sm font-medium text-ink">
               {{ stats.best.count }}
             </dd>
@@ -112,7 +114,7 @@ const label = (d: ContributionDay) =>
 
       <!-- Only the graph scrolls horizontally on small screens, never the page -->
       <div ref="scroller" class="-mx-1 overflow-x-auto px-1 pb-1 [--cell:11px] md:[--cell:14px]">
-        <div class="inline-block" role="img" :aria-label="`GitHub contribution graph: ${total ?? 'several'} contributions in the last year.`">
+        <div class="inline-block" role="img" :aria-label="$t('github.graphLabel', { total: total?.toLocaleString(locale) ?? $t('github.several') })">
           <div class="mb-1.5 grid grid-flow-col auto-cols-[var(--cell)] gap-[3px] text-[10px] leading-none text-ink-3" aria-hidden="true">
             <span v-for="(m, i) in months" :key="i" class="overflow-visible whitespace-nowrap">{{ m }}</span>
           </div>
@@ -136,18 +138,18 @@ const label = (d: ContributionDay) =>
           <Icon name="simple-icons:github" class="size-3.5" aria-hidden="true" />@{{ github.username }}
         </a>
         <span class="inline-flex items-center gap-1" aria-hidden="true">
-          Less
+          {{ $t('github.less') }}
           <span v-for="l in 5" :key="l" class="contrib-cell size-[11px]" :data-level="l - 1" />
-          More
+          {{ $t('github.more') }}
         </span>
       </div>
     </div>
 
     <!-- Empty state: data could not be fetched at build time or in the browser -->
     <div v-else class="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-line p-6 text-sm text-ink-2">
-      <p>The contribution graph is unavailable right now.</p>
+      <p>{{ $t('github.unavailable') }}</p>
       <AppButton :href="profileUrl" variant="outline" icon="lucide:arrow-up-right">
-        View on GitHub
+        {{ $t('github.viewOnGitHub') }}
       </AppButton>
     </div>
   </div>
