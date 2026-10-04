@@ -80,6 +80,8 @@ function localeCollections(locale: (typeof contentLocales)[number]) {
           summary: z.string(),
           highlights: z.array(z.string()).default([]),
           project: z.string().optional(),
+          // external site of the company/project, shown as a link under the highlights
+          url: z.string().optional(),
         })),
       }),
     }),
