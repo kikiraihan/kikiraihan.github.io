@@ -27,7 +27,7 @@ As a Senior Fullstack Developer at **Singapay** I help maintain a payment gatewa
 
 I now handle the PPOB project, working from Indonesia with a team that is almost entirely in Shanghai.
 
-Outside the day job I contribute to **[Anveesa](https://anveesa.com/)**, a suite of open-source developer tools (a database studio, database management, an AI retrieval tool and cloud storage), mostly on the front end in Vue. I'm involved in Anveesa Aras, Anveesa Vestra, Anveesa Nias and Anveesa Workflow.
+Outside the day job I contribute to **[Anveesa](https://anveesa.com/)**, a suite of open-source developer tools (a database studio, database management, an AI retrieval tool and cloud storage), on both the front end (in Vue) and the back end. I'm involved in Anveesa Aras, Anveesa Vestra, Anveesa Nias and Anveesa Workflow.
 
 ## AI, knowledge graphs & RAG
 
