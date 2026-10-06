@@ -56,6 +56,8 @@ function localeCollections(locale: (typeof contentLocales)[number]) {
         cover: z.string().optional(),
         // language the article was originally written in; a different value marks this file as a translation
         original: z.enum(contentLocales).optional(),
+        // lab notes: still published at /writing/<slug>, but listed on the Lab page instead of the Writing list
+        lab: z.boolean().default(false),
         draft: z.boolean().default(false),
       }),
     }),

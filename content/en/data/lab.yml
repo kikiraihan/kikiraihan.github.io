@@ -1,5 +1,11 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: MCP server for boarding-school student data
+    kind: Tutorial · AI
+    year: 2026
+    description: Wrapping a REST API as an MCP server with the Python SDK v2, tested against a mock service, with the raw JSON-RPC messages captured.
+    tags: [MCP, Python, AI]
+    url: /writing/mcp-server-asrama
   - title: ASCII playground
     kind: Game
     year: 2026
