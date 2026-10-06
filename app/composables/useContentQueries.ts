@@ -75,10 +75,11 @@ export function isHiddenWorkLink(href: string | undefined, hidden: string[]) {
   return !!m && hidden.includes(m[1]!)
 }
 
+// Lab notes (`lab: true`) are left out: they are linked from the Lab page (content/<locale>/data/lab.yml).
 export function useArticles(key = 'writing') {
   const locale = useContentLocale()
   return useAsyncData(`${key}-${locale.value}`, async () => {
-    const query = (l: ContentLocale) => queryCollection(writingOf(l)).where('draft', '=', false).order('date', 'DESC').all()
+    const query = (l: ContentLocale) => queryCollection(writingOf(l)).where('draft', '=', false).where('lab', '=', false).order('date', 'DESC').all()
     if (locale.value === FALLBACK) return query(FALLBACK)
     const [translated, fallback] = await Promise.all([query(locale.value), query(FALLBACK)])
     return withFallback(translated, fallback).sort((a, b) => b.date.localeCompare(a.date))

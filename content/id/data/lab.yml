@@ -1,5 +1,11 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: MCP server untuk data anak asrama
+    kind: Tutorial · AI
+    year: 2026
+    description: Membungkus REST API menjadi MCP server dengan Python SDK v2, diuji dengan service mock, lengkap dengan tangkapan pesan JSON-RPC mentahnya.
+    tags: [MCP, Python, AI]
+    url: /writing/mcp-server-asrama
   - title: ASCII playground
     kind: Game
     year: 2026

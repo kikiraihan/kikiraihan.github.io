@@ -157,6 +157,8 @@ A kind switched off disappears from the Work page (its filter button too), home 
 (not generated) and the sitemap; links to those projects from Markdown, the experience timeline and the Lab render as plain text.
 
 **Article** — `content/en/writing/slug.md` and/or `content/id/writing/slug.md` with `title`, `description`, `date`, `tags`, optional `cover`, and `original: en|id` on the translated copy. Reading time and related articles (by shared tags) are computed.
+Add `lab: true` for a lab note / experiment: it keeps its `/writing/<slug>` page but is left out of the Writing list
+(and related articles) — link it from `content/<locale>/data/lab.yml` with `url: /writing/<slug>`.
 
 **Experience / Lab** — edit `content/<en|id>/data/experience.yml` and `content/<en|id>/data/lab.yml`.
 

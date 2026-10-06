@@ -54,8 +54,9 @@ usePageSeo({
 <template>
   <article v-if="article" class="container-page pt-12 md:pt-20" :lang="article.lang">
     <header class="mx-auto max-w-3xl">
-      <NuxtLink :to="localePath('/writing')" class="eyebrow link-underline inline-flex items-center gap-1 hover:text-ink">
-        <Icon name="lucide:arrow-left" class="size-3" aria-hidden="true" /> {{ $t('writing.back') }}
+      <!-- lab notes go back to the Lab page, where they are listed -->
+      <NuxtLink :to="localePath(article.lab ? '/lab' : '/writing')" class="eyebrow link-underline inline-flex items-center gap-1 hover:text-ink">
+        <Icon name="lucide:arrow-left" class="size-3" aria-hidden="true" /> {{ article.lab ? $t('lab.eyebrow') : $t('writing.back') }}
       </NuxtLink>
       <h1 class="mt-10 font-serif text-headline">
         {{ article.title }}
