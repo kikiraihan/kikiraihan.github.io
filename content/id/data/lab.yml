@@ -5,11 +5,12 @@ items:
     year: 2026
     description: Pencarian dan viewer ID pelanggan dummy Rajabiller (idpel_dummy) untuk testing integrasi API PPOB / H2H, ditampilkan sebagai tabel, tree, dan JSON.
     tags: [Vue, Vite, API, PPOB]
+    image: /images/lab/rajabiller-dummy-id-pelanggan.webp
     url: https://rajabiller-dummy-id-pelanggan-searc.vercel.app/rajabiller-dummy-id-pelanggan/
   - title: Viewer daftar universitas
     kind: Dev tool · API
     year: 2026
-    description: Pencarian dan viewer Universities API dari Hipolabs: filter nama, negara, limit, dan offset lewat API, lalu cari, filter per kolom, dan export CSV di browser, ditampilkan sebagai tabel, tree, dan JSON.
+    description: 'Pencarian dan viewer Universities API dari Hipolabs: filter nama, negara, limit, dan offset lewat API, lalu cari, filter per kolom, dan export CSV di browser, ditampilkan sebagai tabel, tree, dan JSON.'
     tags: [Vue, Vite, API]
     url: https://rajabiller-dummy-id-pelanggan-searc.vercel.app/daftar-universitas/
   - title: MCP server untuk data anak asrama
