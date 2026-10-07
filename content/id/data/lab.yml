@@ -1,5 +1,11 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: Pencarian ID pelanggan dummy Rajabiller
+    kind: Dev tool · API
+    year: 2026
+    description: Pencarian dan viewer ID pelanggan dummy Rajabiller (idpel_dummy) untuk testing integrasi API PPOB / H2H, ditampilkan sebagai tabel, tree, dan JSON.
+    tags: [Vue, Vite, API, PPOB]
+    url: https://rajabiller-dummy-id-pelanggan-searc.vercel.app/
   - title: MCP server untuk data anak asrama
     kind: Tutorial · AI
     year: 2026
