@@ -1,5 +1,11 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: Rajabiller dummy customer ID search
+    kind: Dev tool · API
+    year: 2026
+    description: Search and viewer for Rajabiller's dummy customer IDs (idpel_dummy) when testing PPOB / H2H API integrations, shown as table, tree and JSON.
+    tags: [Vue, Vite, API, PPOB]
+    url: https://rajabiller-dummy-id-pelanggan-searc.vercel.app/
   - title: MCP server for boarding-school student data
     kind: Tutorial · AI
     year: 2026
