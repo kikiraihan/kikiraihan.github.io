@@ -3,7 +3,6 @@ title: "Building an MCP Server for a Boarding-School Student Data Service (Pytho
 description: "A step-by-step guide to wrapping a boarding-school student REST API as an MCP server with MCPServer (MCP Python SDK v2), then dissecting the JSON-RPC messages an AI agent actually reads."
 date: 2026-10-06
 original: id
-lab: true
 tags: [Engineering, AI, MCP, Python]
 ---
 

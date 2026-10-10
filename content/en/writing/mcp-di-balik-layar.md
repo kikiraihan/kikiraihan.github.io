@@ -12,7 +12,7 @@ A while ago I built a [small MCP server for boarding-school student data](/writi
 - Does it read **all** tool definitions and all data every time, or is there some kind of **glossary/index** it opens only when needed?
 - If the model never sees my code, how does it know to call `cari_anak` (find student) first, and `absensi_harian` (daily attendance) after?
 
-This article isn't about building the server (that's in the lab note above), but about what happens behind it.
+This article isn't about building the server (that's in the previous article), but about what happens behind it.
 
 ## Three players, not two
 
@@ -106,7 +106,7 @@ The model runs nothing. It only produces structured blocks that say "please run 
 
 ### 3. The host translates to JSON-RPC
 
-The host sees the name `mcp__asrama__cari_anak`, knows it belongs to the `asrama` server, and sends a `tools/call` with the original name `cari_anak`, exactly as dissected in the lab note. The server calls the REST API, filters out the sensitive fields and replies with JSON in `content[].text`.
+The host sees the name `mcp__asrama__cari_anak`, knows it belongs to the `asrama` server, and sends a `tools/call` with the original name `cari_anak`, exactly as dissected in the previous article. The server calls the REST API, filters out the sensitive fields and replies with JSON in `content[].text`.
 
 ### 4. Tool results join the conversation, and **everything is sent again**
 
@@ -130,7 +130,7 @@ This is the part people most often miss. The host appends two messages to the hi
 }
 ```
 
-Tool results are sent as a `role: "user"` message, paired by `tool_use_id`. If the MCP server replied with `isError: true`, the host usually passes it on as `is_error: true`. That's why an error "hidden" as a plain dict (covered in the lab note) still reads as a success.
+Tool results are sent as a `role: "user"` message, paired by `tool_use_id`. If the MCP server replied with `isError: true`, the host usually passes it on as `is_error: true`. That's why an error "hidden" as a plain dict (covered in the previous article) still reads as a success.
 
 The model rereads everything from the start, matches the two results and answers: *"Of the two students in class 7A, the one on leave today is Citra Lestari (gone home for a family event)."* This time the `stop_reason` is `end_turn`, and the host shows the answer.
 

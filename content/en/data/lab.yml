@@ -13,12 +13,6 @@ items:
     description: 'Search and viewer for the Hipolabs Universities API: filter by name, country, limit and offset through the API, then search, filter per column and export CSV in the browser, shown as table, tree and JSON.'
     tags: [Vue, Vite, API]
     url: https://rajabiller-dummy-id-pelanggan-searc.vercel.app/daftar-universitas/
-  - title: MCP server for boarding-school student data
-    kind: Tutorial · AI
-    year: 2026
-    description: Wrapping a REST API as an MCP server with the Python SDK v2, tested against a mock service, with the raw JSON-RPC messages captured.
-    tags: [MCP, Python, AI]
-    url: /writing/mcp-server-asrama
   - title: ASCII playground
     kind: Game
     year: 2026
