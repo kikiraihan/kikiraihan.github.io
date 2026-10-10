@@ -3,7 +3,6 @@ title: "Membuat MCP Server untuk Service Data Anak Asrama (Python SDK v2) — Le
 description: "Panduan langkah demi langkah membungkus REST API data anak asrama menjadi MCP server dengan MCPServer (SDK MCP Python v2), lalu membedah pesan JSON-RPC yang sebenarnya dibaca oleh agent AI."
 date: 2026-10-06
 original: id
-lab: true
 tags: [Engineering, AI, MCP, Python]
 ---
 

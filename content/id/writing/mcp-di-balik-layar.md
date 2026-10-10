@@ -12,7 +12,7 @@ Beberapa waktu lalu saya membuat [MCP server kecil untuk data anak asrama](/writ
 - Apakah model membaca **semua** definisi tool dan semua data setiap kali, atau ada semacam **glosarium/indeks** yang ia buka seperlunya?
 - Kalau model tidak melihat kode saya, dari mana ia tahu harus memanggil `cari_anak` dulu, baru `absensi_harian`?
 
-Artikel ini tidak membahas cara membuat server (itu ada di catatan lab tadi), tapi apa yang terjadi di belakangnya.
+Artikel ini tidak membahas cara membuat server (itu ada di artikel sebelumnya), tapi apa yang terjadi di belakangnya.
 
 ## Tiga pemain, bukan dua
 
@@ -104,7 +104,7 @@ Model tidak menjalankan apa pun. Ia hanya menghasilkan blok terstruktur yang ber
 
 ### 3. Host menerjemahkan ke JSON-RPC
 
-Host melihat nama `mcp__asrama__cari_anak`, tahu itu milik server `asrama`, lalu mengirim `tools/call` dengan nama asli `cari_anak`, persis seperti yang dibedah di catatan lab. Server memanggil REST API, menyaring field sensitif, lalu membalas `content[].text` berisi JSON.
+Host melihat nama `mcp__asrama__cari_anak`, tahu itu milik server `asrama`, lalu mengirim `tools/call` dengan nama asli `cari_anak`, persis seperti yang dibedah di artikel sebelumnya. Server memanggil REST API, menyaring field sensitif, lalu membalas `content[].text` berisi JSON.
 
 ### 4. Hasil tool masuk ke percakapan, lalu **semuanya dikirim ulang**
 
@@ -128,7 +128,7 @@ Ini bagian yang paling sering tidak disadari. Host menambahkan dua pesan ke riwa
 }
 ```
 
-Hasil tool dikirim sebagai pesan ber-`role: "user"`, dipasangkan dengan `tool_use_id`. Kalau MCP server membalas `isError: true`, host biasanya meneruskannya sebagai `is_error: true`. Itu sebabnya error yang "disembunyikan" sebagai dict biasa (dibahas di catatan lab) tetap terbaca sebagai sukses.
+Hasil tool dikirim sebagai pesan ber-`role: "user"`, dipasangkan dengan `tool_use_id`. Kalau MCP server membalas `isError: true`, host biasanya meneruskannya sebagai `is_error: true`. Itu sebabnya error yang "disembunyikan" sebagai dict biasa (dibahas di artikel sebelumnya) tetap terbaca sebagai sukses.
 
 Model membaca ulang semuanya dari awal, mencocokkan dua hasil tadi, lalu menjawab: *"Dari dua anak kelas 7A, yang izin hari ini adalah Citra Lestari (pulang, acara keluarga)."* Kali ini `stop_reason`-nya `end_turn`, dan host menampilkan jawabannya.
 

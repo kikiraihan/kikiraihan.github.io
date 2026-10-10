@@ -13,12 +13,6 @@ items:
     description: 'Pencarian dan viewer Universities API dari Hipolabs: filter nama, negara, limit, dan offset lewat API, lalu cari, filter per kolom, dan export CSV di browser, ditampilkan sebagai tabel, tree, dan JSON.'
     tags: [Vue, Vite, API]
     url: https://rajabiller-dummy-id-pelanggan-searc.vercel.app/daftar-universitas/
-  - title: MCP server untuk data anak asrama
-    kind: Tutorial · AI
-    year: 2026
-    description: Membungkus REST API menjadi MCP server dengan Python SDK v2, diuji dengan service mock, lengkap dengan tangkapan pesan JSON-RPC mentahnya.
-    tags: [MCP, Python, AI]
-    url: /writing/mcp-server-asrama
   - title: ASCII playground
     kind: Game
     year: 2026
