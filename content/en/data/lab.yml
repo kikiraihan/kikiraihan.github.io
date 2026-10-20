@@ -1,5 +1,12 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: LiteScroller
+    kind: macOS app · Menu bar
+    year: 2026
+    description: 'Menu bar separator for macOS that hides icons like Hidden Bar, plus a scroller mode: hidden icons appear in a scrollable strip over the menu bar, so they stay reachable even when long app menus or the notch would cover them. Pure Swift + AppKit in a single source file.'
+    tags: [Swift, AppKit, macOS, Accessibility]
+    image: /images/lab/lite-scroller.webp
+    url: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller
   - title: LiteMonitor
     kind: macOS app · Menu bar
     year: 2026
