@@ -1,5 +1,12 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: LiteMonitor
+    kind: Aplikasi macOS · Menu bar
+    year: 2026
+    description: 'Indikator sistem ringan di menu bar macOS untuk CPU, RAM, SSD, jaringan, dan baterai. Swift + AppKit murni dalam satu file sumber tanpa dependensi: mode normal atau ringkas, pilih metrik yang tampil, sekitar 15–25 MB RAM.'
+    tags: [Swift, AppKit, macOS]
+    image: /images/lab/lite-monitor.webp
+    url: https://github.com/kikiraihan/mac-os-lite-monitor
   - title: Pencarian ID pelanggan dummy Rajabiller
     kind: Dev tool · API
     year: 2026
