@@ -1,5 +1,12 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: LiteScroller
+    kind: Aplikasi macOS · Menu bar
+    year: 2026
+    description: 'Pemisah menu bar macOS yang menyembunyikan ikon seperti Hidden Bar, plus mode scroller: ikon tersembunyi tampil di strip yang bisa digulir di atas menu bar, jadi tetap terjangkau walau tertutup menu aplikasi yang panjang atau notch. Swift + AppKit murni dalam satu file sumber.'
+    tags: [Swift, AppKit, macOS, Accessibility]
+    image: /images/lab/lite-scroller.webp
+    url: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller
   - title: LiteMonitor
     kind: Aplikasi macOS · Menu bar
     year: 2026
