@@ -1,5 +1,12 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: LiteMonitor
+    kind: macOS app · Menu bar
+    year: 2026
+    description: 'Lightweight macOS menu bar indicator for CPU, RAM, SSD, network and battery. Pure Swift + AppKit in a single source file with no dependencies: normal or compact mode, pick which metrics to show, about 15–25 MB of RAM.'
+    tags: [Swift, AppKit, macOS]
+    image: /images/lab/lite-monitor.webp
+    url: https://github.com/kikiraihan/mac-os-lite-monitor
   - title: Rajabiller dummy customer ID search
     kind: Dev tool · API
     year: 2026
