@@ -1,5 +1,12 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: LiteCalendar
+    kind: macOS app · Menu bar
+    year: 2026
+    description: 'Two-month calendar in the macOS menu bar: after the 15th it shows this month and next, before that the previous month and this one, with arrows, keys and trackpad swipes to move between months. Event dots come from the calendars on the Mac (iCloud, Google, Exchange) through EventKit. Pure Swift + AppKit in a single source file.'
+    tags: [Swift, AppKit, macOS, EventKit]
+    image: /images/lab/lite-calendar.webp
+    url: https://github.com/kikiraihan/mac-os-calendar-two-sided
   - title: LiteScroller
     kind: macOS app · Menu bar
     year: 2026

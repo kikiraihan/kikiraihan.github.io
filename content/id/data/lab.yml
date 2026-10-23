@@ -1,5 +1,12 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: LiteCalendar
+    kind: Aplikasi macOS · Menu bar
+    year: 2026
+    description: 'Kalender dua bulan di menu bar macOS: setelah tanggal 15 tampil bulan ini dan bulan depan, sebelumnya bulan lalu dan bulan ini, dengan tombol panah, keyboard, dan geser trackpad untuk pindah bulan. Titik acara diambil dari kalender di Mac (iCloud, Google, Exchange) lewat EventKit. Swift + AppKit murni dalam satu file sumber.'
+    tags: [Swift, AppKit, macOS, EventKit]
+    image: /images/lab/lite-calendar.webp
+    url: https://github.com/kikiraihan/mac-os-calendar-two-sided
   - title: LiteScroller
     kind: Aplikasi macOS · Menu bar
     year: 2026
