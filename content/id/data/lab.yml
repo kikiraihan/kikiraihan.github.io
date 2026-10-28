@@ -21,6 +21,20 @@ items:
     tags: [Swift, AppKit, macOS]
     image: /images/lab/lite-monitor.webp
     url: https://github.com/kikiraihan/mac-os-lite-monitor
+  - title: my-commits.sh
+    kind: CLI · Bash
+    year: 2026
+    description: 'Laporan commit interaktif untuk banyak project sekaligus: pilih rentang tanggal, repo, dan branch (bisa wildcard seperti *kiki*), lalu commit milik sendiri ditampilkan per project dan branch. Report tampil di terminal, bisa disimpan ke file, atau dirangkum AI (Groq atau Gemini) jadi daily standup atau weekly progress report, lalu di-copy ke clipboard.'
+    tags: [Bash, Git, CLI, AI]
+    image: /images/lab/my-commits.webp
+    url: https://github.com/kikiraihan/reusable-bash-command
+  - title: Git feature branch toolkit (gfb)
+    kind: CLI · Zsh
+    year: 2026
+    description: 'Kumpulan perintah zsh untuk alur kerja feature branch: gfb membuat branch dari base, gfbls menampilkan branch urut terakhir dipakai, gfbstatus adalah git status versi lengkap dengan status push/pull dan langkah berikut, plus perintah untuk membandingkan branch, cek conflict sebelum merge, membersihkan branch yang sudah merged, dan generate commit message serta deskripsi PR dengan AI.'
+    tags: [Zsh, Git, CLI, AI]
+    image: /images/lab/git-featuring-branch.webp
+    url: https://github.com/kikiraihan/reusable-bash-command
   - title: Pencarian ID pelanggan dummy Rajabiller
     kind: Dev tool · API
     year: 2026
