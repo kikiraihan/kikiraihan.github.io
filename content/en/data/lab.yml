@@ -21,6 +21,20 @@ items:
     tags: [Swift, AppKit, macOS]
     image: /images/lab/lite-monitor.webp
     url: https://github.com/kikiraihan/mac-os-lite-monitor
+  - title: my-commits.sh
+    kind: CLI · Bash
+    year: 2026
+    description: 'Interactive commit reporter for many projects at once: pick a date range, the repos and the branches (wildcards like *kiki* work), and it lists your own commits per project and branch. The report shows in the terminal, can be saved to a file, or turned into a daily standup or weekly progress report with AI (Groq or Gemini), then copied to the clipboard.'
+    tags: [Bash, Git, CLI, AI]
+    image: /images/lab/my-commits.webp
+    url: https://github.com/kikiraihan/reusable-bash-command
+  - title: Git feature branch toolkit (gfb)
+    kind: CLI · Zsh
+    year: 2026
+    description: 'A set of zsh commands for a feature-branch workflow: gfb creates a branch from a base, gfbls lists branches by last use, gfbstatus is a fuller git status with push/pull state and next steps, plus commands to compare branches, find conflicts before merging, clean up merged branches, and generate commit messages and PR descriptions with AI.'
+    tags: [Zsh, Git, CLI, AI]
+    image: /images/lab/git-featuring-branch.webp
+    url: https://github.com/kikiraihan/reusable-bash-command
   - title: Rajabiller dummy customer ID search
     kind: Dev tool · API
     year: 2026
