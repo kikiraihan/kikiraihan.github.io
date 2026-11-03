@@ -1,5 +1,12 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: AI Todo
+    kind: Aplikasi macOS · PWA · AI
+    year: 2026
+    description: 'Todo & pengingat yang bisa dikelola lewat chat dengan AI maupun manual. Satu binary Go dengan SQLite, PWA Vue yang bisa di-install dengan Web Push, dan aplikasi menu bar Swift dengan badge, centang cepat, dan panel chat (⌥⌘T). AI hanya mengusulkan aksi; server yang memvalidasi, minta konfirmasi sebelum menghapus, dan semuanya bisa dibatalkan.'
+    tags: [Go, SQLite, Vue, Swift, AppKit, AI]
+    image: /images/lab/ai-todo.webp
+    url: /work/ai-todo
   - title: LiteCalendar
     kind: Aplikasi macOS · Menu bar
     year: 2026

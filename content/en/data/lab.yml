@@ -1,5 +1,12 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: AI Todo
+    kind: macOS app · PWA · AI
+    year: 2026
+    description: 'Todo list and reminders you can run by chatting with an AI or by hand. One Go binary with SQLite, an installable Vue PWA with Web Push, and a Swift menu bar app with a badge, quick check-off and a chat panel (⌥⌘T). The AI only proposes actions; the server validates them, asks before deleting, and keeps everything undoable.'
+    tags: [Go, SQLite, Vue, Swift, AppKit, AI]
+    image: /images/lab/ai-todo.webp
+    url: /work/ai-todo
   - title: LiteCalendar
     kind: macOS app · Menu bar
     year: 2026
