@@ -53,6 +53,16 @@ const isInternal = (url?: string) => !!url && url.startsWith('/')
             {{ item.description }}
           </p>
           <TagList :tags="item.tags" class="mt-5" />
+          <!-- z-10 keeps the video link clickable above the card's stretched title link -->
+          <a
+            v-if="item.video"
+            :href="item.video"
+            target="_blank"
+            rel="noopener"
+            class="relative z-10 mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+          >
+            <Icon name="lucide:circle-play" class="size-4" aria-hidden="true" />{{ $t('lab.watchVideo') }}
+          </a>
         </div>
       </li>
     </ul>
