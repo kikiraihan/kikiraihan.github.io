@@ -8,6 +8,14 @@ items:
     image: /images/lab/ai-todo.webp
     url: /work/ai-todo
     video: https://github.com/kikiraihan/mac-os-ai-todo/blob/main/video/ai-todo-teaser.mp4
+  - title: PasteLAN
+    kind: macOS app · PWA · Server
+    year: 2026
+    description: 'Copy-paste text and images between a Mac and a phone through your own server: copy on the Mac and it shows up on the phone within a second; paste or pick images on the phone, tap Send, then ⌘V on the Mac. A Swift menu bar app with a clipboard history (⌘0–⌘9), a single Go binary with no dependencies that keeps clips in memory only, and an installable PWA with push notifications. No server? A local Wi-Fi mode pairs by QR code and encrypts everything with ChaCha20-Poly1305.'
+    tags: [Swift, AppKit, Go, PWA, Web Push]
+    image: /images/lab/pastelan.webp
+    url: https://github.com/kikiraihan/mac-os-PasteLAN
+    video: https://github.com/kikiraihan/mac-os-PasteLAN/blob/main/video/pastelan-teaser.mp4
   - title: LiteCalendar
     kind: macOS app · Menu bar
     year: 2026
@@ -22,6 +30,7 @@ items:
     tags: [Swift, AppKit, macOS, Accessibility]
     image: /images/lab/lite-scroller.webp
     url: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller
+    video: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller/blob/main/video/litescroller-teaser.mp4
   - title: LiteMonitor
     kind: macOS app · Menu bar
     year: 2026
