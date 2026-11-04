@@ -101,6 +101,8 @@ function localeCollections(locale: (typeof contentLocales)[number]) {
           tags: z.array(z.string()).default([]),
           image: z.string().optional(),
           url: z.string().optional(),
+          // optional link to a video preview (e.g. a teaser .mp4 on GitHub), shown as a small link under the tags
+          video: z.string().optional(),
         })),
       }),
     }),
