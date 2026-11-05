@@ -8,6 +8,14 @@ items:
     image: /images/lab/ai-todo.webp
     url: /work/ai-todo
     video: https://github.com/kikiraihan/mac-os-ai-todo/blob/main/video/ai-todo-teaser.mp4
+  - title: PasteLAN
+    kind: Aplikasi macOS · PWA · Server
+    year: 2026
+    description: 'Copy-paste teks & gambar antara Mac dan HP lewat server milik sendiri: copy di Mac, isinya muncul di HP dalam sedetik; tempel atau pilih gambar di HP, tekan Kirim, lalu ⌘V di Mac. Aplikasi menu bar Swift dengan riwayat clipboard (⌘0–⌘9), satu binary Go tanpa dependensi yang menyimpan isi hanya di memori, dan PWA yang bisa di-install dengan notifikasi push. Tidak punya server? Mode Wi-Fi lokal dipasangkan lewat QR code dan semua isi dienkripsi ChaCha20-Poly1305.'
+    tags: [Swift, AppKit, Go, PWA, Web Push]
+    image: /images/lab/pastelan.webp
+    url: https://github.com/kikiraihan/mac-os-PasteLAN
+    video: https://github.com/kikiraihan/mac-os-PasteLAN/blob/main/video/pastelan-teaser.mp4
   - title: LiteCalendar
     kind: Aplikasi macOS · Menu bar
     year: 2026
@@ -22,6 +30,7 @@ items:
     tags: [Swift, AppKit, macOS, Accessibility]
     image: /images/lab/lite-scroller.webp
     url: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller
+    video: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller/blob/main/video/litescroller-teaser.mp4
   - title: LiteMonitor
     kind: Aplikasi macOS · Menu bar
     year: 2026
