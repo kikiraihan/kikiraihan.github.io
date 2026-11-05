@@ -19,7 +19,7 @@ links:
 
 ## Video teaser
 
-::video-player{src="/videos/ourday-teaser.mp4" poster="/images/lab/our-day.webp" caption="Pindai, jepret, bagikan: alur tamu dari kode QR sampai galeri bersama."}
+::video-player{src="/videos/ourday-teaser.mp4" poster="/images/lab/our-day.webp" caption="Pindai, jepret, bagikan: alur tamu dari kode QR sampai galeri bersama." live="https://ourday.katili.dev"}
 ::
 
 ## Apa yang dilakukan

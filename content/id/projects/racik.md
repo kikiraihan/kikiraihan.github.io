@@ -20,7 +20,7 @@ links:
 
 ## Video teaser
 
-::video-player{src="https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4" poster="/images/lab/racik.webp" caption="Dari satu kalimat prompt jadi desain multi halaman yang bisa diedit."}
+::video-player{src="https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4" poster="/images/lab/racik.webp" caption="Dari satu kalimat prompt jadi desain multi halaman yang bisa diedit." live="https://racik.katili.dev"}
 ::
 
 ## Apa yang dilakukan

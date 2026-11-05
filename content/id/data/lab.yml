@@ -8,6 +8,7 @@ items:
     image: /images/lab/racik.webp
     url: /work/racik
     video: https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4
+    live: https://racik.katili.dev
   - title: Our Day
     kind: Web app · PWA · SaaS
     year: 2026
@@ -16,6 +17,7 @@ items:
     image: /images/lab/our-day.webp
     url: /work/our-day
     video: /videos/ourday-teaser.mp4
+    live: https://ourday.katili.dev
   - title: AI Todo
     kind: Aplikasi macOS · PWA · AI
     year: 2026

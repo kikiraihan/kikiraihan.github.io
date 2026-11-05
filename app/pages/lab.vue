@@ -122,7 +122,7 @@ function onDialogClick(e: MouseEvent) {
             </button>
           </div>
         </div>
-        <VideoPlayer :src="preview.video!" :poster="preview.image" autoplay class="my-0!" />
+        <VideoPlayer :src="preview.video!" :poster="preview.image" :live="preview.live" autoplay class="my-0!" />
       </div>
     </dialog>
   </div>

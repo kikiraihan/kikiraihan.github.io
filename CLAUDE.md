@@ -165,7 +165,8 @@ content, so swatches use inline styles), `symbol-explorer`, and `gallery` with `
 ## Videos (Lab previews)
 
 A Lab item's `video` (`content/<locale>/data/lab.yml`) plays in a dialog on the Lab page (play button on the card image and the
-"Watch the teaser video" button) instead of linking away. In Markdown use `::video-player{src="…" poster="…" caption="…"}`.
+"Watch the teaser video" button) instead of linking away. In Markdown use `::video-player{src="…" poster="…" caption="…" live="…"}`.
+An optional `live` (Lab item field and player prop) adds a "Live site" link under the video, next to the source link.
 `src` can be a local file (`/videos/<name>.mp4` in `public/videos/`) or a GitHub blob URL of a **public** repo
 (`https://github.com/<owner>/<repo>/blob/<branch>/<path>.mp4`): `videoSrc()` in `app/utils/video.ts` turns it into the
 raw.githubusercontent.com file. Videos in private repos can't be streamed — copy them to `public/videos/`. Every Lab item with

@@ -20,7 +20,7 @@ links:
 
 ## Teaser video
 
-::video-player{src="https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4" poster="/images/lab/racik.webp" caption="From a one-line prompt to an editable multi-page design."}
+::video-player{src="https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4" poster="/images/lab/racik.webp" caption="From a one-line prompt to an editable multi-page design." live="https://racik.katili.dev"}
 ::
 
 ## What it does
