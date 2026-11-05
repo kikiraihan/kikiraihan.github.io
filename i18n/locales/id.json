@@ -75,7 +75,8 @@
   "video": {
     "failed": "Video ini tidak bisa diputar di sini.",
     "openOriginal": "Buka berkas videonya",
-    "sourceGithub": "Lihat di GitHub"
+    "sourceGithub": "Lihat di GitHub",
+    "fullscreen": "Layar penuh"
   },
   "about": {
     "seoTitle": "Tentang",

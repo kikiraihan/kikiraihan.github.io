@@ -136,7 +136,8 @@
 }
 .dark :where(.group, a, button):is(:hover, :focus-visible) :where(img, video),
 .dark :where(dialog) :where(img, video),
-.dark :where(.video-frame.is-playing) :where(video) {
+.dark :where(.video-frame.is-playing) :where(video),
+.dark :where(video:fullscreen) {
   filter: none;
 }
 

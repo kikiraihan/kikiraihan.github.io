@@ -17,6 +17,18 @@ watch(() => props.src, () => {
   failed.value = false
   playing.value = false
 })
+
+// Fullscreen: the native controls have their own button, but not every browser shows it (or it hides
+// in the overflow menu), so there's an explicit one under the video too. iOS Safari only supports
+// fullscreen on the <video> element through its webkit API.
+const video = ref<HTMLVideoElement>()
+type WebkitVideo = HTMLVideoElement & { webkitEnterFullscreen?: () => void }
+function enterFullscreen() {
+  const el = video.value as WebkitVideo | undefined
+  if (!el) return
+  if (el.requestFullscreen) el.requestFullscreen().catch(() => el.webkitEnterFullscreen?.())
+  else el.webkitEnterFullscreen?.()
+}
 </script>
 
 <template>
@@ -24,6 +36,7 @@ watch(() => props.src, () => {
     <div class="video-frame group relative overflow-hidden rounded-lg border border-line bg-black" :class="{ 'is-playing': playing }">
       <video
         v-if="!failed"
+        ref="video"
         :key="playable"
         :poster="poster"
         :autoplay="autoplay"
@@ -46,10 +59,21 @@ watch(() => props.src, () => {
     </div>
     <figcaption class="mt-2 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 text-xs leading-relaxed text-ink-3">
       <span v-if="caption">{{ caption }}</span>
-      <a :href="src" target="_blank" rel="noopener" class="link-underline inline-flex items-center gap-1 hover:text-ink">
-        {{ videoRepo(src) ? $t('video.sourceGithub') : $t('video.openOriginal') }}
-        <Icon name="lucide:arrow-up-right" class="size-3" aria-hidden="true" />
-      </a>
+      <span class="ml-auto inline-flex items-center gap-4">
+        <button
+          v-if="!failed"
+          type="button"
+          class="link-underline inline-flex items-center gap-1 hover:text-ink"
+          @click="enterFullscreen"
+        >
+          <Icon name="lucide:maximize" class="size-3" aria-hidden="true" />
+          {{ $t('video.fullscreen') }}
+        </button>
+        <a :href="src" target="_blank" rel="noopener" class="link-underline inline-flex items-center gap-1 hover:text-ink">
+          {{ videoRepo(src) ? $t('video.sourceGithub') : $t('video.openOriginal') }}
+          <Icon name="lucide:arrow-up-right" class="size-3" aria-hidden="true" />
+        </a>
+      </span>
     </figcaption>
   </figure>
 </template>
