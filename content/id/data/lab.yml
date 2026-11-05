@@ -6,7 +6,7 @@ items:
     description: 'Editor desain ala Canva dengan AI: tulis ide, Claude menyusun seluruh desain (layout, copy, palet, font) dan model gambar membuat visualnya, lalu semuanya tetap bisa diedit: teks, gambar, layer, multi halaman. Export ke PPTX dengan teks yang tetap bisa diedit, PDF, PNG/JPG, dan SVG. Beri 👍/👎 dan atur Brand Kit, desain berikutnya makin sesuai selera. Nuxt + fabric.js di depan, Go net/http murni dan PostgreSQL di belakang.'
     tags: [Vue, Nuxt, fabric.js, Go, PostgreSQL, AI]
     image: /images/lab/racik.webp
-    url: https://racik.katili.dev
+    url: /work/racik
     video: https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4
   - title: Our Day
     kind: Web app · PWA · SaaS
@@ -14,7 +14,7 @@ items:
     description: 'Album foto bersama untuk pernikahan dan acara, diisi oleh tamunya sendiri: pindai QR, tulis nama, lalu memotret langsung dari peramban, dengan filter yang dipilih sebelum rana, stiker ala Locket (jam, cuaca, lokasi), dan tanpa tombol foto ulang. Foto dan pesan suara langsung masuk ke galeri bersama; tuan rumah memoderasi, mengunduh semuanya sebagai ZIP, dan menerima notifikasi push. PWA Vue 3 + TypeScript dengan backend Go.'
     tags: [Vue, TypeScript, Go, PWA, Web Push]
     image: /images/lab/our-day.webp
-    url: https://ourday.katili.dev
+    url: /work/our-day
     video: /videos/ourday-teaser.mp4
   - title: AI Todo
     kind: Aplikasi macOS · PWA · AI
@@ -23,14 +23,14 @@ items:
     tags: [Go, SQLite, Vue, Swift, AppKit, AI]
     image: /images/lab/ai-todo.webp
     url: /work/ai-todo
-    video: https://github.com/kikiraihan/mac-os-ai-todo/blob/main/video/ai-todo-teaser.mp4
+    video: /videos/ai-todo-teaser.mp4
   - title: PasteLAN
     kind: Aplikasi macOS · PWA · Server
     year: 2026
     description: 'Copy-paste teks & gambar antara Mac dan HP lewat server milik sendiri: copy di Mac, isinya muncul di HP dalam sedetik; tempel atau pilih gambar di HP, tekan Kirim, lalu ⌘V di Mac. Aplikasi menu bar Swift dengan riwayat clipboard (⌘0–⌘9), satu binary Go tanpa dependensi yang menyimpan isi hanya di memori, dan PWA yang bisa di-install dengan notifikasi push. Tidak punya server? Mode Wi-Fi lokal dipasangkan lewat QR code dan semua isi dienkripsi ChaCha20-Poly1305.'
     tags: [Swift, AppKit, Go, PWA, Web Push]
     image: /images/lab/pastelan.webp
-    url: https://github.com/kikiraihan/mac-os-PasteLAN
+    url: /work/pastelan
     video: https://github.com/kikiraihan/mac-os-PasteLAN/blob/main/video/pastelan-teaser.mp4
   - title: LiteCalendar
     kind: Aplikasi macOS · Menu bar
@@ -45,7 +45,7 @@ items:
     description: 'Pemisah menu bar macOS yang menyembunyikan ikon seperti Hidden Bar, plus mode scroller: ikon tersembunyi tampil di strip yang bisa digulir di atas menu bar, jadi tetap terjangkau walau tertutup menu aplikasi yang panjang atau notch. Swift + AppKit murni dalam satu file sumber.'
     tags: [Swift, AppKit, macOS, Accessibility]
     image: /images/lab/lite-scroller.webp
-    url: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller
+    url: /work/litescroller
     video: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller/blob/main/video/litescroller-teaser.mp4
   - title: LiteMonitor
     kind: Aplikasi macOS · Menu bar

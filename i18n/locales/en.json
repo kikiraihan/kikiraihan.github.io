@@ -72,6 +72,12 @@
     "label": "Image preview",
     "close": "Close preview"
   },
+  "video": {
+    "failed": "This video can't be played here.",
+    "openOriginal": "Open the video file",
+    "sourceGithub": "View on GitHub",
+    "fullscreen": "Fullscreen"
+  },
   "about": {
     "seoTitle": "About",
     "eyebrow": "About",
@@ -96,7 +102,9 @@
     "eyebrow": "Lab",
     "title": "Curiosity, unpolished.",
     "intro": "Experiments and side-explorations that don't need a full case study — the places I try things first.",
-    "watchVideo": "Watch the teaser video"
+    "watchVideo": "Watch the teaser video",
+    "previewVideo": "Play the {title} teaser video",
+    "readMore": "Read more"
   },
   "work": {
     "seoTitle": "Work",

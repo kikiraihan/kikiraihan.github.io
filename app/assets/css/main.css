@@ -124,7 +124,7 @@
  * Dark mode image tone
  * Screenshots and artwork are mostly bright and saturated; in dark mode they are
  * toned down slightly (not grayscale) so they sit in the interface instead of glaring.
- * Full color returns on hover/focus of the card or tile, and always in the lightbox.
+ * Full color returns on hover/focus of the card or tile, always in the lightbox, and while a video plays.
  * Nearly monochrome (~75% desaturated) so screenshots blend with the dark neutrals;
  * `filter` is GPU-composited, so it costs no extra requests and practically no render time.
  * Unlayered on purpose: `transition-property` must add `filter` to the utilities'
@@ -135,7 +135,9 @@
   transition-property: transform, filter;
 }
 .dark :where(.group, a, button):is(:hover, :focus-visible) :where(img, video),
-.dark :where(dialog) :where(img, video) {
+.dark :where(dialog) :where(img, video),
+.dark :where(.video-frame.is-playing) :where(video),
+.dark :where(video:fullscreen) {
   filter: none;
 }
 
@@ -184,6 +186,10 @@
 }
 .prose-page :where(img, video) {
   @apply rounded-lg border border-line;
+}
+/* VideoPlayer draws its own frame around the <video> */
+.prose-page :where(.video-frame video) {
+  @apply rounded-none border-0;
 }
 .prose-page :where(table img) {
   @apply my-2;

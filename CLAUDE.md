@@ -162,6 +162,15 @@ content, so swatches use inline styles), `symbol-explorer`, and `gallery` with `
 `caption`. Crops of an original image live next to it in `public/images/work/<slug>/`; new diagrams are SVGs there too
 (served as-is by `ProseImg`). Quote YAML values that contain a comma or colon.
 
+## Videos (Lab previews)
+
+A Lab item's `video` (`content/<locale>/data/lab.yml`) plays in a dialog on the Lab page (play button on the card image and the
+"Watch the teaser video" button) instead of linking away. In Markdown use `::video-player{src="…" poster="…" caption="…"}`.
+`src` can be a local file (`/videos/<name>.mp4` in `public/videos/`) or a GitHub blob URL of a **public** repo
+(`https://github.com/<owner>/<repo>/blob/<branch>/<path>.mp4`): `videoSrc()` in `app/utils/video.ts` turns it into the
+raw.githubusercontent.com file. Videos in private repos can't be streamed — copy them to `public/videos/`. Every Lab item with
+a video has its own page (`/work/<slug>`) that embeds the same video and lists it under `links`.
+
 ## GitHub contributions
 
 `GitHubContributions` (home page) reads `/github-contributions.json`, a server route

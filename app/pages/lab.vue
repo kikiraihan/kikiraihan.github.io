@@ -8,6 +8,20 @@ usePageSeo({
 const { data } = await useLab()
 const { data: hiddenProjects } = await useHiddenProjectSlugs()
 const isInternal = (url?: string) => !!url && url.startsWith('/')
+
+// Video preview: the teaser plays in a dialog on this page instead of sending visitors to GitHub.
+// Native <dialog> (Esc closes, focus is trapped and restored); the player is unmounted on close, so playback stops.
+type LabItem = NonNullable<typeof data.value>['items'][number]
+const dialog = ref<HTMLDialogElement>()
+const preview = ref<LabItem | null>(null)
+function openPreview(item: LabItem) {
+  preview.value = item
+  nextTick(() => dialog.value?.showModal())
+}
+// a click on the backdrop (the <dialog> element itself, outside its panel) closes it
+function onDialogClick(e: MouseEvent) {
+  if (e.target === dialog.value) dialog.value?.close()
+}
 </script>
 
 <template>
@@ -35,6 +49,18 @@ const isInternal = (url?: string) => !!url && url.startsWith('/')
           />
           <!-- generative placeholder for items without an image -->
           <div v-else class="lab-pattern h-full w-full" aria-hidden="true" />
+          <!-- z-10 keeps the preview button clickable above the card's stretched title link -->
+          <button
+            v-if="item.video"
+            type="button"
+            class="absolute inset-0 z-10 grid place-items-center bg-black/0 transition-colors hover:bg-black/25 focus-visible:bg-black/25"
+            @click="openPreview(item)"
+          >
+            <span class="sr-only">{{ $t('lab.previewVideo', { title: item.title }) }}</span>
+            <span class="grid size-14 place-items-center rounded-full bg-black/60 text-white backdrop-blur transition-transform duration-300 group-hover:scale-110" aria-hidden="true">
+              <Icon name="lucide:play" class="size-6 translate-x-0.5" />
+            </span>
+          </button>
         </div>
         <div class="flex flex-1 flex-col p-6">
           <p class="eyebrow">
@@ -53,19 +79,52 @@ const isInternal = (url?: string) => !!url && url.startsWith('/')
             {{ item.description }}
           </p>
           <TagList :tags="item.tags" class="mt-5" />
-          <!-- z-10 keeps the video link clickable above the card's stretched title link -->
-          <a
+          <!-- z-10 keeps the video button clickable above the card's stretched title link -->
+          <button
             v-if="item.video"
-            :href="item.video"
-            target="_blank"
-            rel="noopener"
+            type="button"
             class="relative z-10 mt-4 inline-flex w-fit items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+            @click="openPreview(item)"
           >
             <Icon name="lucide:circle-play" class="size-4" aria-hidden="true" />{{ $t('lab.watchVideo') }}
-          </a>
+          </button>
         </div>
       </li>
     </ul>
+
+    <dialog
+      ref="dialog"
+      class="m-auto w-[min(64rem,calc(100vw-2rem))] max-w-none overflow-visible bg-transparent p-0 backdrop:bg-black/85 backdrop:backdrop-blur-sm"
+      :aria-label="preview ? $t('lab.previewVideo', { title: preview.title }) : undefined"
+      @click="onDialogClick"
+      @close="preview = null"
+    >
+      <div v-if="preview" class="rounded-lg border border-line bg-paper p-3 sm:p-4">
+        <div class="mb-3 flex items-center justify-between gap-4 pl-1">
+          <p class="truncate text-sm font-medium">
+            {{ preview.title }}
+          </p>
+          <div class="flex shrink-0 items-center gap-2">
+            <NuxtLink
+              v-if="isInternal(preview.url) && !isHiddenWorkLink(preview.url, hiddenProjects)"
+              :to="localePath(preview.url!)"
+              class="link-underline inline-flex items-center gap-1 text-sm text-ink-2 hover:text-ink"
+            >
+              {{ $t('lab.readMore') }} <Icon name="lucide:arrow-right" class="size-3.5" aria-hidden="true" />
+            </NuxtLink>
+            <button
+              type="button"
+              class="grid size-9 place-items-center rounded-full text-ink-2 hover:bg-paper-2 hover:text-ink"
+              @click="dialog?.close()"
+            >
+              <span class="sr-only">{{ $t('lightbox.close') }}</span>
+              <Icon name="lucide:x" class="size-5" aria-hidden="true" />
+            </button>
+          </div>
+        </div>
+        <VideoPlayer :src="preview.video!" :poster="preview.image" autoplay class="my-0!" />
+      </div>
+    </dialog>
   </div>
 </template>
 

@@ -72,6 +72,12 @@
     "label": "Pratinjau gambar",
     "close": "Tutup pratinjau"
   },
+  "video": {
+    "failed": "Video ini tidak bisa diputar di sini.",
+    "openOriginal": "Buka berkas videonya",
+    "sourceGithub": "Lihat di GitHub",
+    "fullscreen": "Layar penuh"
+  },
   "about": {
     "seoTitle": "Tentang",
     "eyebrow": "Tentang",
@@ -96,7 +102,9 @@
     "eyebrow": "Lab",
     "title": "Rasa penasaran, apa adanya.",
     "intro": "Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap — tempat saya mencoba hal-hal lebih dulu.",
-    "watchVideo": "Tonton video teaser"
+    "watchVideo": "Tonton video teaser",
+    "previewVideo": "Putar video teaser {title}",
+    "readMore": "Selengkapnya"
   },
   "work": {
     "seoTitle": "Karya",

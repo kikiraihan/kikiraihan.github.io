@@ -102,6 +102,7 @@ function localeCollections(locale: (typeof contentLocales)[number]) {
           image: z.string().optional(),
           url: z.string().optional(),
           // optional link to a video preview (e.g. a teaser .mp4 on GitHub), shown as a small link under the tags
+          // and played in a dialog on the Lab page (GitHub blob URLs are turned into raw files, see app/utils/video.ts)
           video: z.string().optional(),
         })),
       }),
