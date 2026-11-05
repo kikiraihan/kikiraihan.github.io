@@ -41,7 +41,13 @@ contribution:
   mine: Sole developer — product spec, Go server, Vue PWA, Swift menu bar app, CI/CD and deployment.
 links:
   - { label: GitHub, url: https://github.com/kikiraihan/mac-os-ai-todo }
+  - { label: Teaser video, url: /videos/ai-todo-teaser.mp4 }
 ---
+
+## Teaser video
+
+::video-player{src="/videos/ai-todo-teaser.mp4" poster="/images/lab/ai-todo.webp" caption="Teaser of AI Todo: chat, todo lists and reminders on the PWA and the Mac menu bar app."}
+::
 
 ## Problem
 

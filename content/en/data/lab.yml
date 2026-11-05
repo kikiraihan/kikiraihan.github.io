@@ -6,7 +6,7 @@ items:
     description: 'Canva-style design editor with AI: write an idea and Claude lays out the whole design (layout, copy, palette, fonts) while an image model makes the visuals, then everything stays editable: text, images, layers, multiple pages. Export to PPTX with editable text, PDF, PNG/JPG and SVG. Rate results with 👍/👎 and set a Brand Kit, and the next designs follow your taste. Nuxt + fabric.js on the front, plain Go net/http and PostgreSQL behind it.'
     tags: [Vue, Nuxt, fabric.js, Go, PostgreSQL, AI]
     image: /images/lab/racik.webp
-    url: https://racik.katili.dev
+    url: /work/racik
     video: https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4
   - title: Our Day
     kind: Web app · PWA · SaaS
@@ -14,7 +14,7 @@ items:
     description: 'Shared photo album for weddings and events, filled by the guests themselves: they scan a QR code, type their name and shoot straight from the browser, with filters picked before the shutter, Locket-style stickers (time, weather, location) and no retake button. Photos and voice messages land in a live shared gallery; hosts moderate, download everything as a ZIP and get push notifications. Vue 3 + TypeScript PWA with a Go backend.'
     tags: [Vue, TypeScript, Go, PWA, Web Push]
     image: /images/lab/our-day.webp
-    url: https://ourday.katili.dev
+    url: /work/our-day
     video: /videos/ourday-teaser.mp4
   - title: AI Todo
     kind: macOS app · PWA · AI
@@ -23,14 +23,14 @@ items:
     tags: [Go, SQLite, Vue, Swift, AppKit, AI]
     image: /images/lab/ai-todo.webp
     url: /work/ai-todo
-    video: https://github.com/kikiraihan/mac-os-ai-todo/blob/main/video/ai-todo-teaser.mp4
+    video: /videos/ai-todo-teaser.mp4
   - title: PasteLAN
     kind: macOS app · PWA · Server
     year: 2026
     description: 'Copy-paste text and images between a Mac and a phone through your own server: copy on the Mac and it shows up on the phone within a second; paste or pick images on the phone, tap Send, then ⌘V on the Mac. A Swift menu bar app with a clipboard history (⌘0–⌘9), a single Go binary with no dependencies that keeps clips in memory only, and an installable PWA with push notifications. No server? A local Wi-Fi mode pairs by QR code and encrypts everything with ChaCha20-Poly1305.'
     tags: [Swift, AppKit, Go, PWA, Web Push]
     image: /images/lab/pastelan.webp
-    url: https://github.com/kikiraihan/mac-os-PasteLAN
+    url: /work/pastelan
     video: https://github.com/kikiraihan/mac-os-PasteLAN/blob/main/video/pastelan-teaser.mp4
   - title: LiteCalendar
     kind: macOS app · Menu bar
@@ -45,7 +45,7 @@ items:
     description: 'Menu bar separator for macOS that hides icons like Hidden Bar, plus a scroller mode: hidden icons appear in a scrollable strip over the menu bar, so they stay reachable even when long app menus or the notch would cover them. Pure Swift + AppKit in a single source file.'
     tags: [Swift, AppKit, macOS, Accessibility]
     image: /images/lab/lite-scroller.webp
-    url: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller
+    url: /work/litescroller
     video: https://github.com/kikiraihan/mac-os-lite-menu-bar-scroller/blob/main/video/litescroller-teaser.mp4
   - title: LiteMonitor
     kind: macOS app · Menu bar

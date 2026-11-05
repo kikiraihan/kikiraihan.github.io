@@ -41,7 +41,13 @@ contribution:
   mine: Pengembang tunggal — PRD, server Go, PWA Vue, aplikasi menu bar Swift, CI/CD, dan deploy.
 links:
   - { label: GitHub, url: https://github.com/kikiraihan/mac-os-ai-todo }
+  - { label: Video teaser, url: /videos/ai-todo-teaser.mp4 }
 ---
+
+## Video teaser
+
+::video-player{src="/videos/ai-todo-teaser.mp4" poster="/images/lab/ai-todo.webp" caption="Teaser AI Todo: chat, daftar todo, dan pengingat di PWA dan aplikasi menu bar Mac."}
+::
 
 ## Masalah
 
