@@ -19,7 +19,7 @@ links:
 
 ## Teaser video
 
-::video-player{src="/videos/ourday-teaser.mp4" poster="/images/lab/our-day.webp" caption="Scan, shoot, share: the guest flow from QR code to the shared gallery."}
+::video-player{src="/videos/ourday-teaser.mp4" poster="/images/lab/our-day.webp" caption="Scan, shoot, share: the guest flow from QR code to the shared gallery." live="https://ourday.katili.dev"}
 ::
 
 ## What it does

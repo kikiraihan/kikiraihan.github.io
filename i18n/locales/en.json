@@ -76,7 +76,8 @@
     "failed": "This video can't be played here.",
     "openOriginal": "Open the video file",
     "sourceGithub": "View on GitHub",
-    "fullscreen": "Fullscreen"
+    "fullscreen": "Fullscreen",
+    "liveSite": "Live site"
   },
   "about": {
     "seoTitle": "About",
