@@ -1,5 +1,21 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: Racik
+    kind: Web app · AI
+    year: 2026
+    description: 'Editor desain ala Canva dengan AI: tulis ide, Claude menyusun seluruh desain (layout, copy, palet, font) dan model gambar membuat visualnya, lalu semuanya tetap bisa diedit: teks, gambar, layer, multi halaman. Export ke PPTX dengan teks yang tetap bisa diedit, PDF, PNG/JPG, dan SVG. Beri 👍/👎 dan atur Brand Kit, desain berikutnya makin sesuai selera. Nuxt + fabric.js di depan, Go net/http murni dan PostgreSQL di belakang.'
+    tags: [Vue, Nuxt, fabric.js, Go, PostgreSQL, AI]
+    image: /images/lab/racik.webp
+    url: https://racik.katili.dev
+    video: https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4
+  - title: Our Day
+    kind: Web app · PWA · SaaS
+    year: 2026
+    description: 'Album foto bersama untuk pernikahan dan acara, diisi oleh tamunya sendiri: pindai QR, tulis nama, lalu memotret langsung dari peramban, dengan filter yang dipilih sebelum rana, stiker ala Locket (jam, cuaca, lokasi), dan tanpa tombol foto ulang. Foto dan pesan suara langsung masuk ke galeri bersama; tuan rumah memoderasi, mengunduh semuanya sebagai ZIP, dan menerima notifikasi push. PWA Vue 3 + TypeScript dengan backend Go.'
+    tags: [Vue, TypeScript, Go, PWA, Web Push]
+    image: /images/lab/our-day.webp
+    url: https://ourday.katili.dev
+    video: /videos/ourday-teaser.mp4
   - title: AI Todo
     kind: Aplikasi macOS · PWA · AI
     year: 2026

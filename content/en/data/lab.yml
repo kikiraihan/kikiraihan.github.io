@@ -1,5 +1,21 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: Racik
+    kind: Web app · AI
+    year: 2026
+    description: 'Canva-style design editor with AI: write an idea and Claude lays out the whole design (layout, copy, palette, fonts) while an image model makes the visuals, then everything stays editable: text, images, layers, multiple pages. Export to PPTX with editable text, PDF, PNG/JPG and SVG. Rate results with 👍/👎 and set a Brand Kit, and the next designs follow your taste. Nuxt + fabric.js on the front, plain Go net/http and PostgreSQL behind it.'
+    tags: [Vue, Nuxt, fabric.js, Go, PostgreSQL, AI]
+    image: /images/lab/racik.webp
+    url: https://racik.katili.dev
+    video: https://github.com/kikiraihan/racik/blob/main/video/racik-teaser.mp4
+  - title: Our Day
+    kind: Web app · PWA · SaaS
+    year: 2026
+    description: 'Shared photo album for weddings and events, filled by the guests themselves: they scan a QR code, type their name and shoot straight from the browser, with filters picked before the shutter, Locket-style stickers (time, weather, location) and no retake button. Photos and voice messages land in a live shared gallery; hosts moderate, download everything as a ZIP and get push notifications. Vue 3 + TypeScript PWA with a Go backend.'
+    tags: [Vue, TypeScript, Go, PWA, Web Push]
+    image: /images/lab/our-day.webp
+    url: https://ourday.katili.dev
+    video: /videos/ourday-teaser.mp4
   - title: AI Todo
     kind: macOS app · PWA · AI
     year: 2026
