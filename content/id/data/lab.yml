@@ -1,5 +1,12 @@
 # Eksperimen dan eksplorasi sampingan yang tidak perlu studi kasus lengkap.
 items:
+  - title: Ngoding5
+    kind: Web app · Edukasi
+    year: 2026
+    description: 'Situs latihan logika & syntax pemrograman berbahasa Indonesia, sepenuhnya statis tanpa login dan tanpa server: tulis kode lalu jalankan kasus uji langsung di peramban (JavaScript lewat Web Worker, Python lewat Skulpt), atau baca program dan tebak output persisnya. Tiap soal punya petunjuk bertingkat, contoh solusi, pembahasan, kesalahan umum, dan tombol "Salin untuk tanya AI"; progres tersimpan di localStorage. 40 soal tulis kode dan 32 soal tebak output, semuanya terverifikasi dengan menjalankan solusi JS dan Python secara silang, plus CLI konten dan skill Claude Code untuk membuat soal baru. Vue 3 + Vite di Vercel.'
+    tags: [Vue, Vite, TypeScript, Python, Education]
+    image: /images/lab/ngoding5.webp
+    url: https://github.com/kikiraihan/ngoding5-static
   - title: Racik
     kind: Web app · AI
     year: 2026
