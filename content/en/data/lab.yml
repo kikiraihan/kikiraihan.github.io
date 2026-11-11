@@ -6,7 +6,7 @@ items:
     description: 'Indonesian-language practice site for programming logic and syntax, fully static with no login and no server: write code and run the test cases right in the browser (JavaScript in a Web Worker, Python through Skulpt), or read a program and guess its exact output. Each problem has tiered hints, a reference solution, an explanation, common mistakes and a "Copy to ask AI" button; progress stays in localStorage. 40 coding problems and 32 quizzes, all verified by running the JS and Python solutions against each other, with a content CLI and Claude Code skills to generate new ones. Vue 3 + Vite on Vercel.'
     tags: [Vue, Vite, TypeScript, Python, Education]
     image: /images/lab/ngoding5.webp
-    url: https://github.com/kikiraihan/ngoding5-static
+    url: https://ngoding5-static.vercel.app/
   - title: Racik
     kind: Web app · AI
     year: 2026
