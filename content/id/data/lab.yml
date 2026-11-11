@@ -89,12 +89,14 @@ items:
     year: 2026
     description: 'Pencarian dan viewer Universities API dari Hipolabs: filter nama, negara, limit, dan offset lewat API, lalu cari, filter per kolom, dan export CSV di browser, ditampilkan sebagai tabel, tree, dan JSON.'
     tags: [Vue, Vite, API]
+    image: /images/lab/daftar-universitas.webp
     url: https://rajabiller-dummy-id-pelanggan-searc.vercel.app/daftar-universitas/
   - title: ASCII playground
     kind: Game
     year: 2026
     description: Game browser kecil yang seluruhnya dirender dengan karakter ASCII.
     tags: [ASCII, Game]
+    image: /images/lab/ascii-playground.webp
     url: https://katili.dev/playground-ascii
   - title: Klasterisasi daun melon
     kind: Machine learning
