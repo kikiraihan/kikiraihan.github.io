@@ -1,5 +1,14 @@
 # Experiments and side-explorations that don't need a full case study.
 items:
+  - title: Temu
+    kind: macOS app · Web app
+    year: 2026
+    description: 'Pixel version of you (or your pet) that lives on the Mac screen of the people closest to you: it walks along the bottom edge, naps, dances, gets petted with a click and delivers your greetings. Make it by picking a built-in pet, drawing 16 poses in a 32×32 pixel editor, or from a photo with AI. Friends allow each other onto their desktops. The Mac app is just a toy: no screen, keystroke or file access, no special permissions, no password. Swift + AppKit, Go + PostgreSQL, Vue 3.'
+    tags: [Swift, AppKit, Go, PostgreSQL, Vue, AI]
+    image: /images/lab/temu.webp
+    url: /work/temu
+    video: /videos/temu-teaser.mp4
+    live: https://temu.katili.dev
   - title: Ngoding5
     kind: Web app · Education
     year: 2026
