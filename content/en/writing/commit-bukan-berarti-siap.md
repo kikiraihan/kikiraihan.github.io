@@ -18,7 +18,7 @@ My first reaction, honestly: *how?* The balance was clearly there. I opened the 
 
 The problem was in the **other** ledger.
 
-We don't hold merchant money on our own. Every movement of funds in our database also has to be recorded in a core ledger run by another party. Think of it as double bookkeeping: two books that must always agree. If we move Rp 30,000.00 from account A to account B, the ledger on the other side has to record the same movement.
+A bit of context first. A split payment in our system means a merchant's settlement funds are automatically divided into a partner account as soon as they become available. We don't hold merchant money on our own. Every movement of funds in our database also has to be recorded in a core ledger run by another party. Think of it as double bookkeeping: two books that must always agree. If we move Rp 30,000.00 from account A to account B, the ledger on the other side has to record the same movement.
 
 In our book, the split transfer had happened. In theirs, it was rejected because the balance wasn't enough.
 
@@ -65,7 +65,9 @@ That's when something that sounds trivial turned out to matter a lot:
 
 A commit on our side means "our data is final". It says nothing about whether the ledger on the other side is ready to accept a transfer that depends on that data.
 
-And there was one more thing that made me wince. 😅 The `INSUFFICIENT_BALANCE` rejection is a 4xx response, and our outbox treats 4xx as a permanent failure. The row gets marked `FAILED` immediately, while the sweeper only picks up `PENDING` rows. So even after the settlement finished on the other side, **nobody tried to send it again**. The transfer was simply gone.
+So the team's guess about order wasn't wrong. It's just that the order that mattered wasn't the order of jobs on our side, but the order of events on the other side.
+
+And there was one more thing that made me wince. 😅 The `INSUFFICIENT_BALANCE` rejection is a 4xx response, and our outbox treats 4xx as a permanent failure. The row gets marked `FAILED` immediately, while the sweeper, the periodic job that picks up unsent rows, only takes `PENDING` ones. So even after the settlement finished on the other side, **nobody tried to send it again**. The transfer was simply gone.
 
 ## The temptation of quick fixes
 
@@ -111,7 +113,7 @@ outbox.depends_on_settlement_id = settlement.id
 
 The column is written in the same savepoint as the money movement. If the split batch rolls back, its sync intent goes with it. Transfers that aren't splits stay `NULL` and are unaffected.
 
-Then, at the point where every outbox sending path meets, I put a gate. The gate only reads the settlement status already stored in our database. It never calls the other ledger. A settlement with 500 splits must not turn into 500 inquiry requests.
+Then, at the point where every outbox sending path meets, I put a gate. The gate only reads the settlement status already stored in our database. It never calls the other ledger. A settlement with 500 splits must not turn into 500 inquiry requests. Who fills in that status, I'll get to in a moment.
 
 | Status on the other side | What happens |
 |---|---|
@@ -133,7 +135,7 @@ The one peeking at the other side is **a single watcher per settlement**. The wa
 
 However many splits there are, there's still only one watcher, de-duplicated with one cache key per settlement. If it has waited too long, the watcher stops and sends an alert, so nothing waits silently forever.
 
-As soon as `SETTLED` is stored, whether from the watcher, the hourly poll, the manual check button or straight from the report response, every row waiting on that settlement is woken up and sent. Right before it actually sends, the gate is checked once more.
+As soon as `SETTLED` is stored, whether from the watcher, the hourly poll, the manual check button or straight from the report response if it happens to be done already, every row waiting on that settlement is woken up and sent. Right before it actually sends, the gate is checked once more.
 
 ## A race that only shows up on paper
 
@@ -151,7 +153,7 @@ The row ends up stuck for 10 minutes even though the funds are ready. The revers
 
 You wouldn't see this bug by reading the code line by line. Each function is correct on its own. The problem only lives in the gaps between them.
 
-The fix has two layers. First, the release must not touch a row that is currently claimed. A row that is waiting has its `next_retry_at` far ahead, while a claimed row only has it as far as the lease, so the two can be told apart. Second, a worker that has just pushed a row back must check the status once more. If it's already `SETTLED`, that worker wakes the row up itself.
+The fix has two layers. First, the release must not touch a row that is currently claimed. A row that is waiting has its `next_retry_at` far ahead, while a claimed row only has it as far as the lease (the claim's time limit), so the two can be told apart. Second, a worker that has just pushed a row back must check the status once more. If it's already `SETTLED`, that worker wakes the row up itself.
 
 With both layers, every ordering ends safely: either the release sees the row that was pushed back, or the worker that pushed it back sees `SETTLED`. There's no gap in between.
 
@@ -165,7 +167,7 @@ Because the transfer is synchronous, a rejected transfer means the money really 
 
 ## "Does settlement get slower?"
 
-This question came fastest, and that makes sense, since settlement is the heart of our money flow.
+This question almost always followed, and that makes sense, since settlement is the heart of our money flow.
 
 It doesn't. Inside the settlement transaction, the only change is one extra column in an INSERT that was already there. No HTTP, no waiting. Regular transactions without splits don't even go through the new code. The only thing that changes is *when* the split transfer's shadow appears in the other ledger: a few minutes after settlement instead of immediately.
 
@@ -179,4 +181,4 @@ And a few minutes is still much better than the old version, where it never appe
 4. **When the docs are ambiguous, ask with your findings in hand.** "It says X here and Y there, which one is right?" gets answered much faster than "what's the status?".
 5. **Draw the timeline.** The slipperiest races live in the gaps between functions, not inside them.
 
-These days, whenever a split happens, I still sometimes peek at the outbox table. The row sits there patiently with `waiting dependency`, and a few minutes later it turns into `COMMITTED`. The hardest part, it turns out, wasn't making the system move faster. It was teaching it when to wait. 🙂
+These days, I still peek at the outbox table now and then after a split. The row sits there patiently with `waiting dependency`, and a few minutes later it turns into `COMMITTED`. The hardest part, it turns out, wasn't making the system move faster. It was teaching it when to wait. 🙂
