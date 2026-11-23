@@ -18,7 +18,7 @@ Reaksi pertama saya jujur saja: *kok bisa?* Saldonya jelas ada. Saya buka datany
 
 Masalahnya ada di ledger yang **satunya lagi**.
 
-Kami tidak memegang uang merchant sendirian. Setiap pergerakan dana di database kami juga harus dicatat di sebuah core ledger milik pihak lain. Anggap saja ini pembukuan kembar: dua buku besar yang harus selalu sama isinya. Kalau kami memindahkan Rp 30.000,00 dari account A ke account B, ledger di seberang juga harus mencatat perpindahan yang sama.
+Sedikit konteks dulu. Split payment di sistem kami artinya dana settlement merchant otomatis dibagi ke account partner begitu dananya tersedia. Kami tidak memegang uang merchant sendirian. Setiap pergerakan dana di database kami juga harus dicatat di sebuah core ledger milik pihak lain. Anggap saja ini pembukuan kembar: dua buku besar yang harus selalu sama isinya. Kalau kami memindahkan Rp 30.000,00 dari account A ke account B, ledger di seberang juga harus mencatat perpindahan yang sama.
 
 Di buku kami, transfer split itu sudah terjadi. Di buku mereka, transfer itu ditolak karena saldo dianggap tidak cukup.
 
@@ -65,7 +65,9 @@ Saat itulah saya sadar sesuatu yang kedengarannya sepele tapi ternyata penting:
 
 Commit di sisi kami berarti "data kami sudah final". Itu sama sekali tidak menjamin ledger di seberang sudah siap menerima transfer yang bergantung pada data tersebut.
 
-Masih ada satu hal yang bikin sedikit meringis. 😅 Penolakan `INSUFFICIENT_BALANCE` itu balasan 4xx, dan sistem outbox kami menganggap 4xx sebagai kegagalan permanen. Barisnya langsung ditandai `FAILED`, padahal sweeper hanya mengambil baris `PENDING`. Jadi setelah settlement di seberang selesai sekalipun, **tidak ada yang mencoba mengirim ulang**. Transfernya hilang begitu saja.
+Jadi dugaan tim soal urutan sebenarnya tidak meleset. Hanya saja urutan yang menentukan bukan urutan job di sisi kami, melainkan urutan kejadian di sisi seberang.
+
+Masih ada satu hal yang bikin sedikit meringis. 😅 Penolakan `INSUFFICIENT_BALANCE` itu balasan 4xx, dan sistem outbox kami menganggap 4xx sebagai kegagalan permanen. Barisnya langsung ditandai `FAILED`, padahal sweeper, job berkala yang memungut baris yang belum terkirim, hanya mengambil baris `PENDING`. Jadi setelah settlement di seberang selesai sekalipun, **tidak ada yang mencoba mengirim ulang**. Transfernya hilang begitu saja.
 
 ## Godaan solusi cepat
 
@@ -111,7 +113,7 @@ outbox.depends_on_settlement_id = settlement.id
 
 Kolom ini ditulis di savepoint yang sama dengan perpindahan dananya. Kalau batch split di-rollback, niat sync-nya ikut hilang. Transfer yang bukan split tetap `NULL` dan tidak terpengaruh.
 
-Lalu di titik tempat semua jalur pengirim outbox bertemu, saya pasang satu gerbang. Gerbang ini hanya membaca status settlement yang sudah tersimpan di database, tanpa menelepon ledger seberang. Settlement dengan 500 split tidak boleh menghasilkan 500 request inquiry.
+Lalu di titik tempat semua jalur pengirim outbox bertemu, saya pasang satu gerbang. Gerbang ini hanya membaca status settlement yang sudah tersimpan di database, tanpa menelepon ledger seberang. Settlement dengan 500 split tidak boleh menghasilkan 500 request inquiry. Siapa yang mengisi status itu, saya bahas sebentar lagi.
 
 | Status di seberang | Yang terjadi |
 |---|---|
@@ -133,7 +135,7 @@ Yang bertugas "mengintip" ke seberang adalah **satu watcher per settlement**. Wa
 
 Berapa pun jumlah split-nya, watcher-nya tetap satu. Duplikasinya dicegah dengan satu cache key per settlement. Kalau sudah terlalu lama menunggu, watcher berhenti dan mengirim alert, supaya tidak ada yang menunggu diam-diam selamanya.
 
-Begitu status `SETTLED` tersimpan, entah dari watcher, polling per jam, tombol cek manual, atau langsung dari respons report, semua baris yang menunggu settlement itu dibangunkan dan dikirim. Sebelum benar-benar mengirim, gerbangnya dicek sekali lagi.
+Begitu status `SETTLED` tersimpan, entah dari watcher, polling per jam, tombol cek manual, atau langsung dari respons report kalau kebetulan sudah selesai, semua baris yang menunggu settlement itu dibangunkan dan dikirim. Sebelum benar-benar mengirim, gerbangnya dicek sekali lagi.
 
 ## Race yang cuma kelihatan di atas kertas
 
@@ -151,7 +153,7 @@ Akibatnya baris tertahan 10 menit padahal dananya sudah siap. Ada juga kebalikan
 
 Bug ini tidak akan kelihatan dari membaca kode baris per baris. Setiap fungsinya benar kalau dilihat sendiri-sendiri. Masalahnya hanya muncul di sela-sela antar fungsi.
 
-Perbaikannya ada dua lapis. Pertama, release tidak boleh menyentuh baris yang sedang di-claim. Baris yang ditunda punya `next_retry_at` jauh di depan, sedangkan baris yang sedang di-claim hanya sejauh durasi lease, jadi keduanya bisa dibedakan. Kedua, worker yang baru menunda wajib mengecek status sekali lagi. Kalau ternyata sudah `SETTLED`, worker itu sendiri yang membangunkan barisnya.
+Perbaikannya ada dua lapis. Pertama, release tidak boleh menyentuh baris yang sedang di-claim. Baris yang ditunda punya `next_retry_at` jauh di depan, sedangkan baris yang sedang di-claim hanya sejauh durasi lease (batas waktu claim), jadi keduanya bisa dibedakan. Kedua, worker yang baru menunda wajib mengecek status sekali lagi. Kalau ternyata sudah `SETTLED`, worker itu sendiri yang membangunkan barisnya.
 
 Dengan dua lapis ini, urutan mana pun berakhir aman: release sempat melihat baris yang ditunda, atau worker yang menunda sempat melihat status `SETTLED`. Tidak ada celah di antaranya.
 
@@ -165,7 +167,7 @@ Karena transfernya sinkron, transfer yang ditolak berarti uangnya memang tidak p
 
 ## "Settlement-nya jadi lambat nggak?"
 
-Pertanyaan ini datang paling cepat, dan wajar saja, karena settlement adalah jantung alur uang kami.
+Pertanyaan ini hampir selalu menyusul, dan wajar saja, karena settlement adalah jantung alur uang kami.
 
 Jawabannya tidak. Di dalam transaksi settlement, satu-satunya perubahan adalah satu kolom tambahan di INSERT yang sudah ada sejak awal. Tidak ada HTTP dan tidak ada proses menunggu. Transaksi reguler tanpa split bahkan tidak lewat kode baru sama sekali. Yang berubah hanya *kapan* bayangan transfer split muncul di ledger seberang: beberapa menit setelah settlement, bukan langsung.
 
@@ -179,4 +181,4 @@ Dan beberapa menit itu masih jauh lebih baik daripada versi sebelumnya, yang tid
 4. **Kalau dokumentasi ambigu, bertanya sambil membawa temuan.** Pertanyaan "di sini tertulis X, di sana Y, yang benar yang mana?" dijawab jauh lebih cepat daripada "statusnya apa ya?".
 5. **Gambar timeline-nya.** Race yang paling licin tinggal di sela-sela antar fungsi, bukan di dalam fungsinya.
 
-Sekarang setiap kali ada split, saya kadang masih mengintip tabel outbox. Barisnya duduk sabar dengan `waiting dependency`, lalu beberapa menit kemudian berubah jadi `COMMITTED`. Ternyata pekerjaan terberatnya bukan membuat sistem bergerak lebih cepat, tapi mengajarinya kapan harus menunggu. 🙂
+Sekarang, sesekali saya masih mengintip tabel outbox setelah ada split. Barisnya duduk sabar dengan `waiting dependency`, lalu beberapa menit kemudian berubah jadi `COMMITTED`. Ternyata pekerjaan terberatnya bukan membuat sistem bergerak lebih cepat, tapi mengajarinya kapan harus menunggu. 🙂
